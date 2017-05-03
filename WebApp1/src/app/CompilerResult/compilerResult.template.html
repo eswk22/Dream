@@ -1,0 +1,32 @@
+<md-data-table>
+	<thead>
+		<tr>
+			<th>
+				Error
+			</th>
+			<th>
+				Code
+			</th>
+			<th>
+				Description
+			</th>
+			<th>
+				Line
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let err of Result.errors">
+			<td>error image</td>
+			<td>{{err.id}}</td>
+			<td>{{err.message}}</td>
+			<td>{{err.start.line + 1}}</td>
+		</tr>
+		<tr *ngFor="let err of Result.warnings">
+			<td>warning image</td>
+			<td>{{err.id}}</td>
+			<td>{{err.message}}</td>
+			<td>{{err.start.line + 1}}</td>
+		</tr>
+	</tbody>
+</md-data-table>

@@ -1,0 +1,26 @@
+
+<form [formGroup]="editorForm" (ngSubmit)="submitState()" autocomplete="off">
+    <div>
+
+        <label for="power">Language</label>
+        <select class="form-control" formControlName="drplanguage" required>
+            <option *ngFor="let p of languages" [value]="p.Value">{{p.DisplayName}}</option>
+        </select>
+        <div class="alert alert-danger" [hidden]="editorForm.controls.drplanguage.valid">Language is required</div>
+    </div>
+    <button md-raised-button color="primary">Compile</button>
+    <!--<codemirror [(ngModel)]="value" [config]="{ mode:text/x-csharp}"></codemirror>-->
+    <textarea formControlName="editorTextArea" class="form-control" codeEditor id="codeMirrorEditor"
+              [(value)]="value"
+              (valueChange)="onvaluechange($event)"
+              mode="text/x-csharp"
+              lint="lintCodeAsync"
+              options="{lineNumbers: true,
+                        indentUnit: 1,
+                        gutters: ['CodeMirror-linenumbers','CodeMirror-lint-markers']
+                            }"></textarea>
+</form>
+<compilerresult [Result]="Result">
+
+</compilerresult>
+

@@ -1,0 +1,179 @@
+
+
+
+<form [formGroup]="actiontaskForm" novalidate (ngSubmit)="submitState()" class="form-group" autocomplete="on">
+    <button md-raised-button color="primary" type="submit" name="action" [disabled]="!actiontaskForm.valid">
+        Submit
+        <i class="material-icons right">send</i>
+    </button>
+    <md-tab-group>
+
+        <md-tab>
+            <template md-tab-label>
+                Tab 1
+            </template>
+            <template md-tab-content>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" formControlName="name" required />
+                        <div class="alert alert-danger" [hidden]="actiontaskForm.controls.name.valid || actiontaskForm.controls.name.pristine">Name is required</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea type="text" rows="4" class="form-control" formControlName="description"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="summary">Summary</label>
+                        <textarea type="text" class="form-control" formControlName="summary"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="createdby">Created By</label>
+                        <input type="text" class="form-control" formControlName="createdby" readonly />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="updatedby">Last Updated By</label>
+                        <input type="text" class="form-control" formControlName="updatedby" readonly />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="createdon">CreatedOn</label>
+                        <input type="text" class="form-control" formControlName="createdon" readonly />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="updatedon">Last Updated On</label>
+                        <input type="text" class="form-control" formControlName="updatedon" readonly />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="isactive">Active</label>
+                        <input type="checkbox" class="form-control" formControlName="isactive" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="module">module</label>
+                        <input type="text" class="form-control" formControlName="module" required />
+                        <div class="alert alert-danger" [hidden]="actiontaskForm.controls.module.valid ||
+			 actiontaskForm.controls.module.pristine">Module is required</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="menupath">menupath</label>
+                        <input type="text" class="form-control" formControlName="menupath" required />
+                        <div class="alert alert-danger" [hidden]="actiontaskForm.controls.menupath.valid ||
+			 actiontaskForm.controls.menupath.pristine">Menupath is required</div>
+                    </div>
+                </div>
+            </template>
+        </md-tab>
+        <md-tab>
+            <template md-tab-label>
+                Tab 2
+            </template>
+            <template md-tab-content>
+                <div class="form-group">
+                    <label for="actiontype">Actiontype</label>
+                    <select class="form-control" formControlName="actiontype" required>
+                        <option *ngFor="let p of actiontypes" [value]="p.Value">{{p.DisplayName}}</option>
+                    </select>
+                    <div class="alert alert-danger" [hidden]="actiontaskForm.controls.actiontype.valid ||
+			 actiontaskForm.controls.actiontype.pristine">ActionType is required</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="codelanguage">Language</label>
+                    <select class="form-control" formControlName="codelanguage" required>
+                        <option *ngFor="let p of languages" [value]="p.Value">{{p.DisplayName}}</option>
+                    </select>
+                    <div class="alert alert-danger" [hidden]="actiontaskForm.controls.codelanguage.valid ||
+			actiontaskForm.controls.codelanguage.pristine">Language is required</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeout">Timeout(secs)</label>
+                    <input type="number" class="form-control" formControlName="timeout" />
+                </div>
+            </template>
+
+
+        </md-tab>
+        <md-tab heading="Tab 3">
+            <template md-tab-label>
+                Tab 3
+            </template>
+            <template md-tab-content>
+                <ag-grid-ng2 #agGrid style="width: 100%; height: 350px;" class="ag-fresh" id="InputGrid"
+                             [gridOptions]="gridOptions"
+                             [columnDefs]="columnDefs"
+                             [rowData]="InputParam">
+                </ag-grid-ng2>
+                <ag-grid-ng2 #agGrid2 style="width: 100%; height: 350px;" class="ag-fresh" id="OutputGrid"
+                             [gridOptions]="gridOptions"
+                             [columnDefs]="columnDefs"
+                             [rowData]="OutputParam">
+                </ag-grid-ng2>
+            </template>
+        </md-tab>
+        <!--<md-tab>
+            <template md-tab-label>
+                Tab 4
+            </template>
+            <template md-tab-content>
+                <div class="form-group">
+                    <label for="remotecode">RemoteCode</label>
+                    <textarea formControlName="remotecode" class="form-control" codeEditor
+                              (OnValueChange)="onvaluechange($event)"></textarea>
+                 </div>
+            </template>
+        </md-tab>-->
+
+
+        <md-tab>
+            <template md-tab-label>
+                Tab 5
+            </template>
+            <template md-tab-content>
+                <div class="form-group">
+
+                    <label for="accesscode">AccessCode</label>
+                    <button type="button" (click)="OnRemoteCodeExecute()" md-raised-button color="primary" class="btn btn-default pull-right">Run</button>
+                    <!--<editor [code]="accesscode"></editor>-->
+
+                    <button md-raised-button color="primary" (click)="OnCompile()">Compile</button>
+                    <!--<codemirror [(ngModel)]="value" [config]="{ mode:text/x-csharp}"></codemirror>-->
+                   
+                    <textarea class="form-control" codeEditor id="codeMirrorEditor"
+                              [(value)]="accesscode"
+                              (valueChange)="onvaluechange($event)"
+                              mode="text/x-csharp"
+                              lint="lintCodeAsync"
+                              options="{lineNumbers: true,
+                        indentUnit: 1,
+                        gutters: ['CodeMirror-linenumbers','CodeMirror-lint-markers']
+                            }"></textarea>
+
+                    <compilerresult [Result]="Result">
+
+                    </compilerresult>
+                </div>
+            </template>
+        </md-tab>
+
+    </md-tab-group>
+
+
+
+
+
+
+
+
+</form>
+
+

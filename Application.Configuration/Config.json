@@ -1,0 +1,615 @@
+﻿{
+    "Environment": "Test",
+    "Database": {
+        "Type": "mongo",
+        "Host": "127.0.0.1",
+        "Username": "",
+        "Password": ""
+    },
+    "RabbitMQ": {
+        "Primary": "",
+        "Secondary": "",
+        "Port": 1433,
+        "Username": "",
+        "Password": ""
+    },
+    "Email": {
+        "Host": "",
+        "SMTP_Port": 25,
+        "POP3_Port": 110,
+        "Username": "",
+        "Password": ""
+    },
+    "Loglevel": {
+        "Gateway": "Info",
+        "Worker": "Info",
+        "RemoteWorker": "Info",
+        "Web": "Info"
+    },
+    "Gateways": {
+        "netcool": false,
+        "mspoi": false,
+        "dbgw": false,
+        "mysql": false,
+        "oracle": false,
+        "db2": false,
+        "mssql": true,
+        "postgresql": false,
+        "informix": false,
+        "sybase": false,
+        "remedy": false,
+        "remedyx": false,
+        "tn3270": false,
+        "tn5250": false,
+        "vt": false,
+        "htmlconnect": false,
+        "pdf": false,
+        "exchange": false,
+        "itncm": false,
+        "tsrm": false,
+        "xmpp": false,
+        "servicenow": false,
+        "salesforce": false,
+        "snmp": false,
+        "hpom": false,
+        "ews": false,
+        "wsliteconnect": false,
+        "emailconnect2": false,
+        "email": false,
+        "ftpconnect": false,
+        "networkconnect": false,
+        "hpsm": false,
+        "http": false,
+        "caspectrum": false,
+        "tibcobespoke": false
+    },
+    "NetcoolGateways": [
+        {
+            "name": "netcool",
+            "active": false,
+            "queue": "NETCOOL",
+            "primary": true,
+            "secondary": false,
+            "worker": true,
+            "ipaddress": "",
+            "ipaddress2": "",
+            "port": 4100,
+            "port2": 4100,
+            "username": "root",
+            "password": "",
+            "status_active": false,
+            "status_fieldname": "ResolveStatus",
+            "status_process": 1,
+            "runbookid_active": false,
+            "runbookid_fieldname": "ResolveRunbookId",
+            "version": 7,
+            "poolsize": 10,
+            "minevictableidletime": 600,
+            "timebetweenevictionruns": 300,
+            "url": "",
+            "url2": "",
+            "driver": "",
+            "heartbeat": 20,
+            "failover": 60,
+            "reconnectdelay": 30,
+            "retrydelay": 5,
+            "uppercase": true
+        }
+    ],
+    "RemedyGateways": [
+        {
+            "name": "remedy",
+            "queue" :  "remedy",
+            "active": false,
+            "username": "remedy",
+            "password": "",
+            "host": "",
+            "port": 0,
+            "maxconnection": 1,
+            "poll": false,
+            "pollinterval": 0
+        }
+    ],
+    "RemedyxGateways": [
+        {
+            "name": "remedyx",
+            "active": false,
+            "queue": "REMEDYX",
+            "primary": true,
+            "secondary": false,
+            "worker": true,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "username": "remedy",
+            "password": "",
+            "host": "",
+            "port": -1,
+            "poll": false,
+            "pollinterval": 0,
+            "uppercase": true
+
+        }
+    ],
+    "DBGateways": [
+        {
+            "name" :  "DB",
+            "active": false,
+            "queue": "DATABASE",
+            "primary": true,
+            "secondary": false,
+            "worker": true,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "poll": false,
+            "pollinterval": 10,
+            "resolvestatusfield": "ResolveStatus",
+            "resolvestatusvalue": 1,
+            "uppercase": true
+        }
+    ],
+    "MSSQLGateways": [
+        {
+            "name": "mssql",
+            "active": true,
+            "queue": "MSSQLQUEUE",
+            "host": "142.133.140.106",
+            "port": 1433,
+            "instance": "",
+            "username": "sa",
+            "password": "eric@123",
+            "isencrypted": false
+        }
+    ],
+   
+     "PostgreSQLGateways": [
+        {
+            "name": "LECAccess",
+            "active": false,
+            "queue": "MSSQLQUEUE",
+            "host": "142.133.143.106",
+            "port": 1433,
+            "instance": "",
+            "username": "sa",
+            "password": "eric@123",
+            "isencrypted": false
+        }
+    ],
+    "SybaseGateways": [
+        {
+            "name": "LECAccess",
+            "active": false,
+            "queue": "MSSQLQUEUE",
+            "host": "142.133.143.106",
+            "port": 1433,
+            "instance": "",
+            "username": "sa",
+            "password": "eric@123",
+            "isencrypted": false
+        }
+    ],
+    "OracleGateways": [
+        {
+            "name": "LECAccess",
+            "active": false,
+            "queue": "MSSQLQUEUE",
+            "host": "142.133.143.106",
+            "port": 1433,
+            "instance": "",
+            "username": "sa",
+            "password": "eric@123",
+            "isencrypted": false
+        }
+    ],
+    "MYSQLGateways": [
+        {
+            "name": "LECAccess",
+            "active": false,
+            "queue": "MSSQLQUEUE",
+            "host": "142.133.143.106",
+            "port": 1433,
+            "instance": "",
+            "username": "sa",
+            "password": "eric@123",
+            "isencrypted": false
+        }
+    ],
+    "db2Gateways": [
+        {
+            "name": "LECAccess",
+            "active": false,
+            "queue": "MSSQLQUEUE",
+            "host": "142.133.143.106",
+            "port": 1433,
+            "instance": "",
+            "username": "sa",
+            "password": "eric@123",
+            "isencrypted": false
+        }
+    ],
+
+    "EmailGateways": [
+        {
+            "name": "email",
+            "active": false,
+            "queue": "EMAIL",
+            "primary": true,
+            "secondary": false,
+            "worker": true,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "protocol": "pop3",
+            "socialpost": true,
+            "pop3_username": "${EMAIL_USERNAME}",
+            "pop3_password": "${EMAIL_PASSWORD}",
+            "pop3_ipaddress": "${EMAIL_HOST}",
+            "pop3_port": "${EMAIL_POP3_PORT}",
+            "pop3_folder": "INBOX",
+            "pop3_ssl": "${EMAIL_SSL}",
+            "properties": "pop3.properties",
+            "smtp_host": "${EMAIL_HOST}",
+            "smtp_port": "${EMAIL_SMTP_PORT}",
+            "smtp_from": "",
+            "smtp_username": "${EMAIL_USERNAME}",
+            "smtp_password": "${EMAIL_PASSWORD}",
+            "smtp_ssl": "${EMAIL_SSL}",
+            "smtp_properties": "",
+            "uppercase": true
+        }
+    ],
+    "TSRMGateways": [
+        {
+            "name": "tsrm",
+            "active": false,
+            "queue": "TSRM",
+            "primary": true,
+            "secondary": false,
+            "worker": true,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "reconnectdelay": 30,
+            "retrydelay": 5,
+            "url": "http://localhost/maxrest/rest/os/",
+            "username": "maxadmin",
+            "password": "maxadmin",
+            "httpbasicauthusername": "",
+            "httpbasicauthpassword": "",
+            "url2": "",
+            "username2": "",
+            "password2": "",
+            "httpbasicauthusername2": "",
+            "httpbasicauthpassword2": "",
+            "uppercase": true,
+            "objects": "Incident"
+        }
+    ],
+    "ITMGateways": [
+        {
+            "name": "itm",
+            "active": false,
+            "queue" :  "itm",
+            "username": "itmadmin",
+            "password": "itmadmin",
+            "server": "teps.demo.local",
+            "cmd": "/opt/IBM/ITM/bin/tacmd",
+            "remote_windows_dir": "c:\\temp",
+            "remote_unix_dir": "/usr/tmp",
+            "deleteoutputs": true,
+            "outputdir": "{DIST}/rsremote/log/",
+            "scriptdir": "{DIST}/rsremote/file/",
+            "loginduration": 1440,
+            "timeout": 1200
+
+        }
+    ],
+    "ExchangeGateways": [
+        {
+            "name": "exchange",
+            "active": false,
+            "queue": "EXCHANGE",
+            "username": "username",
+            "password": "password",
+            "host": "127.0.0.1",
+            "ewsmode": false,
+            "ewsurl": "https://localhost/ews/exchange.asmx",
+            "mailbox": "mailbox",
+            "domain": "domain",
+            "mapiclientversion": "12.4518.1014",
+            "reconnectdelay": 30,
+            "retrydelay": 5,
+            "maxattachmentmessagesize": 0,
+            "socialpost": false
+        }
+    ],
+    "XMPPGateways": [
+        {
+            "name": "smpp",
+            "active": false,
+            "queue": "XMPP",
+            "primary": true,
+            "secondary": false,
+            "worker": true,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "server": "",
+            "port": "",
+            "service": "",
+            "username": "",
+            "password": "",
+            "sasl": true,
+            "saslmechanism": "PLAIN", //Valid value: DIGEST-MD5, CRAM-MD5, PLAIN, ANONYMOUS
+            "uppercase": true,
+            "socialpost": true
+        }
+    ],
+    "ServiceNowGateways": [
+        {
+            "name": "Servicenow",
+            "active": false,
+            "queue": "SERVICENOW",
+            "primary": true,
+            "secondary": false,
+            "worker": true,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "url": "http://localhost/api/now/v1/table/",
+            "httpbasicauthusername": "",
+            "httpbasicauthpassword": "",
+            "datetimewebservicename": "GetServerDateTime",
+            "uppercase": true
+
+        }
+    ],
+    "SalesforseGateways": [
+        {
+            "name": "Salesforse",
+            "active": false,
+            "queue": "SALESFORCE",
+            "primary": true,
+            "secondary": false,
+            "worker": true,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "accounttype": "enterprise",
+            "url": "https://login.salesforce.com/services/Soap/c/25.0",
+            "httpbasicauthusername": "",
+            "httpbasicauthpassword": "",
+            "uppercase": true,
+            "objects": "Incident"
+
+        }
+    ],
+    "SNMPGateways": [
+        {
+            "name": "snmp",
+            "active": false,
+            "queue": "SNMP",
+            "primary": true,
+            "secondary": false,
+            "worker": true,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "ipaddress": "${LOCALHOST}",
+            "port": 162,
+            "readcommunity": "public",
+            "sendtrap_writecommunity": "private",
+            "sendtrap_retries": 2,
+            "sendtrap_timeout": 10,
+            "uppercase": true
+
+        }
+    ],
+    "SSHGateways": [
+        {
+            "active": false,
+            "queue": "SSH",
+            "interval": 10,
+            "port": 22,
+            "maxconnection": 10,
+            "timeout": 120,
+            "timeoutcounter": 10
+        }
+    ],
+    "HPOMGateways": [
+        {
+            "name": "hpom",
+            "active": false,
+            "queue": "HPOM",
+            "primary": true,
+            "secondary": false,
+            "worker": true,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "url": "http://hpom_host:port/opr-webservice",
+            "username": "",
+            "password": "",
+            "socket_timeout": 30,
+            "status_active": false,
+            "status_fieldname": "RESOLVE_STATUS",
+            "status_process": 1,
+            "runbookid_active": false,
+            "runbookid_fieldname": "RESOLVE_RUNBOOKID",
+            "uppercase": true,
+            "objects": "Case"
+        }
+    ],
+    "TelnetGateways": [
+        {
+            "active": false,
+            "interval": 10,
+            "queue": "TELNET",
+            "port": 23,
+            "maxconnection": 10,
+            "timeout": 120
+        }
+    ],
+    "EWSGateways": [
+        {
+            "name": "esw",
+            "active": false,
+            "queue": "EWS",
+            "primary": true,
+            "secondary": false,
+            "worker": true,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "url": "https://127.0.0.1/EWS/Exchange.asmx",
+            "username": "",
+            "password": "",
+            "uppercase": true,
+            "socialpost": false
+        }
+    ],
+    "LDAPGateways": [
+        {
+            "active": false,
+            "queue": "LDAP",
+            "userauth": false,
+            "grouprequired": false
+        }
+    ],
+    "ADGateways": [
+        {
+            "active": false,
+            "queue": "LDAP",
+            "userauth": false,
+            "grouprequired": false
+        }
+    ],
+    "HPSMGateways": [
+        {
+            "name": "hpsm",
+            "active": false,
+            "queue": "HPSM",
+            "primary": true,
+            "worker": false,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "url": "http://127.0.0.1:13080/SM/7",
+            "username": "falcon",
+            "password": "",
+            "uppercase": true,
+            "objects": "Case"
+        }
+    ],
+    "amqpGateways": [
+        {
+            "active": false,
+            "queue": "AMQP",
+            "primary": true,
+            "secondary": false,
+            //you may set it to false in primary/secondary so it simply distribute data to workers
+            "worker": true,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "uppercase": true,
+            "serverwithport": "",
+            "virtualhost": "",
+            "username": "",
+            "password": "",
+            "ssl": true,
+            "connectionretry": 30,
+            "connectionwait": 10
+        }
+    ],
+    "tcpGateways": [
+        {
+            "active": false,
+            "queue": "TCP",
+            "primary": true,
+            "secondary": false,
+            "worker": true,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "uppercase": true,
+            "timeout": 0 //timeout in milliseconds for a socket to abandon the connection.
+        }
+    ],
+    "httpGateways": [
+        {
+            "name": "http",
+            "active": false,
+            "queue": "HTTP",
+            "primary": true,
+            "secondary": false,
+            "worker": true,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "uppercase": true,
+            "port": 7777,
+            "ssl": false,
+            "sslcertificate": "/opt/resolve/rsremote/config/jetty.jks",
+            "sslpassword": "",
+            "username": "",
+            "password": "",
+            "execute_timeout": 120,
+            "script_timeout": 120,
+            "wait_timeout": 120
+        }
+    ],
+    "tibcobespokeGateways": [
+        {
+            "name": "tipco",
+            "active": false,
+            "queue": "TIBCOBESPOKE",
+            "primary": true,
+            "secondary": false,
+            "worker": true,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "uppercase": true,
+            "processminthread": 10,
+            "processmaxthread": 15,
+            "rabbitcorepoolsize": 100,
+            "rabbitmaxpoolsize": 500,
+            "rabbitkeepalivetime": 120,
+            "rabbitblockingqueuesize": 50,
+            "tomid": "",
+            "credential": "",
+            "handlerclassname": "",
+            "logtypes": "INFO,WARN,ERROR,FATAL,TIBCO",
+            "busjarfiles": "",
+            "ldlibrarypath": ""
+        }
+    ],
+    "CASpectrumGateways": [
+        {
+            "name": "CA",
+            "active": false,
+            "queue": "CASPECTRUM",
+            "primary": true,
+            "secondary": false,
+            "worker": true,
+            "heartbeat": 20,
+            "failover": 60,
+            "interval": 10,
+            "url": "http://10.60.0.45:8080/spectrum/restful/",
+            "httpbasicauthusername": "",
+            "httpbasicauthpassword": "",
+            "uppercase": true,
+            "throttlesize": 1000
+        }
+    ],
+    "pingGateways": {
+        "active": false,
+        "interval": 300,
+        "timeout": 600
+    }
+
+
+
+}

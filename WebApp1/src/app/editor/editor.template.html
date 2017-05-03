@@ -1,0 +1,26 @@
+<div class="card-container">
+	<form (ngSubmit)="submitState(value)" autocomplete="off">
+		<button md-raised-button color="primary">Submit Value</button>
+		<md-menu #menu="mdMenu">
+			<button md-menu-item *ngFor="let item of languages" (click)="Onselectlanguage(item.text)" [disabled]="item.disabled">
+				{{ item.text }}
+			</button>
+		</md-menu>
+		<md-card x-large class="sample-content">
+			<textarea codeEditor id="codeMirrorEditor"
+					  [(value)]="value"
+					  (OnValueChange) ="onvaluechange($event)"
+					  mode="text/x-csharp"
+					  lint="lintCodeAsync"
+					  options="{lineNumbers: true,
+                        indentUnit: 1,
+                        gutters: ['CodeMirror-linenumbers','CodeMirror-lint-markers']
+                            }"></textarea>
+		</md-card>
+	</form>
+	<md-card>
+		<compilerresult [Result] ="Result">
+
+		</compilerresult>
+	</md-card>
+</div>
