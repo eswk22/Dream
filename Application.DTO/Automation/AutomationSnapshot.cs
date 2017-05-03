@@ -1,4 +1,6 @@
 ﻿using Application.DTO.RunBook;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +9,11 @@ using System.Threading.Tasks;
 
 namespace Application.DTO.Automation
 {
-    public class AutomationEntity
+    [CollectionName("gateways")]
+    public class AutomationSnapshot : Entity
     {
-        public string automationId { get; set; }
+        [BsonElement("Id")]
+        public override string Id { get; set; }
         public string name { get; set; }
         public string title { get; set; }
         public string summary { get; set; }
@@ -17,11 +21,11 @@ namespace Application.DTO.Automation
         public RunbookEntity runbookException { get; set; }
         public int version { get; set; }
         public bool isLatestVersion { get; set; }
-        public bool isActive { get; set; }
-        public string createdBy { get; set; }
-        public string modifiedBy { get; set; }
-        public DateTime createdOn { get; set; }
-        public DateTime modifiedOn { get; set; }
+        public bool IsActive { get; set; }
+        public string CreatedBy { get; set; }
+        public string ModifiedBy { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public DateTime ModifiedOn { get; set; }
 
     }
 }

@@ -9,6 +9,6 @@ namespace Application.Manager
 {
     public interface IAutomationManager
     {
-        AutomationEntity GetbyId(string automationId);
+        AutomationDTO GetbyId(string automationId);
     }
 }

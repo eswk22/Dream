@@ -53,13 +53,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessContract\IAutomationBusinessManager.cs" />
     <Compile Include="Converter\ActionTasklistTranslator.cs" />
-    <Compile Include="Converter\GatewayStatusMessageTranslator.cs" />
-    <Compile Include="Converter\GatewayTranslator.cs" />
     <Compile Include="Converter\ActionTaskTranslator.cs" />
     <Compile Include="Converter\CompilationResultTranslator.cs" />
     <Compile Include="Converter\CompilationArgumentTranslator.cs" />
     <Compile Include="IAutomationManager.cs" />
+    <Compile Include="ServiceContract\IAutomationServiceManager.cs" />
     <Compile Include="ServiceContract\IServiceGatewayManager.cs" />
     <Compile Include="ICompileManager.cs" />
     <Compile Include="Implementation\ActionTaskManager.cs" />

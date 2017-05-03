@@ -43,7 +43,7 @@ namespace Worker.AutomationHandlers
             {
                 if (message != null)
                 {
-                    AutomationEntity entity = _automationManager.GetbyId(message.AutomationId);
+                    AutomationDTO entity = _automationManager.GetbyId(message.AutomationId);
                     RunbookEntity runbook = entity.runbookContent;
                     string sourceId = runbook.start.Id;
                     string IncidentId = message.IncidentId;
@@ -80,7 +80,7 @@ namespace Worker.AutomationHandlers
                     AutomationMessage ParentAutomations = message.Parent;
                     string sheetId = "";
                     AutomationParameter parameters = message.Parameters;
-                    AutomationEntity entity = _automationManager.GetbyId(automationId);
+                    AutomationDTO entity = _automationManager.GetbyId(automationId);
                     RunbookEntity runbook = entity.runbookContent;
                     string condition = message.Parameters.Result["Condition"];
                     Execute(runbook, parameters, sourceId, IncidentId, automationId, sheetId,
@@ -154,7 +154,7 @@ namespace Worker.AutomationHandlers
                     SubRunbook subRunbook = runbook.subRunbook.Where(x => x.Id == targetId).FirstOrDefault();
                     if (subRunbook != null)
                     {
-                        AutomationEntity entity = _automationManager.GetbyId(subRunbook.SubAutomationId);
+                        AutomationDTO entity = _automationManager.GetbyId(subRunbook.SubAutomationId);
                         RunbookEntity subRunbookentity = entity.runbookContent;
                         AutomationMessage automation = new AutomationMessage()
                         {
@@ -180,7 +180,7 @@ namespace Worker.AutomationHandlers
                         if(ParentAutomations != null)
                         {
 
-                            AutomationEntity entity = _automationManager.GetbyId(ParentAutomations.AutomationId);
+                            AutomationDTO entity = _automationManager.GetbyId(ParentAutomations.AutomationId);
                             RunbookEntity ParentRunbook = entity.runbookContent;
 
                             this.Execute(ParentRunbook, parameters, ParentAutomations.ParentAutomationFlowId, IncidentId, ParentAutomations.AutomationId,

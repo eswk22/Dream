@@ -51,7 +51,8 @@
     <Compile Include="ActionTask\ActionTaskResponseMessage.cs" />
     <Compile Include="ActionTask\RemoteTaskResponseMessage.cs" />
     <Compile Include="AutomationSnapshot.cs" />
-    <Compile Include="Automation\AutomationEntity.cs" />
+    <Compile Include="Automation\AutomationSnapshot.cs" />
+    <Compile Include="Automation\AutomationDTO.cs" />
     <Compile Include="Automation\AutomationMessage.cs" />
     <Compile Include="Automation\AutomationParameter.cs" />
     <Compile Include="Compilation\CompilationArguments.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Compilation\CompilationResultDiagnostic.cs" />
     <Compile Include="Compilation\CompilationResultDiagnosticLocation.cs" />
     <Compile Include="Converter\ActionTasklistTranslator.cs" />
+    <Compile Include="Converter\AutomationTranslator.cs" />
     <Compile Include="Converter\ActionTaskTranslator.cs" />
     <Compile Include="Converter\GatewayStatusMsgTranslator.cs" />
     <Compile Include="Converter\GatewayStatusMessageTranslator.cs" />
