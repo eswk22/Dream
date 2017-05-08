@@ -1,0 +1,12 @@
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Datalayer\obj\Debug\Application.Datalayer.csprojResolveAssemblyReference.cache
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\Application.Datalayer.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\Application.Datalayer.pdb
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\MongoDB.Bson.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\MongoDB.Driver.Core.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\MongoDB.Driver.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\MongoDB.Driver.Legacy.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\MongoDB.Bson.xml
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\MongoDB.Driver.xml
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\MongoDB.Driver.Legacy.xml
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Datalayer\obj\Debug\Application.Datalayer.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Datalayer\obj\Debug\Application.Datalayer.pdb

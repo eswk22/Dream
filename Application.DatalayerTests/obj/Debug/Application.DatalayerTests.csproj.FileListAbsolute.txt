@@ -1,0 +1,17 @@
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\obj\Debug\Application.DatalayerTests.csprojResolveAssemblyReference.cache
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\bin\Debug\Application.DatalayerTests.dll.config
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\bin\Debug\Application.DatalayerTests.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\bin\Debug\Application.DatalayerTests.pdb
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\bin\Debug\Application.Datalayer.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\bin\Debug\MongoDB.Bson.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\bin\Debug\MongoDB.Driver.Core.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\bin\Debug\MongoDB.Driver.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\bin\Debug\MongoDB.Driver.Legacy.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\bin\Debug\Application.Datalayer.pdb
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\bin\Debug\MongoDB.Bson.xml
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\bin\Debug\MongoDB.Driver.xml
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\bin\Debug\MongoDB.Driver.Legacy.xml
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\obj\Debug\Application.DatalayerTests.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.DatalayerTests\obj\Debug\Application.DatalayerTests.pdb

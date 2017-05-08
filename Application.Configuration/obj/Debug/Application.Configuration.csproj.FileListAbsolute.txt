@@ -1,0 +1,7 @@
+C:\Eswar\Projects\Dream\Application.Configuration\bin\Debug\Application.Configuration.dll
+C:\Eswar\Projects\Dream\Application.Configuration\bin\Debug\Application.Configuration.pdb
+C:\Eswar\Projects\Dream\Application.Configuration\bin\Debug\Newtonsoft.Json.dll
+C:\Eswar\Projects\Dream\Application.Configuration\bin\Debug\Newtonsoft.Json.xml
+C:\Eswar\Projects\Dream\Application.Configuration\obj\Debug\Application.Configuration.csprojResolveAssemblyReference.cache
+C:\Eswar\Projects\Dream\Application.Configuration\obj\Debug\Application.Configuration.dll
+C:\Eswar\Projects\Dream\Application.Configuration\obj\Debug\Application.Configuration.pdb

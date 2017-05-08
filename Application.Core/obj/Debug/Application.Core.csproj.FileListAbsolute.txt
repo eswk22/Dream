@@ -1,0 +1,12 @@
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Core\bin\Debug\Application.Core.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Core\bin\Debug\Application.Core.pdb
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Core\obj\Debug\Application.Core.dll
+C:\Eswar\Projects\non-Ericsson\Dream\Application.Core\obj\Debug\Application.Core.pdb
+G:\Projects\non-Ericsson\Dream\Application.Core\bin\Debug\Application.Core.dll
+G:\Projects\non-Ericsson\Dream\Application.Core\bin\Debug\Application.Core.pdb
+G:\Projects\non-Ericsson\Dream\Application.Core\obj\Debug\Application.Core.dll
+G:\Projects\non-Ericsson\Dream\Application.Core\obj\Debug\Application.Core.pdb
+C:\Eswar\Projects\Dream\Application.Core\bin\Debug\Application.Core.dll
+C:\Eswar\Projects\Dream\Application.Core\bin\Debug\Application.Core.pdb
+C:\Eswar\Projects\Dream\Application.Core\obj\Debug\Application.Core.dll
+C:\Eswar\Projects\Dream\Application.Core\obj\Debug\Application.Core.pdb
