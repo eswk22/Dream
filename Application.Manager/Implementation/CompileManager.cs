@@ -56,7 +56,7 @@ namespace Application.Manager.Implementation
 			ActionTaskResponseMessage response = null;
 			try
 			{
-				ActionTaskMessage actiontask = _actiontaskManager.GetbyId(actiontaskCaller.ActionId);
+				ActionTaskMessage actiontask = _actiontaskManager.GetbyId(actiontaskCaller.ActionTaskId);
 				foreach (var input in actiontaskCaller.Inputs)
 				{
 					actiontask.Inputs[input.Key] = input.Value;
@@ -71,7 +71,7 @@ namespace Application.Manager.Implementation
 				response = new ActionTaskResponseMessage()
 				{
 					ActionIdInRunBook = actiontaskCaller.ActionIdInRunBook,
-					ActionTaskId = actiontaskCaller.ActionId,
+					ActionTaskId = actiontaskCaller.ActionTaskId,
 					IncidentId = actiontaskCaller.IncidentId//,
 					//Outputs = globals.OUTPUTS,
 					//Results = globals.RESULTS

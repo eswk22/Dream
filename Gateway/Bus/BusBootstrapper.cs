@@ -24,7 +24,7 @@ namespace Gateway.Bus
 
             //Subscribe messages for Gateway status update 
 
-            _bus.Subscribe<GatewayStatusMessage>("GatewayStatusUpdate", message =>
+            _bus.Receive<GatewayStatusMessage>("GatewayStatusUpdate", message =>
             {
                 try
                 {

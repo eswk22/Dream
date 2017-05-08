@@ -60,8 +60,10 @@
     <Compile Include="Compilation\CompilationResultDiagnostic.cs" />
     <Compile Include="Compilation\CompilationResultDiagnosticLocation.cs" />
     <Compile Include="Converter\ActionTasklistTranslator.cs" />
-    <Compile Include="Converter\AutomationTranslator.cs" />
+    <Compile Include="Converter\ActionTaskResponseTranslator.cs" />
+    <Compile Include="Converter\RemoteTaskTranslator.cs" />
     <Compile Include="Converter\ActionTaskTranslator.cs" />
+    <Compile Include="Converter\AutomationTranslator.cs" />
     <Compile Include="Converter\GatewayStatusMsgTranslator.cs" />
     <Compile Include="Converter\GatewayStatusMessageTranslator.cs" />
     <Compile Include="Converter\GatewayCallerMessageTranslator.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="RunBook\Component\Event.cs" />
     <Compile Include="RunBook\Helper\Container.cs" />
     <Compile Include="RunBook\Helper\ArrayofPoints.cs" />
+    <Compile Include="RunBook\Helper\MxGraphModel.cs" />
     <Compile Include="RunBook\Helper\Point.cs" />
     <Compile Include="RunBook\Component\Connector.cs" />
     <Compile Include="RunBook\Component\End.cs" />

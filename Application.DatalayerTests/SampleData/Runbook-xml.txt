@@ -1,0 +1,182 @@
+﻿<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Start" description="start#resolve?" id="2">
+      <params>
+        <inputs/>
+        <outputs/>
+      </params>
+      <name>
+        start#resolve
+      </name>
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png" parent="1" vertex="1">
+        <mxGeometry x="365" y="35" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <End label="End" description="end#resolve?" merge="merge = ALL" id="3">
+      <params>
+        <inputs>
+          <![CDATA[{}]]>
+        </inputs>
+        <outputs>
+          <![CDATA[{}]]>
+        </outputs>
+      </params>
+      <name>
+        end#resolve
+      </name>
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/end.png" parent="1" vertex="1">
+        <mxGeometry x="365" y="370" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </End>
+    <Task label="print rb data" actiontaskid="590aa3329a8c492868766fe1" description="print rb data#dev.utils.common?" tooltip="" href="" id="5">
+      <params>
+        <inputs>
+          <![CDATA[{}]]>
+        </inputs>
+        <outputs>
+          <![CDATA[{}]]>
+        </outputs>
+      </params>
+      <name>
+        print rb data#dev.utils.common
+      </name>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="330" y="90" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="join strings" actiontaskid="590aa3329a8c492868766fe1" description="join strings#AAT.Common?" tooltip="" href="" id="6">
+      <params>
+        <inputs>
+          <![CDATA[{"1":"$PARAM{Param1}","2":"Test","TARGET_STRING":"$1 + $2"}]]>
+        </inputs>
+        <outputs>
+          <![CDATA[{"RESULT_STRING":"$PARAM{Param1}"}]]>
+        </outputs>
+      </params>
+      <name>
+        join strings#AAT.Common
+      </name>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="190" y="180" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="join strings" actiontaskid="590aa3329a8c492868766fe1" description="join strings#AAT.Common?" tooltip="" href="" id="7">
+      <params>
+        <inputs>
+          <![CDATA[{"1":"$PARAM{Param2}","2":"Test","TARGET_STRING":"$1 + $2"}]]>
+        </inputs>
+        <outputs>
+          <![CDATA[{"RESULT_STRING":"$PARAM{Param2}"}]]>
+        </outputs>
+      </params>
+      <name>
+        join strings#AAT.Common
+      </name>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="500" y="170" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="noop" actiontaskid="590aa3329a8c492868766fe1" description="noop#resolve?" tooltip="" href="" id="8">
+      <params>
+        <inputs>
+          <![CDATA[{}]]>
+        </inputs>
+        <outputs>
+          <![CDATA[{}]]>
+        </outputs>
+      </params>
+      <name>
+        noop#resolve
+      </name>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="330" y="240" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="print rb data" actiontaskid="590aa3329a8c492868766fe1" description="print rb data#dev.utils.common?" tooltip="" href="" id="15">
+      <params>
+        <inputs>
+          <![CDATA[{}]]>
+        </inputs>
+        <outputs>
+          <![CDATA[{}]]>
+        </outputs>
+      </params>
+      <name>
+        print rb data#dev.utils.common
+      </name>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="330" y="300" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Edge label="" description="" order="99999" id="9">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="2" target="5" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="280" y="50" as="sourcePoint"/>
+          <mxPoint x="180" y="150" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="10">
+      <mxCell style="horizontal" parent="1" source="5" target="6" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="180" y="90" as="sourcePoint"/>
+          <mxPoint x="80" y="190" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="240" y="160"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="11">
+      <mxCell style="horizontal" parent="1" source="5" target="7" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="490" y="170" as="sourcePoint"/>
+          <mxPoint x="390" y="270" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="560" y="150"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="12">
+      <mxCell style="horizontal" parent="1" source="6" target="8" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="210" y="280" as="sourcePoint"/>
+          <mxPoint x="110" y="380" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="240" y="240"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="13">
+      <mxCell style="horizontal" parent="1" source="7" target="8" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="330" y="280" as="sourcePoint"/>
+          <mxPoint x="230" y="380" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="560" y="230"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="14">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="15" target="3" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="290" y="330" as="sourcePoint"/>
+          <mxPoint x="190" y="430" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="16">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="8" target="15" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="380" y="280" as="sourcePoint"/>
+          <mxPoint x="380" y="370" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>

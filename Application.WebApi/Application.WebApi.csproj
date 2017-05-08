@@ -142,6 +142,7 @@
     <Compile Include="Controllers\ActionTaskController.cs" />
     <Compile Include="Controllers\CompilerController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\PropertyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

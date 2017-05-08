@@ -11,10 +11,11 @@ namespace Application.Messages
 	[Serializable]
 	public class ActionTaskCallerMessage : AutomationMessage
 	{
-		public string ActionId { get; set; }
+		public string ActionTaskId { get; set; }
         public string ActionIdInRunBook { get; set; }
         public string SheetId { get; set; }
         public string Code { get; set; }
-        public DictionaryWithDefault<string,dynamic> Inputs { get; set; }
-	}
+        public Dictionary<string,dynamic> Inputs { get; set; }
+        public string ConfiguredOutputParams { get; set; }
+    }
 }

@@ -44,6 +44,11 @@ namespace Application.Utility.IoC.Windsor
             return new WindsorCompositionRoot(Resolver.Container, Assembly.GetCallingAssembly(), performanceLogging);
         }
 
+        public static object RegisterCompositionRoot_Console(bool performanceLogging = false)
+        {
+            return new WindsorCompositionRoot(Resolver.Container, performanceLogging);
+        }
+
 
 
         public static void RegisterControllerFactory(ControllerBuilder builder, List<string> assemblies, bool performanceLogging = false)
@@ -63,7 +68,7 @@ namespace Application.Utility.IoC.Windsor
 
         public static void Register(Type interfaceType, Type implementationType) 
         {
-            Register(interfaceType, implementationType, CrucialLifestyleType.PerWebRequest);
+            Register(interfaceType, implementationType,  CrucialLifestyleType.PerWebRequest);
         }
 
         public static void Register(Type interfaceType, Type implementationType, CrucialLifestyleType lifestyleType)
@@ -228,6 +233,15 @@ namespace Application.Utility.IoC.Windsor
         {
             ComponentRegistration<TInterface> componentRegistration = Component.For<TInterface>().ImplementedBy<TImplementation>();
             Resolver.Container.Register(componentRegistration.LifeStyle.Is((LifestyleType)lifestyleType));
+        }
+
+        public static void Register<TInterface1, TInterface2, TImplementation>(CrucialLifestyleType lifestyleType)
+                        where TInterface1 : class
+                        where TInterface2 : class
+            where TImplementation : TInterface1,TInterface2
+        {
+          
+            Resolver.Container.Register(Component.For<TInterface1, TInterface2>().ImplementedBy<TImplementation>().LifeStyle.Is((LifestyleType)lifestyleType));
         }
 
         public static void EnableWcfFacility()

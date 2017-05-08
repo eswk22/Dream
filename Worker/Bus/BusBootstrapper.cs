@@ -18,6 +18,7 @@ namespace Worker.Bus
     public class BusBootstrapper : IBusBootstrapper
     {
         private IBus _bus { get; set; }
+        private string myQueue = "worker";
         public BusBootstrapper(IBus bus)
         {
             _bus = bus;
@@ -27,7 +28,7 @@ namespace Worker.Bus
 
             //Subscribe messages for Gateway status update 
 
-            _bus.Subscribe<AutomationMessage>("Worker", message =>
+            _bus.Receive<AutomationMessage>(myQueue, message =>
             {
                 try
                 {
@@ -40,7 +41,7 @@ namespace Worker.Bus
                 }
             });
 
-            _bus.Subscribe<ActionTaskResponseMessage>("Worker", message =>
+            _bus.Receive<ActionTaskResponseMessage>(myQueue, message =>
             {
                 try
                 {
@@ -54,7 +55,7 @@ namespace Worker.Bus
             });
 
 
-            _bus.Subscribe<RemoteTaskResponseMessage>("Worker", message =>
+            _bus.Receive<RemoteTaskResponseMessage>(myQueue, message =>
             {
                 try
                 {
@@ -67,7 +68,7 @@ namespace Worker.Bus
                 }
             });
 
-            _bus.Subscribe<ActionTaskCallerMessage>("Worker", message =>
+            _bus.Receive<ActionTaskCallerMessage>("worker1", message =>
              {
                  try
                  {

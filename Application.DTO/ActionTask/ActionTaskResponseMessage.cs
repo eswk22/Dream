@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Application.Messages
 {
-	public class ActionTaskResponseMessage : AutomationMessage
+	public class ActionTaskResponseMessage : ActionTaskCallerMessage
 	{
-        public string ActionIdInRunBook { get; set; }
-		public string ActionTaskId { get; set; }
+
     }
 }

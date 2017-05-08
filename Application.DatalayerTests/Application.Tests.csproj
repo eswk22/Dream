@@ -82,6 +82,7 @@
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Helper\AssertHelper.cs" />
     <Compile Include="Implementation\ActionTaskTest.cs" />
+    <Compile Include="Implementation\AutomationManagerTests.cs" />
     <Compile Include="Implementation\CompileManagerTests.cs" />
     <Compile Include="Implementation\GatewayManagerTests.cs" />
     <Compile Include="MongoRepositoryManagerTest.cs" />
@@ -126,6 +127,7 @@
     <Content Include="EmailSender\test-embedded.txt" />
     <Content Include="EmailSender\test.he-IL.txt" />
     <Content Include="EmailSender\test.txt" />
+    <Content Include="SampleData\Runbook-xml.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

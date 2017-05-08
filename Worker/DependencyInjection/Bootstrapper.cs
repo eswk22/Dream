@@ -1,5 +1,5 @@
-﻿using Application.Manager;
-using Application.Manager.Conversion;
+﻿using Application.DTO.Conversion;
+using Application.Manager;
 using Application.Manager.Implementation;
 using Application.Repository;
 using Application.Snapshot;
@@ -29,14 +29,14 @@ namespace Worker.DependencyInjection
 
 
             Registrar.Register<IBusBootstrapper, BusBootstrapper>(CrucialLifestyleType.Singleton);
-            Registrar.Register<IRunbookHandler, RunbookHandler>(CrucialLifestyleType.Singleton);
+            Registrar.Register<IRunbookHandler, RunbookHandler>(CrucialLifestyleType.Transient);
 
             //Compiler.Core.Bootstrapper.BootstrapStructureMap();
-            Registrar.Register(typeof(IRepository<>), typeof(MongoRepository<>));
+            Registrar.Register(typeof(IRepository<>), typeof(MongoRepository<>),CrucialLifestyleType.Transient);
 			Registrar.Register<IRepository<ActionTaskSnapshot>, MongoRepository<ActionTaskSnapshot>>(CrucialLifestyleType.Transient);
             Registrar.Register<IRepository<GatewaySnapshot>, MongoRepository<GatewaySnapshot>>(CrucialLifestyleType.Transient);
 
-            Registrar.Register<IAutomationManager, AutomationManager>(CrucialLifestyleType.Transient);
+            Registrar.Register<IAutomationBusinessManager,IAutomationServiceManager, AutomationManager>(CrucialLifestyleType.Transient);
             Registrar.Register<IActionTaskManager, ActionTaskManager>(CrucialLifestyleType.Transient);
             Registrar.Register<IBusinessGatewayManager, GatewayManager>(CrucialLifestyleType.Transient);
             Registrar.Register<ICompileManager, CompileManager>(CrucialLifestyleType.Transient);
@@ -60,11 +60,13 @@ namespace Worker.DependencyInjection
 
 		private static void RegisterTranslators(IEntityTranslatorService translatorService)
 		{
-			translatorService.RegisterEntityTranslator(new CompilationResultTranslator());
-			translatorService.RegisterEntityTranslator(new CompilationArgumentTranslator());
+			translatorService.RegisterEntityTranslator(new AutomationTranslator());
+			//translatorService.RegisterEntityTranslator(new CompilationArgumentTranslator());
 			translatorService.RegisterEntityTranslator(new ActionTaskTranslator());
 			translatorService.RegisterEntityTranslator(new ActionTasklistTranslator());
             translatorService.RegisterEntityTranslator(new GatewayTranslator());
+            translatorService.RegisterEntityTranslator(new RemoteTaskTranslator());
+            translatorService.RegisterEntityTranslator(new ActionTaskResponseTranslator());
 
         }
 

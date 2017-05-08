@@ -24,8 +24,7 @@ namespace RemoteWorker
 
 			Registrar.RegisterCompositionRoot();
 
-            Compiler.Core.Bootstrapper.BootstrapStructureMap();
-
+      
             Registrar.Register<IGateway, MSSQLGateway>(CrucialLifestyleType.Transient);
             Registrar.Register<IActionTaskHandler, ActionTaskHandler>(CrucialLifestyleType.Transient);
             Registrar.Register<IBusBootstrapper, BusBootstrapper>(CrucialLifestyleType.Singleton);
@@ -45,6 +44,7 @@ namespace RemoteWorker
 			translatorService.RegisterEntityTranslator(new ActionTaskTranslator());
 			translatorService.RegisterEntityTranslator(new ActionTasklistTranslator());
             translatorService.RegisterEntityTranslator(new GatewayStatusMessageTranslator());
+            translatorService.RegisterEntityTranslator(new RemoteTaskTranslator());
 
 
         }

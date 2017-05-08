@@ -17,8 +17,8 @@ namespace Application.DTO.Automation
         public string name { get; set; }
         public string title { get; set; }
         public string summary { get; set; }
-        public RunbookEntity runbookContent { get; set; }
-        public RunbookEntity runbookException { get; set; }
+        public string runbookContent { get; set; }
+        public string runbookException { get; set; }
         public int version { get; set; }
         public bool isLatestVersion { get; set; }
         public bool IsActive { get; set; }

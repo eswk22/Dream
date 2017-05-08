@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace Application.DTO.RunBook
 {
+    [XmlRoot(ElementName = "root")]
     public class RunbookEntity
     {
         [XmlElement(ElementName = "runbookid")]

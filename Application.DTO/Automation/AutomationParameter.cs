@@ -11,10 +11,8 @@ namespace Application.DTO.Automation
         public Dictionary<string, dynamic> Params { get; set; }
         public Dictionary<string, dynamic> Flow { get; set; }
         public Dictionary<string, dynamic> CNS { get; set; }
-        public Dictionary<string, dynamic> WSData { get; set; }
         public Dictionary<string, dynamic> Outputs { get; set; }
         public Dictionary<string, dynamic> Result { get; set; }
-
 
 
     }

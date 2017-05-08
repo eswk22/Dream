@@ -42,7 +42,7 @@ namespace RemoteWorker.Gateway
                         Params = PARAMS
                     }
                 };
-                _bus.Publish<AutomationMessage>(message);
+                _bus.Send<AutomationMessage>("worker",message);
             }
             catch (Exception ex)
             {
@@ -55,7 +55,7 @@ namespace RemoteWorker.Gateway
             GatewayStatusMessage message = _translator.Translate<GatewayStatusMessage>(dto);
             message.Status = Status;
             message.LastRunTime = DateTime.UtcNow;
-            _bus.Publish<GatewayStatusMessage>(message);
+            _bus.Send<GatewayStatusMessage>("GatewayStatusUpdate",message);
         }
 
         protected void GetGatewayJob(string Id)

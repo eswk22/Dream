@@ -84,7 +84,7 @@ namespace Application.Manager.Implementation.Tests
         public void UpdateTest()
         {
             GatewayDTO input = _gatewayManager.GetbyId("5908f97c9a8c4b24bc6a95e8");
-            input.Query = "Select Top 1 * from LEC_Access_Dev.dbo.OrderData";
+            input.AutomationId = "590a882f9a8c492558bc73ca";
             var result = _gatewayManager.Update(input);
          
            AssertHelper.HasEqualFieldValues<GatewayDTO>(input, result);

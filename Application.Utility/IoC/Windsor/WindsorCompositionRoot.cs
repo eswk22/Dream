@@ -20,11 +20,21 @@ namespace Application.Utility.IoC.Windsor
 	{
 		private readonly IWindsorContainer container;
 
-		
 
-		#region constructors
 
-		public WindsorCompositionRoot(IWindsorContainer container, Assembly ass, bool performanceLogging = false)
+        #region constructors
+        public WindsorCompositionRoot(IWindsorContainer container, bool performanceLogging = false)
+        {
+
+            // Retain a private copy of the kernel.
+            this.container = container;
+            this.container.Kernel.Resolver.AddSubResolver(
+                            new CollectionResolver(container.Kernel, true));
+        }
+
+
+
+        public WindsorCompositionRoot(IWindsorContainer container, Assembly ass, bool performanceLogging = false)
 		{
 
 			// Retain a private copy of the kernel.
@@ -80,21 +90,21 @@ namespace Application.Utility.IoC.Windsor
 		/// by calling <code>SetControllerFactory()</code> inside the <code>Application_Start</code> handler in 
 		/// Global.asax.cs</remarks>
 		/// <param name="container">A Windsor Container instance holding the castle configuration settings.</param>
-		public WindsorCompositionRoot(IWindsorContainer container, bool performanceLogging = false)
-		{
-			// Retain a private copy of the kernel.
-			this.container = container;
+		//public WindsorCompositionRoot(IWindsorContainer container, bool performanceLogging = false)
+		//{
+		//	// Retain a private copy of the kernel.
+		//	this.container = container;
 
-			// new method for MVC3 - used when this class is not in the same assembly as the contollers, controller are assumed to be in the calling assembly...
-			container.Register(Classes.FromAssembly(Assembly.GetCallingAssembly())
-							.BasedOn<ApiController>()
-							.If(t => t.Name.EndsWith("Controller"))
-							.Configure(c => c.LifeStyle.Is(LifestyleType.Transient))
-							.ConfigureIf(
-								c => performanceLogging, c => c.Interceptors("Application.Utility.Interceptors.PerformanceInterceptor")
-							)
-			);
-		}
+		//	// new method for MVC3 - used when this class is not in the same assembly as the contollers, controller are assumed to be in the calling assembly...
+		//	container.Register(Classes.FromAssembly(Assembly.GetCallingAssembly())
+		//					.BasedOn<ApiController>()
+		//					.If(t => t.Name.EndsWith("Controller"))
+		//					.Configure(c => c.LifeStyle.Is(LifestyleType.Transient))
+		//					.ConfigureIf(
+		//						c => performanceLogging, c => c.Interceptors("Application.Utility.Interceptors.PerformanceInterceptor")
+		//					)
+		//	);
+		//}
 
 		/// <summary>
 		/// Constructs an instance of a WindsorControllerFactory class. (First overload)

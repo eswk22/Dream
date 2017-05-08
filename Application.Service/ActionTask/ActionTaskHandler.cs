@@ -3,6 +3,7 @@ using Application.DTO.ActionTask;
 using Application.DTO.Automation;
 using Application.Messages;
 using Application.Utility.Logging;
+using Application.Utility.Translators;
 using Compiler.Core;
 using EasyNetQ;
 using System;
@@ -18,6 +19,7 @@ namespace RemoteWorker.ActionTask
         private readonly ICodeProcessor _processor;
         private readonly ILogger _logger;
         private readonly IBus _bus;
+        private readonly IEntityTranslatorService _translator;
 
 
         /// <summary>
@@ -25,11 +27,13 @@ namespace RemoteWorker.ActionTask
         /// </summary>
         /// <param name="processor"></param>
         /// <param name="logger"></param>
-        public ActionTaskHandler(ICodeProcessor processor, ILogger logger, IBus bus)
+        public ActionTaskHandler(ICodeProcessor processor, ILogger logger, IBus bus,
+            IEntityTranslatorService translator)
         {
             _processor = processor;
             _logger = logger;
             _bus = bus;
+            _translator = translator;
         }
 
 
@@ -41,24 +45,18 @@ namespace RemoteWorker.ActionTask
             {
                 var globals = new Globals()
                 {
-                    INPUTS = actiontaskCaller.Inputs,
+                    //   INPUTS = actiontaskCaller.Inputs,
                     OUTPUTS = new DictionaryWithDefault<string, dynamic>(),
                     RESULTS = new DictionaryWithDefault<string, dynamic>()
                 };
                 //needs to implement timeout 
                 _processor.Execute(actiontaskCaller.Code, globals);
-                response = new RemoteTaskResponseMessage()
-                {
-                    ActionIdInRunBook = actiontaskCaller.ActionIdInRunBook,
-                    ActionTaskId = actiontaskCaller.ActionId,
-                    AutomationId = actiontaskCaller.AutomationId,
-                    IncidentId = actiontaskCaller.IncidentId,
-                    Parameters = actiontaskCaller.Parameters,
-                };
+                response = _translator.Translate<RemoteTaskResponseMessage>(actiontaskCaller);
                 response.Parameters.Outputs = globals.OUTPUTS;
+                response.Inputs = globals.INPUTS;
                 response.Parameters.Result = globals.RESULTS;
                 _logger.Info("Result of action task", response);
-                _bus.Publish<RemoteTaskResponseMessage>(response);
+                _bus.Send<RemoteTaskResponseMessage>("worker", response);
             }
             catch (Exception ex)
             {

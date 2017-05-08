@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutomationHandlers\ActionTaskHandler.cs" />
+    <Compile Include="AutomationHandlers\ActionTaskHelper.cs" />
     <Compile Include="AutomationHandlers\ConditionHandler.cs" />
     <Compile Include="AutomationHandlers\IActionTaskHandler.cs" />
     <Compile Include="AutomationHandlers\IConditionHandler.cs" />
