@@ -1,0 +1,23 @@
+﻿
+<div class="commitModal">
+    <h2 mat-dialog-title>Comments</h2>
+    <form [formGroup]="form">
+        <mat-dialog-content>
+            <div layout="row" flex>
+                <mat-form-field class="full-width">
+                    <input matInput mat-autosize  formControlName="txtnamespace" placeholder="Provide comments"/>
+                </mat-form-field>
+            </div>
+            <div layout="row" flex>
+                <mat-form-field class="full-width">
+                    <input matInput mat-autosize formControlName="txtName" placeholder="Name of the object" />
+                </mat-form-field>
+            </div>
+        </mat-dialog-content>
+        <mat-dialog-actions>
+            <button mat-button mat-dialog-close>Cancel</button>
+            <!-- Can optionally provide a result for the closing dialog. -->
+            <button mat-button [mat-dialog-close]="form.controls">Copy</button>
+        </mat-dialog-actions>
+    </form>
+</div>

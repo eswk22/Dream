@@ -45,18 +45,23 @@ namespace RemoteWorker.ActionTask
             {
                 var globals = new Globals()
                 {
-                    //   INPUTS = actiontaskCaller.Inputs,
-                    OUTPUTS = new DictionaryWithDefault<string, dynamic>(),
-                    RESULTS = new DictionaryWithDefault<string, dynamic>()
+                    INPUTS = actiontaskCaller.Inputs,
+                    OUTPUTS = new Dictionary<string, dynamic>(),
+                    RESULTS = new Dictionary<string, dynamic>()
                 };
                 //needs to implement timeout 
-                _processor.Execute(actiontaskCaller.Code, globals);
+                _processor.Execute(actiontaskCaller.Code, globals,actiontaskCaller.Timeout);
                 response = _translator.Translate<RemoteTaskResponseMessage>(actiontaskCaller);
                 response.Parameters.Outputs = globals.OUTPUTS;
                 response.Inputs = globals.INPUTS;
                 response.Parameters.Result = globals.RESULTS;
                 _logger.Info("Result of action task", response);
                 _bus.Send<RemoteTaskResponseMessage>("worker", response);
+            }
+            catch (TimeoutException ex)
+            {
+                _logger.Error("Action Task timed out", ex, actiontaskCaller);
+                //initiate the abort model
             }
             catch (Exception ex)
             {
@@ -73,9 +78,9 @@ namespace RemoteWorker.ActionTask
     /// </summary>
     public class Globals
     {
-        public DictionaryWithDefault<string, dynamic> INPUTS { get; set; }
-        public DictionaryWithDefault<string, dynamic> OUTPUTS { get; set; }
-        public DictionaryWithDefault<string, dynamic> RESULTS { get; set; }
+        public Dictionary<string, dynamic> INPUTS { get; set; }
+        public Dictionary<string, dynamic> OUTPUTS { get; set; }
+        public Dictionary<string, dynamic> RESULTS { get; set; }
 
 
     }

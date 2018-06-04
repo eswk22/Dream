@@ -1,0 +1,74 @@
+<mxDefaultToolbar>
+	<add as="save" action="save" icon="assets/editor/images/save.gif"/>
+	<add as="show" action="show" icon="assets/editor/images/preview.gif"/>
+	<add as="print" action="print" icon="assets/editor/images/print.gif"/>
+	<add as="exportImage" action="exportImage" icon="assets/editor/images/image.gif"/>
+	<br/><hr/>
+	<add as="select" mode="select" icon="assets/editor/images/select.gif"/>
+	<add as="pan" mode="pan" icon="assets/editor/images/pan.gif"/>
+	<add as="connect" mode="connect" icon="assets/editor/images/connect.gif"><![CDATA[
+		function (editor)
+		{
+			if (editor.defaultEdge != null)
+			{
+				editor.defaultEdge.style = null;
+			}
+		}
+	]]></add>
+	<add as="connect" mode="connect" icon="assets/editor/images/straight.gif"><![CDATA[
+		function (editor)
+		{
+			if (editor.defaultEdge != null)
+			{
+				editor.defaultEdge.style = 'straightEdge';
+			}
+		}
+	]]></add>
+	<br/><hr/>
+	<add as="undo" action="undo" icon="assets/editor/images/undo.gif"/>
+	<add as="redo" action="redo" icon="assets/editor/images/redo.gif"/>
+	<br/><hr/>
+	<add as="cut" action="cut" icon="assets/editor/images/cut.gif"/>
+	<add as="copy" action="copy" icon="assets/editor/images/copy.gif"/>
+	<add as="paste" action="paste" icon="assets/editor/images/paste.gif"/>
+	<add as="delete" action="delete" icon="assets/editor/images/delete.gif"/>
+	<br/><hr/>
+	<add as="group" action="group" icon="assets/editor/images/group.gif"/>
+	<add as="ungroup" action="ungroup" icon="assets/editor/images/ungroup.gif"/>
+	<br/><hr/>
+	<add as="Swimlane" template="swimlane" icon="assets/editor/images/swimlane.gif"/>
+	<add as="Task" template="task" icon="assets/editor/images/rectangle.gif"/>
+	<add as="Subprocess" template="subprocess" icon="assets/editor/images/rounded.gif"/>
+	<add as="Ellipse" template="shape" style="ellipse" icon="assets/editor/images/ellipse.gif"/>
+	<add as="Rhombus" template="shape" style="rhombus" icon="assets/editor/images/rhombus.gif"/>
+	<add as="Actor" template="shape" style="actor" icon="assets/editor/images/actor.gif"/>
+	<br/><hr/>
+	<add as="Event" template="symbol" style="symbol;image=assets/editor/images/symbols/event.png" icon="assets/editor/images/symbols/small_event.gif"/>
+	<add as="Event (Intermediate)" template="symbol" style="symbol;image=assets/editor/images/symbols/event_intermediate.png" icon="assets/editor/images/symbols/small_event_intermediate.gif"/>
+	<add as="Event (End)" template="symbol" style="symbol;image=assets/editor/images/symbols/event_end.png" icon="assets/editor/images/symbols/small_event_end.gif"/>
+	<add as="Timer" template="symbol" style="symbol;image=assets/editor/images/symbols/timer.png" icon="assets/editor/images/symbols/small_timer.gif"/>
+	<add as="Message" template="symbol" style="symbol;image=assets/editor/images/symbols/message.png" icon="assets/editor/images/symbols/small_message.gif"/>
+	<add as="Message (Intermediate)" template="symbol" style="symbol;image=assets/editor/images/symbols/message_intermediate.png" icon="assets/editor/images/symbols/small_message_intermediate.gif"/>
+	<add as="Message (End)" template="symbol" style="symbol;image=assets/editor/images/symbols/message_end.png" icon="assets/editor/images/symbols/small_message_end.gif"/>
+	<add as="Terminate" template="symbol" style="symbol;image=assets/editor/images/symbols/terminate.png" icon="assets/editor/images/symbols/small_terminate.gif"/>
+	<add as="Link" template="symbol" style="symbol;image=assets/editor/images/symbols/link.png" icon="assets/editor/images/symbols/small_link.gif"/>
+	<add as="Rule" template="symbol" style="symbol;image=assets/editor/images/symbols/rule.png" icon="assets/editor/images/symbols/small_rule.gif"/>
+	<add as="Multiple" template="symbol" style="symbol;image=assets/editor/images/symbols/multiple.png" icon="assets/editor/images/symbols/small_multiple.gif"/>
+	<add as="Error" template="symbol" style="symbol;image=assets/editor/images/symbols/error.png" icon="assets/editor/images/symbols/small_error.gif"/>
+	<add as="Cancel (End)" template="symbol" style="symbol;image=assets/editor/images/symbols/cancel_end.png" icon="assets/editor/images/symbols/small_cancel_end.gif"/>
+	<add as="Cancel (Intermediate)" template="symbol" style="symbol;image=assets/editor/images/symbols/cancel_intermediate.png" icon="assets/editor/images/symbols/small_cancel_intermediate.gif"/>
+	<add as="Fork" template="symbol" style="symbol;image=assets/editor/images/symbols/fork.png" icon="assets/editor/images/symbols/small_fork.gif"/>
+	<add as="Merge" template="symbol" style="symbol;image=assets/editor/images/symbols/merge.png" icon="assets/editor/images/symbols/small_merge.gif"/>
+	<add as="Inclusive" template="symbol" style="symbol;image=assets/editor/images/symbols/inclusive.png" icon="assets/editor/images/symbols/small_inclusive.gif"/>
+	<br/><hr/>
+	<add as="fit" action="fit" icon="assets/editor/images/zoom.gif"/>
+	<add as="zoomIn" action="zoomIn" icon="assets/editor/images/zoomin.gif"/>
+	<add as="zoomOut" action="zoomOut" icon="assets/editor/images/zoomout.gif"/>
+	<add as="actualSize" action="actualSize" icon="assets/editor/images/zoomactual.gif"/>
+	<add as="zoom" action="zoom" icon="assets/editor/images/zoom.gif"/>
+	<br/><hr/>
+	<add as="outline" action="toggleOutline" icon="assets/editor/images/outline.gif"/>
+	<add as="tasks" action="toggleTasks" icon="assets/editor/images/tasks.gif"/>
+	<add as="help" action="toggleHelp" icon="assets/editor/images/help.gif"/>
+	<add as="console" action="toggleConsole" icon="assets/editor/images/console.gif"/>
+</mxDefaultToolbar>

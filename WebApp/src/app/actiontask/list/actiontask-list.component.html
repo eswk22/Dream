@@ -1,0 +1,46 @@
+﻿<mat-toolbar color="primary">
+  <div class="col-mat-12"
+       fxLayout
+       fxLayout.xs="column"
+       fxLayoutAlign="center"
+       fxLayoutGap="10px"
+       fxLayoutGap.xs="0">
+    <div class="item item-1" fxFlex="25%"><span>Business Objects</span></div>
+    <div class="item item-2 pull-right" fxFlex="35%" fxFlexOrder="3">
+      <form [formGroup]="form" class="form-horizontal" novalidate>
+        <div class="row">
+          <div class="col-mat-12">
+            <input type="text" formControlName="txtSearch" />
+            <button type="button" mat-button (click)="search()">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="item item-3" fxFlex></div>
+  </div>
+</mat-toolbar>
+
+
+<div class="row">
+  <div class="col-mat-12">
+    <div>
+      <div class="btn-group pull-right" id="mainActions">
+        <button mat-button (click)="newAT()" title="New" class="buttonInGrp"><mat-icon>playlist_add</mat-icon></button>
+        <button mat-button (click)="edit()" title="Edit" class="buttonInGrp"><mat-icon>open_in_new</mat-icon></button>
+        <button mat-button (click)="copy()" title="Copy" class="buttonInGrp"><mat-icon>content_copy</mat-icon></button>
+        <button mat-button (click)="delete()" title="Delete" class="buttonInGrp"><mat-icon>delete_forever</mat-icon></button>
+        <button mat-button (click)="search()" title="Search" class="buttonInGrp"><mat-icon>refresh</mat-icon></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-mat-12">
+    <ag-grid-angular #agGrid style="width: 100%; height: 450px;" class="ag-material"
+                     [gridOptions]="gridOptions"
+                     [columnDefs]="columnDefs"
+                     [rowData]="rowData">
+    </ag-grid-angular>
+  </div>
+</div>
+

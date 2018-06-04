@@ -31,8 +31,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Elasticsearch.Net, Version=5.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elasticsearch.Net.5.4.0\lib\net46\Elasticsearch.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MongoDB.Bson">
       <HintPath>..\Application.Datalayer\bin\Debug\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="Nest, Version=5.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\NEST.5.4.0\lib\net46\Nest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,23 +56,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionTaskSnapshot.cs" />
+    <Compile Include="ActionTask\ActionTaskSnapshot.cs" />
     <Compile Include="ActionTask\ActionTaskCallerMessage.cs" />
     <Compile Include="ActionTask\ActionTasklist.cs" />
-    <Compile Include="ActionTask\ActionTaskMessage.cs" />
+    <Compile Include="ActionTask\ActionTaskDTO.cs" />
     <Compile Include="ActionTask\ActionTaskResponseMessage.cs" />
+    <Compile Include="ActionTask\ActionTaskMessage.cs" />
     <Compile Include="ActionTask\RemoteTaskResponseMessage.cs" />
     <Compile Include="AutomationSnapshot.cs" />
     <Compile Include="Automation\AutomationSnapshot.cs" />
     <Compile Include="Automation\AutomationDTO.cs" />
     <Compile Include="Automation\AutomationMessage.cs" />
     <Compile Include="Automation\AutomationParameter.cs" />
+    <Compile Include="Common\GridSearchDTO.cs" />
+    <Compile Include="Common\ParameterSnapshot.cs" />
+    <Compile Include="Common\ParameterDTO.cs" />
+    <Compile Include="Common\RolePermissionSnapshot.cs" />
+    <Compile Include="Common\RolePermissionDTO.cs" />
     <Compile Include="Compilation\CompilationArguments.cs" />
     <Compile Include="Compilation\CompilationResult.cs" />
     <Compile Include="Compilation\CompilationResultDiagnostic.cs" />
     <Compile Include="Compilation\CompilationResultDiagnosticLocation.cs" />
     <Compile Include="Converter\ActionTasklistTranslator.cs" />
     <Compile Include="Converter\ActionTaskResponseTranslator.cs" />
+    <Compile Include="Converter\ActionTaskMessageTranslator.cs" />
+    <Compile Include="Converter\RolePermissionTranslator.cs" />
+    <Compile Include="Converter\ParameterTranslator.cs" />
+    <Compile Include="Converter\PropertyTranslator.cs" />
     <Compile Include="Converter\RemoteTaskTranslator.cs" />
     <Compile Include="Converter\ActionTaskTranslator.cs" />
     <Compile Include="Converter\AutomationTranslator.cs" />
@@ -74,6 +96,8 @@
     <Compile Include="Gateway\GatewayDTO.cs" />
     <Compile Include="Gateway\GatewayStatusMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property\PropertyDTO.cs" />
+    <Compile Include="Property\PropertySnapshot.cs" />
     <Compile Include="RunBook\Component\Text.cs" />
     <Compile Include="RunBook\Component\Event.cs" />
     <Compile Include="RunBook\Helper\Container.cs" />
@@ -92,6 +116,11 @@
     <Compile Include="RunBook\Helper\ExtractedParam.cs" />
     <Compile Include="RunBook\Runbook.cs" />
     <Compile Include="RunBook\RunBookInitialialMessage.cs" />
+    <Compile Include="RunBook\RunbookProperties.cs" />
+    <Compile Include="Worksheet\ActionResultDTO.cs" />
+    <Compile Include="Worksheet\ActionResultSnapshot.cs" />
+    <Compile Include="Worksheet\SheetDTO.cs" />
+    <Compile Include="Worksheet\SheetSnapshot.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application.Common\ExecuteEngine.Common.csproj">
@@ -107,7 +136,10 @@
       <Name>Application.Utility</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

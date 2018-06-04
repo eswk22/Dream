@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Application.Utility.Translators;
-using Application.Repository;
 using Application.Utility.Logging;
 using Application.DTO.Conversion;
 using Application.DTO.Gateway;

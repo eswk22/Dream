@@ -55,7 +55,7 @@ namespace Compiler.Core.Processing.Languages {
 				.AddImports(SurfaceArea.GetNamespaces());
 		}
 
-		public object execute(string code, object globals)
+		public object execute(string code, object globals,int timeout)
 		{
 			throw new NotImplementedException();
 		}

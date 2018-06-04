@@ -7,6 +7,6 @@ namespace Compiler.Core {
         [NotNull]
         ProcessingResult Process([NotNull] string code, [CanBeNull] ProcessingOptions options = null);
 
-		object Execute(string code, object globals);
+		object Execute(string code, object globals,int timeout);
 	}
 }

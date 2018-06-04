@@ -1,0 +1,71 @@
+
+
+<div class="row">
+    <div class="col-md-12" baCardClass="with-scroll">
+
+        <form [formGroup]="hieraForm" class="form-horizontal">
+            <div class="form-group row">
+
+                <label for="inputFirstName" class="col-sm-2 form-control-label">Version</label>
+                <div class="col-sm-10">
+                    <select id="versions" class="form-control" formControlName="versions" (ngModelChange)="onVersionChange($event)">
+                        <option [selected]="hieraForm.controls.versions.value == null" value="">-- Select --</option>
+                        <option *ngFor="let g of versionsArray" [selected]="g == versions" [value]="g">{{g}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputCreatedBy" class="col-sm-2 form-control-label">  Created By: </label>
+                <div class="col-sm-10">
+                    <input formControlName="CreatedBy" id="inputCreatedBy" disabled="disabled" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="inputCreatedOn" class="col-sm-2 form-control-label"> Created On: </label>
+                <div class="col-sm-10">
+                    <input formControlName="CreatedOn" id="inputCreatedOn" disabled="disabled" class="form-control" />
+                </div>
+            </div>
+            <div formArrayName="hieraList">
+                <div *ngFor="let hierlevel of hieraForm.controls.hieraList.controls; let i=index">
+                    <!-- Angular assigns array index as group name by default 0, 1, 2, ... -->
+                    <div [formGroupName]="i">
+                        <div class="form-group row" [ngClass]="{'has-error': (!hieraForm.controls.hieraList.controls[i].controls.Layer.valid &&
+                             hieraForm.controls.hieraList.controls[i].controls.Layer.touched)}">
+                            <label for="Status" class="col-sm-2 form-control-label">
+                                Level {{i + 1}} :
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" formControlName="Layer" class="form-control" />
+                                <!--<small [hidden]="hieraForm.controls.hieraList.controls[i].controls.Layer.valid">
+                                    !Required
+                                </small>-->
+                            </div>
+                            <div class="col-sm-1">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <button type="button" (click)="addHieralevel(i+1)" class="btn btn-success btn-icon"><i class="ion-plus-round"></i></button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button type="button" *ngIf="i != 0" (click)="removeHieralevel(i)" class="btn btn-danger btn-icon"><i class="ion-minus-round"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" (click)="Save()" class="btn btn-primary">Save</button>
+            <button type="submit" (click)="Cancel()" class="btn btn-primary">Cancel</button>
+        </form>
+
+    </div>
+</div>
+
+
+
+
+

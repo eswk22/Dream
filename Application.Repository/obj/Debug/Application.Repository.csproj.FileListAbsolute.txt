@@ -87,3 +87,10 @@ C:\Eswar\Projects\Dream\Application.Repository\bin\Debug\Castle.Core.xml
 C:\Eswar\Projects\Dream\Application.Repository\obj\Debug\Application.Repository.csprojResolveAssemblyReference.cache
 C:\Eswar\Projects\Dream\Application.Repository\obj\Debug\Application.Repository.dll
 C:\Eswar\Projects\Dream\Application.Repository\obj\Debug\Application.Repository.pdb
+C:\Eswar\Projects\Dream\Application.Repository\bin\Debug\Application.Repository.dll.config
+C:\Eswar\Projects\Dream\Application.Repository\bin\Debug\Nest.dll
+C:\Eswar\Projects\Dream\Application.Repository\bin\Debug\Elasticsearch.Net.dll
+C:\Eswar\Projects\Dream\Application.Repository\bin\Debug\Newtonsoft.Json.dll
+C:\Eswar\Projects\Dream\Application.Repository\bin\Debug\Nest.xml
+C:\Eswar\Projects\Dream\Application.Repository\bin\Debug\Elasticsearch.Net.xml
+C:\Eswar\Projects\Dream\Application.Repository\bin\Debug\Newtonsoft.Json.xml

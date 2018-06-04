@@ -1,5 +1,5 @@
 ﻿using Application.DTO.Automation;
-using Application.Repository;
+using Application.DTO.Common;
 using Application.Snapshot;
 using Application.Utility.Logging;
 using Application.Utility.Translators;
@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace Application.Manager.Implementation
 {
+   
     public class AutomationManager : IAutomationBusinessManager, IAutomationServiceManager
     {
 
@@ -117,7 +118,7 @@ namespace Application.Manager.Implementation
             return result;
         }
 
- 
+
         public IEnumerable<AutomationDTO> Get()
         {
             IEnumerable<AutomationDTO> result = null;
@@ -152,13 +153,13 @@ namespace Application.Manager.Implementation
 
 
 
-    
-       
 
 
 
-   
-  
+
+
+
+
         public AutomationDTO Save(AutomationDTO Automationmessage)
         {
             AutomationDTO result = null;
@@ -207,10 +208,92 @@ namespace Application.Manager.Implementation
             return this.Update(Automationmessage);
         }
 
+        public AutomationDTO Delete(string Id)
+        {
+            AutomationSnapshot snapshot = this.GetSnapshotbyId(Id);
+            if (snapshot != null)
+            {
+                return _translatorService.Translate<AutomationDTO>(this.Delete(snapshot));
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
+
         public AutomationSnapshot Delete(AutomationSnapshot AutomationSnapshot)
         {
             AutomationSnapshot.IsActive = false;
             return this.Update(AutomationSnapshot);
+        }
+        public bool ExistsByName(string name)
+        {
+            bool result = false;
+            try
+            {
+                Expression<Func<AutomationSnapshot, bool>> expr = (x => x.name == name);
+                var findResult = _IAutomationRepository.Find(expr);
+                if (findResult != null && findResult.Count() > 0)
+                {
+                    result = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return result;
+        }
+
+        public AutomationDTO Copy(string Id, string name)
+        {
+            AutomationDTO result = null;
+            try
+            {
+                var existingAutomation = this.GetSnapshotbyId(Id);
+                if(existingAutomation != null)
+                {
+                    existingAutomation.Id = string.Empty;
+                    existingAutomation.name = name;
+                    var newAutomation = this.Add(existingAutomation);
+                    return _translatorService.Translate<AutomationDTO>(newAutomation);
+                }
+                else
+                {
+                    throw new Exception("Not found");
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+            return result;
+        }
+
+        public IEnumerable<AutomationDTO> Search(string quickFilter, int page, int size, string sort, FilterDTO[] filterPerColumn, ref int rowCount)
+        {
+
+            IEnumerable<AutomationDTO> result = null;
+            rowCount = 0;
+            try
+            {
+                Expression<Func<AutomationSnapshot, bool>> expr = null;
+                if (quickFilter != string.Empty && quickFilter != null)
+                    expr = (x => x.name.Contains(quickFilter) && x.IsActive == true);
+                else
+                    expr = (x => x.IsActive == true);
+                int skip = (page - 1) * size;
+                result = _IAutomationRepository.Find(expr).Skip(skip).Take(size).Select(s => _translatorService.Translate<AutomationDTO>(s));
+                if (result != null)
+                {
+                    rowCount = _IAutomationRepository.Count(expr);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.Error("Unable to search Automations", ex);
+            }
+            return result;
         }
 
 

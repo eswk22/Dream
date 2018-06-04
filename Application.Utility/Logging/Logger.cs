@@ -14,9 +14,11 @@ namespace Application.Utility.Logging
     public class CrucialLogger : ILogger
     {
         private readonly Logger _nLogger;
+        private Random _KeyGenerator;
 
         public CrucialLogger()
         {
+            _KeyGenerator = new Random(1000000);
             _nLogger = LogManager.GetLogger(GetType().FullName);
         }
 
@@ -248,14 +250,27 @@ namespace Application.Utility.Logging
             WriteMessage(LogLevel.Fatal, message, exception, httpRequest);
         }
 
-        public void Error(string message, params Object[] parameters)
+        public int Error(string message, Exception ex, params Object[] parameters)
         {
-            WriteMessage(LogLevel.Error, message, parameters);
+            int key = _KeyGenerator.Next();
+            message = string.Concat(message, "\r\nReference Key : ", key);
+            WriteMessage(LogLevel.Error, message, ex, parameters);
+            return key;
+        }
+        public int Error(string message, params Object[] parameters)
+        {
+            int key = _KeyGenerator.Next();
+            message = string.Concat(message, "\r\nReference Key : ", key);
+            WriteMessage(LogLevel.Error, message, null, parameters);
+            return key;
         }
 
-        public void Error(string message, Exception exception)
+        public int ErrorWithKey(string message, Exception exception)
         {
+            int key = _KeyGenerator.Next();
+            message = string.Concat(message, "\r\nReference Key : ", key);
             WriteMessage(LogLevel.Error, message, exception);
+            return key;
         }
 
         public void Error(string message, Exception exception, HttpRequest httpRequest)

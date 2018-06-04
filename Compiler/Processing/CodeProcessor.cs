@@ -9,9 +9,11 @@ using Compiler.Core.Decompilation;
 using Compiler.Core.Processing.Languages;
 using Application.Utility;
 
-namespace Compiler.Core.Processing {
+namespace Compiler.Core.Processing
+{
     [ThreadSafe]
-    public class CodeProcessor : ICodeProcessor {
+    public class CodeProcessor : ICodeProcessor
+    {
         // ReSharper disable once AgentHeisenbug.FieldOfNonThreadSafeTypeInThreadSafeType
         private readonly MetadataReference[] _references = {
             MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
@@ -20,16 +22,38 @@ namespace Compiler.Core.Processing {
         };
         private readonly IReadOnlyCollection<IDecompiler> _decompilers;
         private readonly IReadOnlyCollection<IRoslynLanguage> _languages;
-        
+
         public CodeProcessor(
             IReadOnlyCollection<IRoslynLanguage> languages,
             IReadOnlyCollection<IDecompiler> decompilers
-        ) {
+        )
+        {
             _languages = languages;
             _decompilers = decompilers;
         }
 
-        public ProcessingResult Process(string code, ProcessingOptions options) {
+        public ProcessingResult Process(string code, ProcessingOptions options)
+        {
+            options = options ?? new ProcessingOptions();
+            var kind = options.ScriptMode ? SourceCodeKind.Script : SourceCodeKind.Regular;
+            var sourceLanguage = _languages.Single(l => l.Identifier == options.SourceLanguage);
+
+            var syntaxTree = sourceLanguage.ParseText(code, kind);
+
+            var stream = new MemoryStream();
+            var compilation = sourceLanguage
+                .CreateLibraryCompilation("Test", options.OptimizationsEnabled)
+                .AddReferences(_references)
+                .AddSyntaxTrees(syntaxTree);
+
+            var emitResult = compilation.Emit(stream);
+
+            return new ProcessingResult(null, emitResult.Diagnostics.Select(d => new ProcessingResultDiagnostic(d)));
+        }
+
+
+        public ProcessingResult Decompile(string code, ProcessingOptions options)
+        {
             options = options ?? new ProcessingOptions();
             var kind = options.ScriptMode ? SourceCodeKind.Script : SourceCodeKind.Regular;
             var sourceLanguage = _languages.Single(l => l.Identifier == options.SourceLanguage);
@@ -60,19 +84,20 @@ namespace Compiler.Core.Processing {
 
         #region IDisposable Members
 
-        void IDisposable.Dispose() {
+        void IDisposable.Dispose()
+        {
         }
 
-		#endregion
+        #endregion
 
 
-		public object Execute(string code,object globals)
-		{
-			var sourceLanguage = _languages.Single(l => l.Identifier ==  LanguageIdentifier.CSharp);
-			return sourceLanguage.execute(code, globals);
-		}
+        public object Execute(string code, object globals,int timeout)
+        {
+            var sourceLanguage = _languages.Single(l => l.Identifier == LanguageIdentifier.CSharp);
+            return sourceLanguage.execute(code, globals,timeout);
+        }
 
 
-		
-	}
+
+    }
 }

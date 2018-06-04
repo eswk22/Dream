@@ -37,7 +37,7 @@ namespace Gateway.Job
             ISimpleTrigger trigger = (ISimpleTrigger)TriggerBuilder.Create()
                 .WithIdentity("trigger1", "group1")
                 .StartAt(startTime)
-                .WithSimpleSchedule(x => x.WithIntervalInSeconds(300).WithRepeatCount(3))
+                .WithSimpleSchedule(x => x.WithIntervalInSeconds(300).WithRepeatCount(1))
                 .Build();
             sched.ScheduleJob(jobDetail, trigger);
         }

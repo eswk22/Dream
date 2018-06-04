@@ -8,68 +8,68 @@ using Application.Snapshot;
 
 namespace Application.DTO.Conversion
 {
-    public class ActionTaskTranslator : EntityMapperTranslator<ActionTaskMessage, ActionTaskSnapshot>
+    public class ActionTaskTranslator : EntityMapperTranslator<ActionTaskDTO, ActionTaskSnapshot>
     {
-        public override ActionTaskSnapshot BusinessToService(IEntityTranslatorService service, ActionTaskMessage value)
+        public override ActionTaskSnapshot BusinessToService(IEntityTranslatorService service, ActionTaskDTO value)
         {
-			ActionTaskSnapshot _ActionTaskSnapshot = null;
-			if (value != null)
-			{
-				_ActionTaskSnapshot = new ActionTaskSnapshot();
-				_ActionTaskSnapshot.AccessCode = value.AccessCode;
-				_ActionTaskSnapshot.Id = value.ActionId;
-				_ActionTaskSnapshot.Actiontype = value.Actiontype;
-				_ActionTaskSnapshot.Codelanguage = value.Codelanguage;
-				_ActionTaskSnapshot.CreatedBy = value.CreatedBy;
-				_ActionTaskSnapshot.CreatedOn = value.CreatedOn;
-				_ActionTaskSnapshot.Description = value.Description;
-				//	_ActionTaskSnapshot.Inputs = value.Inputs;
-				_ActionTaskSnapshot.IsActive = value.IsActive;
-				_ActionTaskSnapshot.menupath = value.menupath;
-				//	_ActionTaskSnapshot.MockInputs = value.MockInputs;
-				_ActionTaskSnapshot.module = value.module;
-				_ActionTaskSnapshot.Name = value.Name;
-				//	_ActionTaskSnapshot.Outputs = value.Outputs;
-				_ActionTaskSnapshot.RemoteCode = value.RemoteCode;
-				//	_ActionTaskSnapshot.Results = value.Results;
-				_ActionTaskSnapshot.Summary = value.Summary;
-				_ActionTaskSnapshot.TimeOut = value.TimeOut;
-				_ActionTaskSnapshot.UpdatedBy = value.UpdatedBy;
-				_ActionTaskSnapshot.UpdatedOn = value.UpdatedOn;
-			}
-			return _ActionTaskSnapshot;
-
-		}
-
-		public override ActionTaskMessage ServiceToBusiness(IEntityTranslatorService service, ActionTaskSnapshot value)
-        {
-            ActionTaskMessage _ActionTaskMessage = null;
+            ActionTaskSnapshot snapshot = null;
             if (value != null)
             {
-                _ActionTaskMessage = new ActionTaskMessage();
-                _ActionTaskMessage.AccessCode = value.AccessCode;
-				_ActionTaskMessage.ActionId = value.Id;
-				_ActionTaskMessage.Actiontype = value.Actiontype;
-				_ActionTaskMessage.Codelanguage = value.Codelanguage;
-				_ActionTaskMessage.CreatedBy = value.CreatedBy;
-				_ActionTaskMessage.CreatedOn = value.CreatedOn;
-				_ActionTaskMessage.Description = value.Description;
-			//	_ActionTaskMessage.Inputs = value.Inputs;
-				_ActionTaskMessage.IsActive = value.IsActive;
-				_ActionTaskMessage.menupath = value.menupath;
-			//	_ActionTaskMessage.MockInputs = value.MockInputs;
-				_ActionTaskMessage.module = value.module;
-				_ActionTaskMessage.Name = value.Name;
-			//	_ActionTaskMessage.Outputs = value.Outputs;
-				_ActionTaskMessage.RemoteCode = value.RemoteCode;
-			//	_ActionTaskMessage.Results = value.Results;
-				_ActionTaskMessage.Summary = value.Summary;
-				_ActionTaskMessage.TimeOut = value.TimeOut;
-				_ActionTaskMessage.UpdatedBy = value.UpdatedBy;
-				_ActionTaskMessage.UpdatedOn = value.UpdatedOn;
-			}
-            return _ActionTaskMessage;
+                snapshot = new ActionTaskSnapshot();
+                snapshot.AccessCode = value.LocalCode;
+                snapshot.Actiontype = value.Type;
+                snapshot.CreatedBy = value.CreatedBy;
+                snapshot.CreatedOn = value.CreatedOn;
+                snapshot.Description = value.Description;
+                snapshot.Id = value.ActionTaskId;
+                snapshot.IsActive = value.IsActive;
+                snapshot.LocalCodelanguage = value.LocalLanguage;
+                snapshot.menupath = value.FolderPath;
+                snapshot.ModifiedBy = value.ModifiedBy;
+                snapshot.ModifiedOn = value.ModifiedOn;
+                snapshot.module = value.Namespace;
+                snapshot.Name = value.Name;
+                snapshot.Queue = value.Queuename;
+                snapshot.RemoteCode = value.RemoteCode;
+                snapshot.RemoteCodelanguage = value.RemoteLanguage;
+                snapshot.Summary = value.Summary;
+                snapshot.TimeOut = value.Timeout;
+                snapshot.Version = value.Version;
+                snapshot.Status = value.Status;
+            }
+            return snapshot;
+
         }
 
-	}
+        public override ActionTaskDTO ServiceToBusiness(IEntityTranslatorService service, ActionTaskSnapshot value)
+        {
+            ActionTaskDTO dto = null;
+            if (value != null)
+            {
+                dto = new ActionTaskDTO();
+                dto.LocalCode = value.AccessCode;
+                dto.Type = value.Actiontype;
+                dto.CreatedBy = value.CreatedBy;
+                dto.CreatedOn = value.CreatedOn;
+                dto.Description = value.Description;
+                dto.ActionTaskId = value.Id;
+                dto.IsActive = value.IsActive;
+                dto.LocalLanguage = value.LocalCodelanguage;
+                dto.FolderPath = value.menupath;
+                dto.ModifiedBy = value.ModifiedBy;
+                dto.ModifiedOn = value.ModifiedOn;
+                dto.Namespace = value.module;
+                dto.Name = value.Name;
+                dto.Queuename = value.Queue;
+                dto.RemoteCode = value.RemoteCode;
+                dto.RemoteLanguage = value.RemoteCodelanguage;
+                dto.Summary = value.Summary;
+                dto.Timeout = value.TimeOut;
+                dto.Version = value.Version;
+                dto.Status = value.Status;
+            }
+            return dto;
+        }
+
+    }
 }

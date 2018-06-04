@@ -1,60 +1,27 @@
-import { WebpackAsyncRoute } from '@angularclass/webpack-toolkit';
-import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { Home } from './home';
-import { editor } from './editor';
-import { actionTask } from './actiontask';
-import { actionTasklist } from './actiontasklist';
-import { NoContent } from './no-content';
+﻿import { Routes } from '@angular/router';
+import { HomeComponent } from './home';
+import { AccountComponent } from './account';
+import { EditorComponent } from './editor';
+import { AboutComponent } from './about';
+import { NoContentComponent } from './no-content';
 
 import { DataResolver } from './app.resolver';
+import { AuthGuard } from './common/auth.guard.service';
 
-export const approutes: Routes  = [
-  { path: '',      component: Home },
-  { path: 'home',  component: Home },
-  // make sure you match the component type string to the require in asyncRoutes
-  { path: 'about', component: 'About',
-    resolve: {
-      'yourData': DataResolver
-	  }
-  },
-  { path: 'editor', component: editor },
-  { path: 'actiontask/:id', component: actionTask },
-  { path: 'actiontasklist', component: actionTasklist },
-  // async components with children routes must use WebpackAsyncRoute
-  { path: 'detail', component: 'Detail',
-   // canActivate: [ WebpackAsyncRoute ],
-    children: [
-      { path: '', component: 'Index' }  // must be included
-    ]},
-  { path: '**', component: NoContent },
-
+export const ROUTES: Routes = [
+	{ path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+	{
+		path: 'account',
+		redirectTo: 'account'
+	},
+	{
+		path: 'editor',
+		redirectTo: 'editor'
+	},
+	{ path: '', component: HomeComponent },
+	{ path: 'home', component: HomeComponent },
+	{ path: 'about', component: AboutComponent },
+	{ path: 'detail', loadChildren: './+detail#DetailModule' },
+	{ path: 'barrel', loadChildren: './+barrel#BarrelModule' },
+	{ path: '**', component: NoContentComponent },
 ];
-
-export const appRoutingProviders: any[] = [
- 
-];
-
-//export const routing: ModuleWithProviders = RouterModule.forRoot(approutes);
-// Async load a component using Webpack's require with es6-promise-loader and webpack `require`
-// asyncRoutes is needed for our @angularclass/webpack-toolkit that will allow us to resolve
-// the component correctly
-
-export const asyncRoutes: AsyncRoutes = {
-  // we have to use the alternative syntax for es6-promise-loader to grab the routes
-  'About': require('es6-promise-loader!./about'),
-  'Detail': require('es6-promise-loader!./+detail'),
-  'Index': require('es6-promise-loader!./+detail'), // must be exported with detail/index.ts
-};
-
-
-// Optimizations for initial loads
- //An array of callbacks to be invoked after bootstrap to prefetch async routes
-export const prefetchRouteCallbacks: Array<IdleCallbacks> = [
-  asyncRoutes['About'],
-  asyncRoutes['Detail'],
-   // es6-promise-loader returns a function
-];
-
-
-// Es6PromiseLoader and AsyncRoutes interfaces are defined in custom-typings

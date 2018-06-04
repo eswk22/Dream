@@ -1,7 +1,6 @@
 ﻿using Application.Manager;
 using Application.Manager.Conversion;
 using Application.Manager.Implementation;
-using Application.Repository;
 using Application.Snapshot;
 using Application.Utility.IoC.Windsor;
 using Application.Utility.Logging;

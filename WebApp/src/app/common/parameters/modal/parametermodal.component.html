@@ -1,0 +1,28 @@
+﻿
+<h2 mat-dialog-title>Add / View</h2>
+<form [formGroup]="form">
+    <mat-dialog-content>
+        <div layout="row" flex>
+            <mat-form-field>
+                <input matInput formControlName="name" placeholder="Name" value="">
+            </mat-form-field>
+        </div>
+
+        <div layout="row" flex>
+            <mat-select name="type" placeholder="Type" required formControlName="type">
+                <mat-option value="text">Text</mat-option>
+                <mat-option value="password">Password</mat-option>
+            </mat-select>
+        </div>
+        <div layout="row" flex>
+            <mat-form-field class="full-width">
+                <textarea matInput mat-autosize minRows="6" formControlName="defaultvalue" placeholder="Default Value" id="paramvalue"></textarea>
+            </mat-form-field>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button mat-dialog-close>Cancel</button>
+        <!-- Can optionally provide a result for the closing dialog. -->
+        <button mat-button [mat-dialog-close]="form">Submit</button>
+    </mat-dialog-actions>
+</form>

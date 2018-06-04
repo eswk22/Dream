@@ -1,0 +1,16 @@
+﻿<div class="row">
+    <div class="col-mat-12">
+        <button mat-button *ngIf="!readonly" (click)="openParameterDialog('input',null)">Add Input</button>
+        <button mat-button *ngIf="!readonly" (click)="openParameterDialog('output',null)">Add Output</button>
+        <button mat-button *ngIf="!readonly" (click)="remove()">Remove</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-mat-12">
+        <ag-grid-angular #agGrid style="width: 100%; height: 150px;" class="ag-material"
+                         [gridOptions]="gridOptions"
+                         [columnDefs]="columnDefs"
+                         [rowData]="rowData">
+        </ag-grid-angular>
+    </div>
+</div>

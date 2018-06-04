@@ -1,4 +1,5 @@
-﻿using Application.DTO.RunBook;
+﻿using Application.Common;
+using Application.DTO.RunBook;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoRepository;
 using System;
@@ -26,6 +27,7 @@ namespace Application.DTO.Automation
         public string ModifiedBy { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime ModifiedOn { get; set; }
+        public DictionaryWithDefault<string, dynamic> Params { get; set; }
 
     }
 }

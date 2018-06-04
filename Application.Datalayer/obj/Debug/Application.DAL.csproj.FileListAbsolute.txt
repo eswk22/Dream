@@ -34,6 +34,33 @@ C:\Eswar\Projects\Dream\Application.Datalayer\bin\Debug\MongoDB.Driver.xml
 C:\Eswar\Projects\Dream\Application.Datalayer\bin\Debug\MongoDB.Driver.Legacy.xml
 C:\Eswar\Projects\Dream\Application.Datalayer\bin\Debug\Norm.pdb
 C:\Eswar\Projects\Dream\Application.Datalayer\bin\Debug\Norm.xml
-C:\Eswar\Projects\Dream\Application.Datalayer\obj\Debug\Application.DAL.csprojResolveAssemblyReference.cache
 C:\Eswar\Projects\Dream\Application.Datalayer\obj\Debug\Application.Datalayer.dll
 C:\Eswar\Projects\Dream\Application.Datalayer\obj\Debug\Application.Datalayer.pdb
+C:\Eswar\Projects\Dream\Application.Datalayer\bin\Debug\Elasticsearch.Net.dll
+C:\Eswar\Projects\Dream\Application.Datalayer\bin\Debug\Nest.dll
+C:\Eswar\Projects\Dream\Application.Datalayer\bin\Debug\Newtonsoft.Json.dll
+C:\Eswar\Projects\Dream\Application.Datalayer\bin\Debug\Elasticsearch.Net.xml
+C:\Eswar\Projects\Dream\Application.Datalayer\bin\Debug\Nest.xml
+C:\Eswar\Projects\Dream\Application.Datalayer\bin\Debug\Newtonsoft.Json.xml
+C:\Eswar\Projects\Dream\Application.Datalayer\obj\Debug\Application.DAL.csprojResolveAssemblyReference.cache
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\Application.Datalayer.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\Application.Datalayer.pdb
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\Elasticsearch.Net.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\MongoDB.Bson.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\MongoDB.Driver.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\MongoDB.Driver.Legacy.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\Nest.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\Norm.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\Elasticsearch.Net.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\MongoDB.Bson.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\MongoDB.Driver.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\MongoDB.Driver.Legacy.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\Nest.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\Norm.pdb
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\bin\Debug\Norm.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\obj\Debug\Application.DAL.csprojResolveAssemblyReference.cache
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\obj\Debug\Application.Datalayer.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.Datalayer\obj\Debug\Application.Datalayer.pdb

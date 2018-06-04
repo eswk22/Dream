@@ -20,7 +20,8 @@ namespace Application.Manager.Conversion
                 _ProcessingOptions.OptimizationsEnabled = value.OptimizationsEnabled;
                 _ProcessingOptions.ScriptMode = value.SourceLanguage.Equals(Utility.LanguageIdentifier.CSharpScript) ||
                     value.SourceLanguage.Equals(Utility.LanguageIdentifier.VBNetScript);
-				_ProcessingOptions.SourceLanguage = value.SourceLanguage;
+				_ProcessingOptions.SourceLanguage = value.SourceLanguage.Equals(Utility.LanguageIdentifier.CSharpScript) ? LanguageIdentifier.CSharp :
+                    value.SourceLanguage.Equals(Utility.LanguageIdentifier.VBNetScript) ? LanguageIdentifier.VBNet : value.SourceLanguage;
 
 				_ProcessingOptions.TargetLanguage = value.TargetLanguage;
             }

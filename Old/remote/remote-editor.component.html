@@ -1,0 +1,27 @@
+﻿<!--<monaco-editor [(ngModel)]="code" [language]="language" (change)="onchange($event)" [language_defaults]="language_defaults" [options]="monaco_options"></monaco-editor>-->
+
+<div class="row">
+    <div class="col-md-10">
+        <input type="button" (click)="save()" value="Save" />
+        <input type="button" (click)="cancel()" value="Cancel" />
+    </div>
+    <div class="col-md-2 pull-right">
+        <select id="languages" class="form-control" [(ngModel)]="language">
+            <option *ngFor="let g of languages" [ngValue]="g.value">{{g.DisplayName}}</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div id='editor' #editor class="monaco-editor" style="height:600px;"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <ag-grid-angular #agGrid style="width: 100%; height: 150px;" class="ag-material"
+                         [gridOptions]="gridOptions"
+                         [columnDefs]="columnDefs"
+                         [rowData]="rowData">
+        </ag-grid-angular>
+    </div>
+</div>

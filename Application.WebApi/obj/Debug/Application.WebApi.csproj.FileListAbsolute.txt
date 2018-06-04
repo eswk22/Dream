@@ -348,7 +348,6 @@ C:\Eswar\Projects\Dream\Application.WebApi\bin\Application.WebApi.pdb
 C:\Eswar\Projects\Dream\Application.WebApi\bin\Application.Datalayer.dll
 C:\Eswar\Projects\Dream\Application.WebApi\bin\Application.DTO.dll
 C:\Eswar\Projects\Dream\Application.WebApi\bin\Application.Manager.dll
-C:\Eswar\Projects\Dream\Application.WebApi\bin\Application.Repository.dll
 C:\Eswar\Projects\Dream\Application.WebApi\bin\Application.Utility.dll
 C:\Eswar\Projects\Dream\Application.WebApi\bin\EasyNetQ.dll
 C:\Eswar\Projects\Dream\Application.WebApi\bin\ExecuteEngine.Common.dll
@@ -404,7 +403,6 @@ C:\Eswar\Projects\Dream\Application.WebApi\bin\ExecuteEngine.Common.pdb
 C:\Eswar\Projects\Dream\Application.WebApi\bin\Application.Datalayer.pdb
 C:\Eswar\Projects\Dream\Application.WebApi\bin\Application.DTO.pdb
 C:\Eswar\Projects\Dream\Application.WebApi\bin\Application.Manager.pdb
-C:\Eswar\Projects\Dream\Application.WebApi\bin\Application.Repository.pdb
 C:\Eswar\Projects\Dream\Application.WebApi\bin\Application.Utility.pdb
 C:\Eswar\Projects\Dream\Application.WebApi\bin\ExecutionEngine.pdb
 C:\Eswar\Projects\Dream\Application.WebApi\bin\EasyNetQ.xml
@@ -438,3 +436,137 @@ C:\Eswar\Projects\Dream\Application.WebApi\obj\Debug\Application.WebApi.dll
 C:\Eswar\Projects\Dream\Application.WebApi\obj\Debug\Application.WebApi.pdb
 C:\Eswar\Projects\Dream\Application.WebApi\bin\System.Reflection.Metadata.dll
 C:\Eswar\Projects\Dream\Application.WebApi\bin\System.Reflection.Metadata.xml
+C:\Eswar\Projects\Dream\Application.WebApi\bin\IdentityServer3.dll
+C:\Eswar\Projects\Dream\Application.WebApi\bin\Owin.dll
+C:\Eswar\Projects\Dream\Application.WebApi\bin\IdentityServer3.pdb
+C:\Eswar\Projects\Dream\Application.WebApi\bin\IdentityServer3.xml
+C:\Eswar\Projects\Dream\Application.WebApi\bin\Microsoft.Owin.dll
+C:\Eswar\Projects\Dream\Application.WebApi\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Eswar\Projects\Dream\Application.WebApi\bin\Microsoft.Owin.xml
+C:\Eswar\Projects\Dream\Application.WebApi\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Eswar\Projects\Dream\Application.WebApi\bin\Nest.dll
+C:\Eswar\Projects\Dream\Application.WebApi\bin\Elasticsearch.Net.dll
+C:\Eswar\Projects\Dream\Application.WebApi\bin\Nest.xml
+C:\Eswar\Projects\Dream\Application.WebApi\bin\Elasticsearch.Net.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\ApplicationInsights.config
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\roslyn\csc.exe
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\roslyn\vbc.exe
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\roslyn\VBCSCompiler.exe
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Application.WebApi.dll.config
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Application.WebApi.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Application.WebApi.pdb
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Application.Datalayer.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Application.DTO.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Application.Manager.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Application.Utility.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\EasyNetQ.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\ExecuteEngine.Common.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\ExecutionEngine.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\IdentityServer3.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.AI.Web.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.ApplicationInsights.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.Owin.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Newtonsoft.Json.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Owin.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\RabbitMQ.Client.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Net.Http.Formatting.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Web.Cors.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Web.Http.Cors.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Web.Http.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Web.Http.WebHost.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Nest.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\MongoDB.Bson.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\MongoDB.Driver.Legacy.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\MongoDB.Driver.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Elasticsearch.Net.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\MongoDB.Driver.Core.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\NLog.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Web.Mvc.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Castle.Facilities.WcfIntegration.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Castle.Windsor.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\StructureMap.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Castle.Core.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.CodeAnalysis.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Collections.Immutable.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Mono.Cecil.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\ICSharpCode.Decompiler.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\ICSharpCode.NRefactory.CSharp.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\ICSharpCode.NRefactory.VB.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\ICSharpCode.NRefactory.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\ILSpy.exe
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Web.Razor.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Web.WebPages.Razor.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Web.WebPages.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.IO.FileSystem.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Diagnostics.StackTrace.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Reflection.Metadata.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.IO.FileSystem.Primitives.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.AppContext.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Mono.Cecil.Pdb.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\ExecuteEngine.Common.pdb
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Application.Datalayer.pdb
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Application.DTO.pdb
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Application.DTO.dll.config
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Application.Manager.pdb
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Application.Manager.dll.config
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Application.Utility.pdb
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\ExecutionEngine.pdb
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\ExecutionEngine.dll.config
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\EasyNetQ.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\IdentityServer3.pdb
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\IdentityServer3.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.AI.Web.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.ApplicationInsights.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.Owin.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Newtonsoft.Json.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\RabbitMQ.Client.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Web.Http.Cors.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Net.Http.Formatting.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Web.Http.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Web.Http.WebHost.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Nest.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\MongoDB.Bson.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\MongoDB.Driver.Legacy.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\MongoDB.Driver.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Elasticsearch.Net.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\NLog.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Castle.Windsor.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Castle.Core.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.CodeAnalysis.Scripting.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.CodeAnalysis.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.CodeAnalysis.CSharp.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Collections.Immutable.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.CodeAnalysis.VisualBasic.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\ICSharpCode.NRefactory.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\Microsoft.CodeAnalysis.CSharp.Scripting.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\bin\System.Reflection.Metadata.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\obj\Debug\Application.WebApi.csprojResolveAssemblyReference.cache
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\obj\Debug\Application.WebApi.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.WebApi\obj\Debug\Application.WebApi.pdb

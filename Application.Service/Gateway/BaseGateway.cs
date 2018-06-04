@@ -36,7 +36,7 @@ namespace RemoteWorker.Gateway
                     RequestedBy = "System",
                     RequestedOn = DateTime.UtcNow,
                     AutomationId = gateway.AutomationId,
-                    ProcessId = Guid.NewGuid().ToString(),
+                    ProcessId = null,
                     Parameters = new AutomationParameter()
                     {
                         Params = PARAMS

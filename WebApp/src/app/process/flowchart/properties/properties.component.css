@@ -1,0 +1,13 @@
+﻿.commitModal{
+    width:700px;
+}
+
+
+
+.myGlyphMarginClass {
+	background: red;
+    z-index:999;
+}
+.myContentClass {
+	background: lightblue;
+}

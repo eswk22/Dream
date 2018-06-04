@@ -1,0 +1,79 @@
+﻿
+<div class="commitModal">
+    <h2 mat-dialog-title>Properties</h2>
+    <mat-dialog-content>
+        <div layout="row">
+            <mat-form-field>
+                <input matInput [(ngModel)]="modalData.name" placeholder="Name">
+            </mat-form-field>
+        </div>
+        <div layout="row" *ngIf="modalData.objectType != 'edge'">
+            <mat-form-field>
+                <input matInput [(ngModel)]="modalData.objectid" placeholder="Id">
+            </mat-form-field>
+        </div>
+        <div layout="row" *ngIf="modalData.objectType == 'edge'">
+            <mat-select name="type" placeholder="Severity Type" [(ngModel)]="modalData.severityType">
+                <mat-option value="none">None</mat-option>
+                <mat-option value="good">Good</mat-option>
+                <mat-option value="bad">Bad</mat-option>
+            </mat-select>
+        </div>
+        <div layout="row" *ngIf="modalData.objectType != 'edge'">
+            <mat-select name="mergetype" placeholder="Merge Type" [(ngModel)]="modalData.mergeType">
+                <mat-option value="anyone">Anyone</mat-option>
+                <mat-option value="all">All</mat-option>
+            </mat-select>
+        </div>
+        <div layout="row" *ngIf="modalData.objectType != 'edge'">
+            <mat-form-field>
+                <textarea matInput mat-autosize minRows="6" [(ngModel)]="modalData.condition" placeholder="Condition"></textarea>
+            </mat-form-field>
+        </div>
+        <button mat-button  (click)="test()">Remove</button>
+        <div layout="row" *ngIf="modalData.objectType != 'edge'">
+            <mat-tab-group>
+                <mat-tab label="Input">
+                    <div class="row">
+                        <div class="col-mat-12">
+                            <button mat-button (click)="addInput()">Add Input</button>
+                            <button mat-button (click)="removeInput()">Remove Input</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-mat-12">
+                            <ag-grid-angular #agGrid style="width: 100%; height: 150px;" class="ag-material"
+                                             [gridOptions]="ipgridOptions"
+                                             [columnDefs]="ipcolumnDefs"
+                                             [(rowData)]="inputParams">
+                            </ag-grid-angular>
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Output">
+                    <div class="row">
+                        <div class="col-mat-12">
+                            <button mat-button (click)="addOutput()">Add Output</button>
+                            <button mat-button (click)="removeOutput()">Remove Output</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-mat-12">
+                            <ag-grid-angular #agGrid style="width: 100%; height: 150px;" class="ag-material"
+                                             [gridOptions]="opgridOptions"
+                                             [columnDefs]="opcolumnDefs"
+                                             [(rowData)]="outputParams">
+                            </ag-grid-angular>
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button mat-dialog-close>Cancel</button>
+        <!-- Can optionally provide a result for the closing dialog. -->
+        <button mat-button [mat-dialog-close]="[modalData,ipgridOptions.api,opgridOptions.api]">Submit</button>
+    </mat-dialog-actions>
+</div>

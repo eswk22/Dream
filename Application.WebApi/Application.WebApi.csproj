@@ -17,7 +17,7 @@
     <AssemblyName>Application.WebApi</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44328</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -46,6 +46,10 @@
   <ItemGroup>
     <Reference Include="EasyNetQ, Version=0.63.0.448, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\EasyNetQ.0.63.0.448\lib\net45\EasyNetQ.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IdentityServer3, Version=2.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdentityServer3.2.6.0\lib\net45\IdentityServer3.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -81,12 +85,24 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="RabbitMQ.Client, Version=3.6.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
@@ -139,22 +155,35 @@
     <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Bus\BusBuilder.cs" />
+    <Compile Include="Configuration\Certificate.cs" />
+    <Compile Include="Configuration\Clients.cs" />
+    <Compile Include="Configuration\Scopes.cs" />
     <Compile Include="Controllers\ActionTaskController.cs" />
+    <Compile Include="Controllers\AutomationController.cs" />
     <Compile Include="Controllers\CompilerController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\PropertyController.cs" />
+    <Compile Include="EulaAtLoginUserService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ActionTaskDefinedParams.cs" />
+    <Compile Include="Models\AutomationDropdownModel.cs" />
     <Compile Include="Models\CompilationArguments.cs" />
     <Compile Include="Models\CompilationMode.cs" />
+    <Compile Include="Models\Converter\AutomationDropdownModelTranslator.cs" />
+    <Compile Include="Models\GridModel.cs" />
+    <Compile Include="Models\PropertyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Results\GlobalExceptionHandler.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Configuration\idsrv3test.pfx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -181,10 +210,6 @@
     <ProjectReference Include="..\Application.Manager\Application.Manager.csproj">
       <Project>{14e6606d-3282-455e-a3b2-899d1e411e7d}</Project>
       <Name>Application.Manager</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Application.Repository\Application.Repository.csproj">
-      <Project>{6cdd6827-ab34-4a02-86da-ef4e0a4ca0df}</Project>
-      <Name>Application.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Application.Utility\Application.Utility.csproj">
       <Project>{58f2d7cf-3f49-4fe8-a13f-795e14292bed}</Project>

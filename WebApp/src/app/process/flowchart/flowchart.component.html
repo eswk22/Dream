@@ -1,0 +1,101 @@
+﻿
+
+<div class="row flowchartHolder">
+
+  <div class="col-md-2">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <span>Shapes</span>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list id="toolbar" valign="top">
+          <mat-list-item>
+            <div id="Test1"> Start</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div id="Test2"> End</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div id="Test3"> Sub-Process</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div id="Test4"> Business Object</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div id="Test5"> Decisions</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div id="Test6"> Container</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div id="Test7"> Notes</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div id="Test8"> Connector</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div id="Test9"> H - Connector</div>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-md-10">
+    
+      <div class="btn-group pull-right" id="mainActions">
+        <button id="openProp" mat-button (click)="ondoubleClicked()" class="buttonInGrp">
+          <mat-icon>open_in_new</mat-icon>
+        </button> <button id="group" mat-button (click)="readflowChart()" class="buttonInGrp">
+          <mat-icon>save</mat-icon>
+        </button>
+        <button id="group" mat-button (click)="executeToolbar('group')" class="buttonInGrp">
+          <mat-icon>home</mat-icon>
+        </button>
+        <button id="ungroup" mat-button (click)="executeToolbar('ungroup')" class="buttonInGrp">
+          <mat-icon>home</mat-icon>
+        </button>
+        <button id="cut" mat-button (click)="executeToolbar('cut')" class="buttonInGrp">
+          <mat-icon>content_cut</mat-icon>
+        </button>
+        <button id="copy" mat-button (click)="executeToolbar('copy')" class="buttonInGrp">
+          <mat-icon>content_copy</mat-icon>
+        </button>
+        <button id="paste" mat-button (click)="executeToolbar('paste')" class="buttonInGrp">
+          <mat-icon>content_paste</mat-icon>
+        </button>
+        <button id="delete" mat-button (click)="executeToolbar('delete')" class="buttonInGrp">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button id="undo" mat-button (click)="executeToolbar('undo')" class="buttonInGrp">
+          <mat-icon>undo</mat-icon>
+        </button>
+        <button id="redo" mat-button (click)="executeToolbar('redo')" class="buttonInGrp">
+          <mat-icon>redo</mat-icon>
+        </button>
+        <button id="zoomin" mat-button (click)="executeToolbar('zoomin')" class="buttonInGrp">
+          <mat-icon>zoom_in</mat-icon>
+        </button>
+        <button id="zoomout" mat-button (click)="executeToolbar('zoomout')" class="buttonInGrp">
+          <mat-icon>zoom_out</mat-icon>
+        </button>
+        <button id="zoomactual" mat-button (click)="executeToolbar('zoomactual')" class="buttonInGrp">
+          <mat-icon>zoom_out_map</mat-icon>
+        </button>
+        <button id="print" mat-button (click)="executeToolbar('print')" class="buttonInGrp">
+          <mat-icon>print</mat-icon>
+        </button>
+      </div>
+
+ 
+    <div valign="top" style="width:100%">
+      <div id="graph" tabindex="-1" style="position:relative;height:480px;width:100%;overflow:auto;cursor:default;">
+      </div>
+      <textarea id="xml" style="height:480px;width:684px;display:none;border-style:none;"></textarea>
+    </div>
+  </div>
+
+
+  
+</div>
+
+

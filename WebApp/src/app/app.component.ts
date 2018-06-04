@@ -1,100 +1,73 @@
-/*
+﻿/**
  * Angular 2 decorators and services
  */
-import { Component, ViewEncapsulation } from '@angular/core';
-
+import {
+	Component,
+	OnInit,
+	ViewEncapsulation
+} from '@angular/core';
 import { AppState } from './app.service';
 
-
-
-/*
+/**
  * App Component
  * Top Level Component
  */
 @Component({
-    selector: 'app',
-    encapsulation: ViewEncapsulation.None,
-    styleUrls: [
-        './app.style.css'
-    ],
-    template: `
-    <nav>
-      <span>
-        <a [routerLink]=" ['./'] ">
-          Index
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./home'] ">
-          Home
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./detail'] ">
-          Detail
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./about'] ">
-          About
-        </a>
-      </span>
-	|
-      <span>
-        <a [routerLink]=" ['./editor'] ">
-          Editor
-        </a>
-      </span>
-	|
-      <span>
-        <a [routerLink]=" ['./actiontask'] ">
-          ActionTask
-        </a>
-      </span>
-|
-      <span>
-        <a [routerLink]=" ['./actiontasklist'] ">
-          ActionTasklist
-        </a>
-      </span>
-    </nav>
+	selector: 'app',
+	encapsulation: ViewEncapsulation.None,
+	styleUrls: [
+		'./app.component.scss'
+	],
+	template: `
+<mat-toolbar class="mat-elevation-z6">
 
-    <main>
-      <router-outlet></router-outlet>
-    </main>
+    <button mat-button routerLink="/">
+    <mat-icon>home</mat-icon> 
+        {{title}}</button>
 
-    <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
+    <!-- This fills the remaining space of the current row -->
+    <span class="fill-remaining-space"></span>
+    <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button mat-menu-item routerLink="/process/general">Process</button>
+    <button mat-menu-item routerLink="/process/list">Process-list</button>
+   <button mat-menu-item routerLink="/general">Action</button>
+    <button mat-menu-item routerLink="/list">Action-list</button>
+    </div>
+    <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+     <mat-icon>menu</mat-icon>
+    </button>
 
-    <footer>
-  <!--    <span>WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
-      <div>
-        <a [href]="url">
-          <img [src]="angularclassLogo" width="25%">
-        </a>
-      </div> -->
+</mat-toolbar>
+<mat-menu x-position="before" #menu="matMenu">
+    <button mat-menu-item routerLink="/process/general">Process</button>
+    <button mat-menu-item routerLink="/process/list">Process-list</button>
+   <button mat-menu-item routerLink="/general">Action</button>
+    <button mat-menu-item routerLink="/list">Action-list</button>
+</mat-menu>       <router-outlet></router-outlet>	
+	  <span defaultOverlayTarget></span>
+   
+<ng-snotify></ng-snotify>
+  <footer>
+   <pre class="app-state">Application name @ 2017</pre>
     </footer>
   `
 })
-export class App {
-    angularclassLogo = 'assets/img/angularclass-avatar.png';
-    name = 'Angular 2 Webpack Starter';
-    url = 'https://twitter.com/AngularClass';
+export class AppComponent implements OnInit {
+	public angularclassLogo = 'assets/img/angularclass-avatar.png';
+	public name = 'Angular 2 Webpack Starter';
+	public url = 'https://twitter.com/AngularClass';
 
-    constructor(
-        public appState: AppState) {
+	constructor(
+		public appState: AppState
+	) { }
 
-    }
-
-    ngOnInit() {
-        console.log('Initial App State', this.appState.state);
-    }
+	public ngOnInit() {
+		console.log('Initial App State', this.appState.state);
+	}
 
 }
 
-/*
+/**
  * Please review the https://github.com/AngularClass/angular2-examples/ repo for
  * more angular app examples that you may copy/paste
  * (The examples may not be updated as quickly. Please open an issue on github for us to update it)

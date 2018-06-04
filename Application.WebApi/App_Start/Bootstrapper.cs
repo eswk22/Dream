@@ -1,7 +1,8 @@
-﻿using Application.Manager;
+﻿using Application.DTO.Automation;
+using Application.DTO.Conversion;
+using Application.Manager;
 using Application.Manager.Conversion;
 using Application.Manager.Implementation;
-using Application.Repository;
 using Application.Snapshot;
 using Application.Utility.IoC.Windsor;
 using Application.Utility.Logging;
@@ -35,11 +36,19 @@ namespace Application.WebApi
 			Registrar.Register(typeof(IRepository<>), typeof(MongoRepository<>));
 			Registrar.Register<IRepository<ActionTaskSnapshot>, MongoRepository<ActionTaskSnapshot>>(CrucialLifestyleType.Transient);
 
-			Registrar.Register<IActionTaskManager, ActionTaskManager>(CrucialLifestyleType.Transient);
-			Registrar.Register<ICompileManager, CompileManager>(CrucialLifestyleType.Transient);
+			Registrar.Register<IActionTaskBusinessManager, ActionTaskManager>(CrucialLifestyleType.Transient);
+            Registrar.Register<IRolePermissionBusinessManager, RolePermissionManager>(CrucialLifestyleType.Transient);
+            Registrar.Register<IParameterBusinessManager, ParameterManager>(CrucialLifestyleType.Transient);
+
+
+            Registrar.Register<IRepository<AutomationSnapshot>, MongoRepository<AutomationSnapshot>>(CrucialLifestyleType.Transient);
+
+            Registrar.Register<IAutomationBusinessManager, AutomationManager>(CrucialLifestyleType.Transient);
+
+
+            Registrar.Register<ICompileManager, CompileManager>(CrucialLifestyleType.Transient);
 
 			//Repository
-			Registrar.Register<IActionTaskRepository, ActionTaskRepository>(CrucialLifestyleType.Transient);
 			Registrar.Register<ILogger, CrucialLogger>(CrucialLifestyleType.Singleton);
 
 			Registrar.Register<IEntityTranslatorService, EntityTranslatorService>(CrucialLifestyleType.Singleton);
@@ -55,8 +64,13 @@ namespace Application.WebApi
 			translatorService.RegisterEntityTranslator(new CompilationArgumentTranslator());
 			translatorService.RegisterEntityTranslator(new ActionTaskTranslator());
 			translatorService.RegisterEntityTranslator(new ActionTasklistTranslator());
+            translatorService.RegisterEntityTranslator(new ActionTaskMessageTranslator());
+            translatorService.RegisterEntityTranslator(new ParameterTranslator());
+            translatorService.RegisterEntityTranslator(new RolePermissionTranslator());
+            translatorService.RegisterEntityTranslator(new PropertyTranslator());
 
-			
-		}
+            translatorService.RegisterEntityTranslator(new AutomationTranslator());
+
+        }
 	}
 }

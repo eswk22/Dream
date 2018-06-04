@@ -68,3 +68,9 @@ C:\Eswar\Projects\Dream\Application.Service\bin\Debug\MongoDB.Driver.xml
 C:\Eswar\Projects\Dream\Application.Service\obj\Debug\RemoteWorker.csprojResolveAssemblyReference.cache
 C:\Eswar\Projects\Dream\Application.Service\obj\Debug\RemoteWorker.exe
 C:\Eswar\Projects\Dream\Application.Service\obj\Debug\RemoteWorker.pdb
+C:\Eswar\Projects\Dream\Application.Service\bin\Debug\System.Reflection.Metadata.dll
+C:\Eswar\Projects\Dream\Application.Service\bin\Debug\Nest.dll
+C:\Eswar\Projects\Dream\Application.Service\bin\Debug\Elasticsearch.Net.dll
+C:\Eswar\Projects\Dream\Application.Service\bin\Debug\System.Reflection.Metadata.xml
+C:\Eswar\Projects\Dream\Application.Service\bin\Debug\Nest.xml
+C:\Eswar\Projects\Dream\Application.Service\bin\Debug\Elasticsearch.Net.xml

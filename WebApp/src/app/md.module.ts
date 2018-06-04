@@ -1,56 +1,85 @@
-/* This module is an example how you can package all services and components
+﻿/* This module is an example how you can package all services and components
  from Angular2-Material into one Angular2 module, which you can import in other modules
  */
-import { NgModule, ModuleWithProviders }      from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { MdButtonModule }                     from '@angular2-material/button';
-import { MdButtonToggleModule }               from '@angular2-material/button-toggle';
-import { MdCardModule }                       from '@angular2-material/card';
-import { MdCheckboxModule }                   from '@angular2-material/checkbox';
-import { MdGridListModule }                   from '@angular2-material/grid-list';
-import { MdIconModule }                       from '@angular2-material/icon';
-import { MdInputModule }                      from '@angular2-material/input';
-import { MdListModule }                       from '@angular2-material/list';
-import { MdMenuModule }                       from '@angular2-material/menu';
-import { MdProgressBarModule }                from '@angular2-material/progress-bar';
-import { MdProgressCircleModule }             from '@angular2-material/progress-circle';
-import { MdRadioModule }                      from '@angular2-material/radio';
-import { MdSidenavModule }                    from '@angular2-material/sidenav';
-import { MdSliderModule }                     from '@angular2-material/slider';
-import { MdSlideToggleModule }                from '@angular2-material/slide-toggle';
-import { MdTabsModule }                       from '@angular2-material/tabs';
-import { MdToolbarModule }                    from '@angular2-material/toolbar';
-import { MdTooltipModule }                    from '@angular2-material/tooltip';
+import { MatDialogModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
+import { MatButtonToggleModule } from '@angular/material';
+import { MatCardModule } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material';
+import { MatChipsModule } from '@angular/material';
+import { MatDatepickerModule } from '@angular/material';
+import { MatSelectModule } from '@angular/material';
+import { MatGridListModule } from '@angular/material';
+import { MatIconModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
+import { MatListModule } from '@angular/material';
+import { MatMenuModule } from '@angular/material';
+import { MatProgressBarModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material';
+import { MatRadioModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material';
+import { MatSliderModule } from '@angular/material';
+import { MatSlideToggleModule } from '@angular/material';
+import { MatTabsModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material';
+import { MatTooltipModule } from '@angular/material';
+
+
 
 @NgModule({
-
-    exports: [
-        MdButtonModule,
-        MdButtonToggleModule,
-        MdCardModule,
-        MdCheckboxModule,
-        MdGridListModule,
-        MdIconModule,
-        MdInputModule,
-        MdListModule,
-        MdMenuModule,
-        MdProgressBarModule,
-        MdProgressCircleModule,
-        MdRadioModule,
-        MdSidenavModule,
-        MdSliderModule,
-        MdSlideToggleModule,
-        MdTabsModule,
-        MdToolbarModule,
-        MdTooltipModule
-    ]
+	imports: [
+		MatButtonModule,
+		MatButtonToggleModule,
+		MatCardModule,
+		MatCheckboxModule,
+		MatChipsModule, MatDatepickerModule, MatDialogModule, MatSelectModule,
+		MatGridListModule,
+		MatIconModule,
+		MatInputModule,
+		MatListModule,
+		MatMenuModule,
+		MatProgressBarModule,
+		MatProgressSpinnerModule,
+		MatRadioModule,
+		MatSidenavModule,
+		MatSliderModule,
+		MatSlideToggleModule,
+		MatTabsModule,
+		MatToolbarModule,
+        MatTooltipModule,
+        MatDialogModule
+	],
+	exports: [
+		MatButtonModule,
+		MatButtonToggleModule,
+		MatCardModule,
+		MatCheckboxModule,
+		MatChipsModule, MatDatepickerModule, MatDialogModule, MatSelectModule,
+		MatGridListModule,
+		MatIconModule,
+		MatInputModule,
+		MatListModule,
+		MatMenuModule,
+		MatProgressBarModule,
+		MatProgressSpinnerModule,
+		MatRadioModule,
+		MatSidenavModule,
+		MatSliderModule,
+		MatSlideToggleModule,
+		MatTabsModule,
+		MatToolbarModule,
+        MatTooltipModule,
+        MatDialogModule
+	]
 })
 
 export class MdModule {
 
-    static forRoot(): ModuleWithProviders {
-        return {
-            ngModule: MdModule
-        };
-    }
+	static forRoot(): ModuleWithProviders {
+		return {
+			ngModule: MdModule
+		};
+	}
 }

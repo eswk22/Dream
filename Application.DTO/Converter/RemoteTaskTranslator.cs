@@ -30,7 +30,9 @@ namespace Application.DTO.Conversion
 				entity.RequestedOn = value.RequestedOn;
                 entity.Inputs = value.Inputs;
                 entity.SheetId = value.SheetId;
-			}
+                entity.ActionResultSheetId = value.ActionResultSheetId;
+                entity.Timeout = value.Timeout;
+            }
 			return entity;
 
 		}
@@ -54,6 +56,8 @@ namespace Application.DTO.Conversion
                 entity.RequestedOn = value.RequestedOn;
                 entity.Inputs = value.Inputs;
                 entity.SheetId = value.SheetId;
+                entity.ActionResultSheetId = value.ActionResultSheetId;
+                entity.Timeout = value.Timeout;
             }
             return entity;
         }

@@ -1,0 +1,15 @@
+﻿
+<h2 mat-dialog-title>Roles</h2>
+
+<mat-dialog-content >
+    <ag-grid-angular #agGrid style="width: 100%; height: 150px;" class="ag-material"
+                     [gridOptions]="gridOptions"
+                     [columnDefs]="columnDefs"
+                     [rowData]="rowData" (selectionChanged) = 'onSelectionChanged($event)'>
+    </ag-grid-angular>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <!-- Can optionally provide a result for the closing dialog. -->
+    <button mat-button [mat-dialog-close]="selectedRows">Select</button>
+</mat-dialog-actions>

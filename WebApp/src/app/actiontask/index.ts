@@ -1,2 +1,6 @@
-export * from './actiontask.component';
-export * from './actiontask.service';
+// App
+
+//export * from './actiontask.service';
+
+export * from './actiontask.module';
+//export * from './actiontask.component';

@@ -55,7 +55,7 @@ namespace Worker.AutomationHandlers
             return Inputs;
         }
 
-        public static AutomationParameter UpdateOutputParams(DictionaryWithDefault<string, dynamic> Outputs, string ATConfigParam, AutomationParameter parameters)
+        public static AutomationParameter UpdateOutputParams(Dictionary<string, dynamic> Outputs, string ATConfigParam, AutomationParameter parameters)
         {
             List<ExtractedParam> ParamsinAT = TransferString2Params(ATConfigParam);
            if (ParamsinAT != null)

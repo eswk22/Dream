@@ -13,27 +13,36 @@ using EasyNetQ;
 using Application.Utility.Translators;
 using Application.DTO.ActionTask;
 using Application.Common;
+using Application.Manager.ServiceContract;
+using Application.DTO.Worksheet;
+using Application.Snapshot;
 
 namespace Worker.AutomationHandlers
 {
     public class RunbookHandler : IRunbookHandler
     {
+
+
+
         private readonly ILogger _logger;
         private readonly IAutomationBusinessManager _automationManager;
         private readonly IActionTaskManager _actionTaskManager;
         private readonly IEntityTranslatorService _translator;
         private readonly IActionTaskHandler _actionTaskHandler;
         private readonly IConditionHandler _conditionHandler;
+        private readonly IWorksheetServiceManager _worksheetManager;
         private readonly IBus _bus;
 
         public RunbookHandler(IAutomationBusinessManager automationManager, ILogger logger,
             IActionTaskManager actionTaskManager, IBus bus, IEntityTranslatorService translator,
+            IWorksheetServiceManager worksheetManager,
             IActionTaskHandler actionTaskHandler, IConditionHandler conditionHandler)
         {
             _automationManager = automationManager;
             _actionTaskManager = actionTaskManager;
             _actionTaskHandler = actionTaskHandler;
             _conditionHandler = conditionHandler;
+            _worksheetManager = worksheetManager;
             _translator = translator;
             _logger = logger;
             _bus = bus;
@@ -53,17 +62,32 @@ namespace Worker.AutomationHandlers
                     RunbookEntity runbook = entity.runbookContent;
                     // Id for the start component 
                     string sourceId = runbook.start.Id;
-                    string IncidentId = message.IncidentId;
+                    string incidentId = message.IncidentId;
                     string automationId = message.AutomationId;
-                    AutomationMessage ParentAutomations = message.Parent;
-                    string ProcessId = Guid.NewGuid().ToString();
-                    string RequestedBy = message.RequestedBy;
-                    DateTime RequestedOn = message.RequestedOn;
-                    string sheetId = "";
+                    AutomationMessage parentAutomations = message.Parent;
+                    string processId = Guid.NewGuid().ToString();
+                    string requestedBy = message.RequestedBy;
+                    DateTime requestedOn = message.RequestedOn;
                     // Parameters for particular automation
                     AutomationParameter parameters = message.Parameters;
-                    Execute(runbook, parameters, sourceId, IncidentId, automationId, sheetId,
-                        ProcessId, RequestedBy, ParentAutomations);
+                    //Create Worksheet
+                    SheetSnapshot sheet = new SheetSnapshot()
+                    {
+                        AutomationId = automationId,
+                        AlertId = incidentId,
+                        AssignedTo = requestedBy,
+                        Summary = entity.name + " process started",
+                        Description = "",
+                        IsActive = true,
+                        ProcessId = processId,
+                        CreatedBy = requestedBy,
+                        CreatedOn = DateTime.UtcNow
+                    };
+                    string sheetId = _worksheetManager.AddSheet(sheet);
+                    this.Execute(runbook, parameters, incidentId, processId, sheetId, automationId,
+                       sourceId, requestedBy, parentAutomations);
+
+
                 }
             }
             catch (Exception ex)
@@ -85,20 +109,20 @@ namespace Worker.AutomationHandlers
                 if (message != null)
                 {
                     string sourceId = message.ActionIdInRunBook;
-                    string IncidentId = message.IncidentId;
+                    string incidentId = message.IncidentId;
                     string automationId = message.AutomationId;
-                    string ProcessId = message.ProcessId;
-                    string RequestedBy = message.RequestedBy;
-                    AutomationMessage ParentAutomations = message.Parent;
+                    string processId = message.ProcessId;
+                    string requestedBy = message.RequestedBy;
+                    AutomationMessage parentAutomations = message.Parent;
                     string sheetId = "";
                     AutomationParameter parameters = message.Parameters;
                     AutomationDTO entity = _automationManager.GetbyId(automationId);
                     RunbookEntity runbook = entity.runbookContent;
                     string condition = "None";
-                    if(message.Parameters.Result != null)
+                    if (message.Parameters.Result != null)
                         condition = message.Parameters.Result["Condition"];
-                    Execute(runbook, parameters, sourceId, IncidentId, automationId, sheetId,
-                        ProcessId, RequestedBy, ParentAutomations, condition, true);
+                    this.Execute(runbook, parameters, incidentId, processId, sheetId, automationId,
+                            sourceId, requestedBy, parentAutomations, condition);
                 }
                 else
                 {
@@ -126,50 +150,54 @@ namespace Worker.AutomationHandlers
         /// <param name="ParentAutomations"></param>
         /// <param name="resultcondition"></param>
         /// <param name="IsRemoteDone"></param>
-        private void Execute(RunbookEntity runbook, AutomationParameter parameters,
-            string sourceId, string IncidentId, string automationId, string sheetId,
-           string ProcessId, string RequestedBy, AutomationMessage ParentAutomations,
-           string resultcondition = "None", bool IsRemoteDone = false)
+
+        private void Execute(RunbookEntity Runbook, AutomationParameter Parameters,
+            string IncidentId, string ProcessId, string SheetId, string AutomationId,
+             string SourceId, string RequestedBy, AutomationMessage ParentAutomations,
+            string Resultcondition = "None")
         {
-            IEnumerable<Connector> targets = runbook.connectors.Where(s =>
-                            s.cell.Source == sourceId && (s.Condition == resultcondition
+            IEnumerable<Connector> targets = Runbook.connectors.Where(s =>
+                            s.cell.Source == SourceId && (s.Condition == Resultcondition
                             || s.Condition == "None" || s.Condition == null));
             if (targets != null)
             {
                 foreach (Connector connector in targets)
                 {
                     string targetId = connector.cell.Target;
-                    Application.DTO.RunBook.Task task = runbook.tasks.Where(x => x.Id == targetId).FirstOrDefault();
+                    Application.DTO.RunBook.Task task = Runbook.tasks.Where(x => x.Id == targetId).FirstOrDefault();
                     if (task != null)
                     {
-                        ActionTaskMessage actionTask = _actionTaskManager.GetbyId(task.ActionTaskId);
+                        ActionTaskMessage actionTask = _actionTaskManager.GetActionMessagebyId(task.ActionTaskId);
                         if (actionTask != null)
                         {
                             var CallerMessage = new ActionTaskCallerMessage()
                             {
-                                ActionTaskId = actionTask.ActionId,
+                                ActionTaskId = actionTask.Id,
                                 ActionIdInRunBook = task.Id,
-                                AutomationId = automationId,
+                                AutomationId = AutomationId,
                                 Code = actionTask.AccessCode,
                                 IncidentId = IncidentId,
-                                Parameters = parameters,
+                                Parameters = Parameters,
                                 ConfiguredOutputParams = task.Params.Outputs,
                                 Parent = ParentAutomations,
                                 ProcessId = ProcessId,
                                 RequestedBy = RequestedBy,
                                 RequestedOn = DateTime.UtcNow,
-                                SheetId = ""
+                                SheetId = SheetId,
+                                Timeout = actionTask.TimeOut
                             };
                             string Queue = "worker1";
-                            if (actionTask.Actiontype != "Remote" && !IsRemoteDone)
+                            if (actionTask.Actiontype != "Remote")
                             {
                                 Queue = actionTask.Queue;
                                 CallerMessage.Code = actionTask.RemoteCode;
                             }
                             else
                             {
-                                CallerMessage.Inputs =ActionTaskHelper.UpdateInputParams(actionTask.Inputs, task.Params.Inputs, parameters);
+                                CallerMessage.Inputs = ActionTaskHelper.UpdateInputParams(actionTask.Inputs, task.Params.Inputs, Parameters);
                             }
+                            //create action result in the sheet
+                            CallerMessage.ActionResultSheetId = WriteActionResult(SheetId, actionTask.Name, task.Id, RequestedBy, Queue);
                             _bus.Send<ActionTaskCallerMessage>(Queue, CallerMessage);
                         }
                         else
@@ -177,22 +205,22 @@ namespace Worker.AutomationHandlers
                             _logger.Error("Action-task is not exist", task.ActionTaskId, task.Label);
                         }
                     }
-                    Precondition condition = runbook.preConditions.Where(x => x.Id == targetId).FirstOrDefault();
+                    Precondition condition = Runbook.preConditions.Where(x => x.Id == targetId).FirstOrDefault();
                     if (condition != null)
                     {
-                        string result = _conditionHandler.Execute(parameters, condition.Description);
+                        WriteActionResult(SheetId, condition.Label, task.Id, RequestedBy, "Worker1");
+                        string result = _conditionHandler.Execute(Parameters, condition.Description);
                         if (result == "None")
                         {
                             // initiate abort model
                         }
                         else
                         {
-
-                            this.Execute(runbook, parameters, sourceId, IncidentId, automationId, sheetId,
-                                         ProcessId, RequestedBy, ParentAutomations, result);
+                            this.Execute(Runbook, Parameters, IncidentId, ProcessId, SheetId, AutomationId,
+                                     SourceId, RequestedBy, ParentAutomations, result);
                         }
                     }
-                    SubRunbook subRunbook = runbook.subRunbook.Where(x => x.Id == targetId).FirstOrDefault();
+                    SubRunbook subRunbook = Runbook.subRunbook.Where(x => x.Id == targetId).FirstOrDefault();
                     if (subRunbook != null)
                     {
                         AutomationDTO entity = _automationManager.GetbyId(subRunbook.SubAutomationId);
@@ -200,7 +228,7 @@ namespace Worker.AutomationHandlers
                         // current automation will be assigned to Parent automation
                         AutomationMessage automation = new AutomationMessage()
                         {
-                            AutomationId = automationId,
+                            AutomationId = AutomationId,
                             ParentAutomationFlowId = targetId,
                             IncidentId = IncidentId,
                             Parameters = null,
@@ -209,35 +237,53 @@ namespace Worker.AutomationHandlers
                             RequestedOn = DateTime.Now,
                             Parent = ParentAutomations
                         };
+                        WriteActionResult(SheetId, subRunbook.Label, targetId, RequestedBy, "", entity.name + " started");
 
                         //update params
-                        this.Execute(runbook, parameters, "0", IncidentId, subRunbook.SubAutomationId, sheetId,
-                                new Guid().ToString(), RequestedBy, automation);
-
+                        string processId = new Guid().ToString(); // new runbook initiation 
+                        this.Execute(Runbook, Parameters, IncidentId, processId, SheetId, subRunbook.SubAutomationId,
+                                "0", RequestedBy, automation);
+                  
                     }
-                    End end = runbook.ends.Where(x => x.Id == targetId).FirstOrDefault();
+                    End end = Runbook.ends.Where(x => x.Id == targetId).FirstOrDefault();
                     if (end != null)
                     {
+                        WriteActionResult(SheetId, "End", targetId, RequestedBy, "worker1");
                         //write in sheet
                         if (ParentAutomations != null)
                         {
 
                             AutomationDTO entity = _automationManager.GetbyId(ParentAutomations.AutomationId);
                             RunbookEntity ParentRunbook = entity.runbookContent;
-
-                            this.Execute(ParentRunbook, parameters, ParentAutomations.ParentAutomationFlowId, IncidentId, ParentAutomations.AutomationId,
-                                sheetId, ParentAutomations.ProcessId, RequestedBy, ParentAutomations.Parent);
-                        }
+                            this.Execute(ParentRunbook, Parameters, IncidentId, ParentAutomations.ProcessId, SheetId, ParentAutomations.AutomationId,
+                                ParentAutomations.ParentAutomationFlowId, RequestedBy, ParentAutomations.Parent);
+                         }
                     }
                 }
             }
             else
             {
-                _logger.Error("Connection not made properly", runbook.start);
+                _logger.Error("Connection not made properly", Runbook.start);
             }
         }
-        
 
-       
+
+        private string WriteActionResult(string SheetId, string name, string taskId, string requestedBy, string Queue, string summary = "")
+        {
+            ActionResultSnapshot actionResult = new ActionResultSnapshot()
+            {
+                IsActive = true,
+                Name = name,
+                ActionTaskId = taskId,
+                CreatedOn = DateTime.UtcNow,
+                ExecutedBy = requestedBy,
+                ExecutedQueue = Queue,
+                IsCompletion = false,
+                SheetId = SheetId,
+                Summary = summary
+            };
+            return _worksheetManager.AddActionResult(actionResult);
+        }
+
     }
 }

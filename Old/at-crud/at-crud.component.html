@@ -1,0 +1,47 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <tabset>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="button" value="Edit" />
+                    <input type="button" value="Save" />
+                    <input type="button" value="Refresh" />
+                    <input type="button" value="Run" />
+                </div>
+            </div>
+            <tab>
+                <span *tabHeading>
+                    General
+                </span>
+                <actiontask-general [(ActiontaskId)]="taskId"></actiontask-general>
+            </tab>
+            <tab>
+                <span *tabHeading>
+                    Parameters
+                </span>
+                <parameters [(ActiontaskId)]="taskId"></parameters>
+            </tab>
+            <tab>
+                <span *tabHeading>
+                    Local
+                </span>
+                <custom-editor></custom-editor>
+        <!--        <local-editor [(ActiontaskId)]="taskId" [type]="'Local'"></local-editor>-->
+            </tab>
+            <tab>
+                <span *tabHeading>
+                    Remote
+                </span>
+                <!--<remote-editor [(ActiontaskId)]="taskId" [type]="'Remote'"></remote-editor>-->
+            </tab>
+            <tab>
+                <span *tabHeading>
+                    References
+                </span>
+                <!--<actiontask-references [(ActiontaskId)] ="taskId"></actiontask-references>-->
+            </tab>
+
+        </tabset>
+
+    </div>
+</div>

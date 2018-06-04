@@ -21,22 +21,33 @@ namespace Worker.AutomationHandlers
             _logger = logger;
         }
 
-        public string Execute(AutomationParameter parameters,string code)
+        public string Execute(AutomationParameter parameters, string code)
         {
             string result = "None";
             try
             {
                 var globals = new Globals()
                 {
-                    INPUTS = new DictionaryWithDefault<string, dynamic>(),
-                    OUTPUTS = new DictionaryWithDefault<string, dynamic>(),
-                    RESULTS = new DictionaryWithDefault<string, dynamic>()
+                    INPUTS = new Dictionary<string, dynamic>(),
+                    OUTPUTS = new Dictionary<string, dynamic>(),
+                    RESULTS = new Dictionary<string, dynamic>()
                 };
                 //needs to implement timeout 
-                _processor.Execute(code, globals);
-                result = "Good";
+                object executedResult = _processor.Execute(code, globals, 300);
+                if (executedResult.GetType() == typeof(bool))
+                {
+                    if (Convert.ToBoolean(executedResult))
+                        result = "Good";
+                    else
+                        result = "Bad";
+                }
             }
-            catch(Exception ex)
+            catch (TimeoutException ex)
+            {
+                _logger.Error("Action Task timed out", ex, parameters, code);
+                //initiate the abort model
+            }
+            catch (Exception ex)
             {
                 _logger.Error("Unable to execute the condition", ex, parameters, code);
                 result = "None";

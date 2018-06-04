@@ -1,4 +1,4 @@
-﻿using Application.DTO.Automation;
+﻿using Application.DTO.ActionTask;
 using Application.Snapshot;
 using System;
 using System.Collections.Generic;
@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace Application.Manager
 {
-    public interface IAutomationServiceManager
+    public interface IActionTaskServiceManager
     {
-        AutomationSnapshot GetSnapshotbyId(string Id);
-        string Add(AutomationSnapshot Automationmessage);
-        AutomationSnapshot Update(AutomationSnapshot Automationmessage);
+        ActionTaskSnapshot GetSnapshotbyId(string Id);
+        string Add(ActionTaskSnapshot actiontaskSnapshot);
+        ActionTaskSnapshot Update(ActionTaskSnapshot actiontaskSnapshot);
 
     
-        IEnumerable<AutomationSnapshot> GetSnapshots();
-         AutomationSnapshot Save(AutomationSnapshot Automationmessage);
-        AutomationSnapshot Delete(AutomationSnapshot Automationmessage);
+        IEnumerable<ActionTaskSnapshot> GetSnapshots();
+         ActionTaskSnapshot Save(ActionTaskSnapshot actiontaskSnapshot);
+        ActionTaskSnapshot Delete(ActionTaskSnapshot actiontaskSnapshot);
     }
 }

@@ -1,0 +1,20 @@
+﻿
+<div class="executeModal">
+    <h2 mat-dialog-title>Input Parameters</h2>
+    <form [formGroup]="form">
+        <mat-dialog-content>
+            <div layout="row" flex>
+                <ag-grid-angular #agGrid style="width: 100%; height: 150px;" class="ag-material"
+                                 [gridOptions]="gridOptions"
+                                 [columnDefs]="columnDefs"
+                                 [rowData]="rowData">
+                </ag-grid-angular>
+            </div>
+        </mat-dialog-content>
+        <mat-dialog-actions>
+            <button mat-button mat-dialog-close>Cancel</button>
+            <!-- Can optionally provide a result for the closing dialog. -->
+            <button mat-button [mat-dialog-close]="rowData">Execute</button>
+        </mat-dialog-actions>
+    </form>
+</div>

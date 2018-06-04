@@ -1,0 +1,14 @@
+﻿<mxEditor defaultGroup="group" defaultEdge="connector">
+	<include name="assets/editor/config/editor-commons.xml"/>
+	<ui>
+		<add as="graph" element="graph"/>
+		<add as="status" element="status"/>
+		<add as="toolbar" element="toolbar"/>
+	</ui>
+	<mxGraph as="graph" alternateEdgeStyle="verticalConnector" allowLoops="1" dropEnabled="1">
+		<include name="assets/editor/config/wfgraph-commons.xml"/>
+	</mxGraph>
+	<mxDefaultToolbar as="toolbar">
+		<include name="assets/editor/config/wftoolbar-commons.xml"/>
+	</mxDefaultToolbar>
+</mxEditor>

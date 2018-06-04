@@ -45,6 +45,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Application.Utility\bin\Debug\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,22 +57,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessContract\IRolePermissionBusinessManager.cs" />
+    <Compile Include="BusinessContract\IParameterBusinessManager.cs" />
     <Compile Include="BusinessContract\IAutomationBusinessManager.cs" />
-    <Compile Include="Converter\ActionTasklistTranslator.cs" />
-    <Compile Include="Converter\ActionTaskTranslator.cs" />
+    <Compile Include="BusinessContract\IActionTaskBusinessManager.cs" />
+    <Compile Include="BusinessContract\IPropertyBusinessManager.cs" />
+    <Compile Include="BusinessContract\IWorksheetBusinessManager.cs" />
     <Compile Include="Converter\CompilationResultTranslator.cs" />
     <Compile Include="Converter\CompilationArgumentTranslator.cs" />
     <Compile Include="IAutomationManager.cs" />
+    <Compile Include="Implementation\ActionTaskManager.cs" />
+    <Compile Include="Implementation\ParameterManager.cs" />
+    <Compile Include="Implementation\PropertyManager.cs" />
+    <Compile Include="Implementation\RolePermissionManager.cs" />
+    <Compile Include="Implementation\WorksheetManager.cs" />
+    <Compile Include="ServiceContract\IRolePermissionServiceManager.cs" />
+    <Compile Include="ServiceContract\IParameterServiceManager.cs" />
+    <Compile Include="ServiceContract\IActionTaskServiceManager.cs" />
     <Compile Include="ServiceContract\IAutomationServiceManager.cs" />
+    <Compile Include="ServiceContract\IPropertyServiceManager.cs" />
     <Compile Include="ServiceContract\IServiceGatewayManager.cs" />
     <Compile Include="ICompileManager.cs" />
-    <Compile Include="Implementation\ActionTaskManager.cs" />
     <Compile Include="IActionTaskManager.cs" />
     <Compile Include="Implementation\AutomationManager.cs" />
     <Compile Include="Implementation\CompileManager.cs" />
     <Compile Include="Implementation\GatewayManager.cs" />
     <Compile Include="BusinessContract\IBusinessGatewayManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceContract\IWorksheetServiceManager.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -83,10 +99,6 @@
     <ProjectReference Include="..\Application.DTO\Application.DTO.csproj">
       <Project>{b4c507b6-2339-4737-a641-2fce101185fc}</Project>
       <Name>Application.DTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Application.Repository\Application.Repository.csproj">
-      <Project>{6cdd6827-ab34-4a02-86da-ef4e0a4ca0df}</Project>
-      <Name>Application.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Application.Utility\Application.Utility.csproj">
       <Project>{58f2d7cf-3f49-4fe8-a13f-795e14292bed}</Project>

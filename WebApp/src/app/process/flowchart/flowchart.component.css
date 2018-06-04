@@ -1,0 +1,14 @@
+﻿.flowchartHolder {
+    min-height:450px;
+}
+
+.mdl-button-group {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+} 
+
+.buttonInGrp{
+    min-width:50px !important;
+    width:50px;
+}

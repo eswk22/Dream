@@ -15,17 +15,17 @@ namespace Application.WebApi
 	{
 
 		private readonly ICompileManager _CompileManager;
-
-		public CompilerController(ICompileManager compileManager)
+        public CompilerController(ICompileManager compileManager)
 		{
 			_CompileManager = compileManager;
 		}
 
 		[HttpPost]
 		[Route("api/compilation")]
-		public object  Compilation([FromBody] CompilationArguments arguments)
+		public HttpResponseMessage  Compilation([FromBody] CompilationArguments arguments)
 		{
-			return _CompileManager.Compile(arguments);
+            CompilationResult result = _CompileManager.Compile(arguments);
+            return Request.CreateResponse<CompilationResult>(HttpStatusCode.OK, result);
 		}
 
 		[HttpPost]
@@ -34,7 +34,7 @@ namespace Application.WebApi
 		{
 			ActionTaskCallerMessage message = new ActionTaskCallerMessage()
 			{
-				ActionId = "57bc819d9a8c482ee0f162d6"
+				ActionTaskId = "57bc819d9a8c482ee0f162d6"
 			};
 			return _CompileManager.execute(message);
 		}

@@ -41,8 +41,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.EmailSender", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.DTO", "Application.DTO\Application.DTO.csproj", "{B4C507B6-2339-4737-A641-2FCE101185FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Repository", "Application.Repository\Application.Repository.csproj", "{6CDD6827-AB34-4A02-86DA-EF4E0A4CA0DF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExecuteEngine.Common", "Application.Common\ExecuteEngine.Common.csproj", "{C861FA8E-6266-4BDA-9C07-4FC5349AB892}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Utility", "Application.Utility\Application.Utility.csproj", "{58F2D7CF-3F49-4FE8-A13F-795E14292BED}"
@@ -118,14 +116,6 @@ Global
 		{B4C507B6-2339-4737-A641-2FCE101185FC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B4C507B6-2339-4737-A641-2FCE101185FC}.Release|x64.ActiveCfg = Release|Any CPU
 		{B4C507B6-2339-4737-A641-2FCE101185FC}.Release|x64.Build.0 = Release|Any CPU
-		{6CDD6827-AB34-4A02-86DA-EF4E0A4CA0DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6CDD6827-AB34-4A02-86DA-EF4E0A4CA0DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6CDD6827-AB34-4A02-86DA-EF4E0A4CA0DF}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{6CDD6827-AB34-4A02-86DA-EF4E0A4CA0DF}.Debug|x64.Build.0 = Debug|Any CPU
-		{6CDD6827-AB34-4A02-86DA-EF4E0A4CA0DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6CDD6827-AB34-4A02-86DA-EF4E0A4CA0DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6CDD6827-AB34-4A02-86DA-EF4E0A4CA0DF}.Release|x64.ActiveCfg = Release|Any CPU
-		{6CDD6827-AB34-4A02-86DA-EF4E0A4CA0DF}.Release|x64.Build.0 = Release|Any CPU
 		{C861FA8E-6266-4BDA-9C07-4FC5349AB892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C861FA8E-6266-4BDA-9C07-4FC5349AB892}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C861FA8E-6266-4BDA-9C07-4FC5349AB892}.Debug|x64.ActiveCfg = Debug|Any CPU

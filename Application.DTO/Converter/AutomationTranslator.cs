@@ -47,6 +47,7 @@ namespace Application.DTO.Conversion
                 snapshot.version = value.version;
                 snapshot.ModifiedBy = value.ModifiedBy;
                 snapshot.ModifiedOn = value.ModifiedOn;
+                snapshot.Params = value.Params;
             }
             return snapshot;
 
@@ -85,6 +86,7 @@ namespace Application.DTO.Conversion
                 dto.version = value.version;
                 dto.ModifiedBy = value.ModifiedBy;
                 dto.ModifiedOn = value.ModifiedOn;
+                dto.Params = value.Params;
             }
             return dto;
         }

@@ -18,8 +18,10 @@ namespace Application.Utility.Logging
 
         void Debug(string message, params Object[] parameters);
         void Fatal(string message, params Object[] parameters);
-        void Error(string message, params Object[] parameters);
-        void Error(string message, Exception exception);
+        int Error(string message, params Object[] parameters);
+        int Error(string message, Exception exception, params Object[] parameters);
+
+        int ErrorWithKey(string message, Exception exception);
         void Info(string message, params Object[] parameters);
         void Trace(string message, params Object[] parameters);
         void Warn(string message, params Object[] parameters);

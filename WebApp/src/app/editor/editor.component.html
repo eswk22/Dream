@@ -1,0 +1,8 @@
+﻿<!--<monaco-editor [(ngModel)]="code" [language]="language" (change)="onchange($event)" [language_defaults]="language_defaults" [options]="monaco_options"></monaco-editor>-->
+
+<div #editor class="monaco-editor"></div>
+<ag-grid-angular #agGrid style="width: 100%; height: 150px;" class="ag-material"
+                 [gridOptions]="gridOptions"
+                 [columnDefs]="columnDefs"
+                 [rowData]="rowData">
+</ag-grid-angular>

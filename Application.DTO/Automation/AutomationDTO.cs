@@ -1,4 +1,5 @@
-﻿using Application.DTO.RunBook;
+﻿using Application.Common;
+using Application.DTO.RunBook;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace Application.DTO.Automation
         public string ModifiedBy { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime ModifiedOn { get; set; }
+        public DictionaryWithDefault<string, dynamic> Params { get; set; }
 
     }
 }

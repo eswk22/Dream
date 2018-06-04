@@ -101,6 +101,7 @@
   <ItemGroup>
     <Compile Include="Attributes\AllowCrossSiteJsonAttribute.cs" />
     <Compile Include="enums\ApplicationEnums.cs" />
+    <Compile Include="Exception\CustomException.cs" />
     <Compile Include="Interceptors\PerformanceInterceptor.cs" />
     <Compile Include="IoC\IAutoRegister.cs" />
     <Compile Include="IoC\StructureMap\DependencyResolver.cs" />

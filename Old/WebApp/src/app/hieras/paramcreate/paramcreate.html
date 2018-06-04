@@ -1,0 +1,150 @@
+<div class="row">
+    <div class="col-md-12" baCardClass="with-scroll">
+        <form [formGroup]="form" class="form-horizontal" novalidate>
+            <div class="form-group row" [ngClass]="{'has-error': (!parametername.valid && parametername.touched), 'has-success': (parametername.valid && parametername.touched)}">
+                <label for="inputParameter" class="col-sm-2 control-label">Parameter</label>
+                <div class="col-sm-4">
+                    <input formControlName="parametername" type="text" class="form-control" id="inputParameter" placeholder="Parameter name">
+                </div>
+                <div class="col-sm-4">
+                    <div class="input-demo radio-demo row">
+                        <div class="col-md-4">
+                            <label class="radio-inline custom-radio nowrap">
+                                <input type="radio" id="defaultRadio" checked="checked" value="Default" formControlName="parametertype">
+                                <span>Default</span>
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="radio-inline custom-radio nowrap">
+                                <input type="radio" id="arrayRadio" value="Array" formControlName="parametertype">
+                                <span>Array</span>
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="radio-inline custom-radio nowrap">
+                                <input type="radio" id="hashRadio3" value="Hash" formControlName="parametertype">
+                                <span>Hash</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2" *ngIf="parametertype.value == 'Hash'">
+                    <button type="button" (click)="addChildParameter(0,0,parametername.value)" class="btn btn-success btn-icon"><i class="ion-plus-round"></i></button>
+                </div>
+
+            </div>
+            <div *ngIf="parametertype.value == 'Hash'" formArrayName="ChildList">
+                <div class="form-group row" *ngFor="let child of form.controls.ChildList.controls; let j=index" [formGroupName]="j">
+                    <input id="ParamId" type="text" hidden="hidden" formControlName="ParamId" value="0" />
+                    <input id="ParentParamId" type="text" hidden="hidden" formControlName="ParentParentId" value="0" />
+                    <input id="ParentParamId" type="text" hidden="hidden" formControlName="ParentParamName" value="0" />
+                    <label for="inputParameter" class="col-sm-2 control-label">Parent Parameter : </label>
+                    <label class="col-sm-2 control-label">{{ child.controls.ParentParamName.value }}</label>
+                    <label for="inputParameter" class="col-sm-1 control-label">Parameter : </label>
+                    <div class="col-sm-3" *ngIf="child.controls.isDynamic.value">
+                        <input type="text" disabled formControlName="ChildParamName" value="Dynamic" class="form-control" id="inputParameter" placeholder="Parameter name">
+                    </div>
+                    <div class="col-sm-3" *ngIf="!child.controls.isDynamic.value">
+                        <input type="text" formControlName="ChildParamName" required class="form-control" id="inputParameter" placeholder="Parameter name">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="checkbox" checked="checked" id="chkIsDynamic" (change)="child.controls.isDynamic.value = $event.target.checked ? true : false" value="true" formControlName="isDynamic" title="IsDynamic" /> Is Dynamic?
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="button" (click)="addChildParameter(j,child.controls.ParamId.value,child.controls.ChildParamName.value)" class="btn btn-success btn-icon"><i class="ion-plus-round"></i></button>
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="button" (click)="removeChildParameter(j)" class="btn btn-danger btn-icon"><i class="ion-minus-round"></i></button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <input type="checkbox" checked="checked" id="chkIsActive" (change)="form.controls.isActive.value = $event.target.checked ? true : false" value="true" formControlName="isActive" title="IsActive" /> IsActive
+                </div>
+                <div class="col-sm-4 pull-right">
+                    <button type="button" (click)="AddHiera()" class="btn btn-success">Add Hiera</button>
+                </div>
+            </div>
+
+            <div formArrayName="hieraList" class="form-group row">
+                <div class="col-sm-12">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                                <th>Hiera Level</th>
+                                <th>Default Value</th>
+                                <th>Is mandatory?</th>
+                                <th>Editable By</th>
+                                <th></th>
+                            </tr>
+                            <tr *ngFor="let item of form.controls.hieraList.controls; let i=index" [formGroupName]="i">
+                                <td>
+                                    <input id="hieraParamId" type="text" hidden="hidden" formControlName="hieraParamId" value="0" />
+                                    <select id="hieralevels" class="form-control" formControlName="hieralevel">
+                                        <!--<option [selected]="hieralevel.value == null" value="">-- Select --</option>-->
+                                        <option *ngFor="let g of hieraArray" [selected]="g == hieralevel" [value]="g.Id">{{g.Layer}}</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <div *ngIf="parametertype.value == 'Default'">
+                                        <div class="form-group row" [ngClass]="{'has-error': (!item.controls.defaultvalue.valid && item.controls.defaultvalue.touched && item.controls.isMandatory.value)}">
+                                            <input formControlName="defaultvalue" required="item.controls.isMandatory.value" type="text" class="form-control" id="inputDefault" placeholder="Default Value">
+                                        </div>
+                                    </div>
+                                    <div *ngIf="parametertype.value == 'Hash'">
+                                        <input formControlName="defaultvalue" disabled="disabled" type="text" class="form-control" id="inputDefault" placeholder="Default Value">
+                                    </div>
+                                    <div *ngIf="parametertype.value == 'Array'">
+                                        <div class="form-group row" [ngClass]="{'has-error': (!item.controls.defaultvalue.valid && item.controls.defaultvalue.touched && item.controls.isMandatory.value)}">
+                                            <textarea cols="25" rows="5" required="item.controls.isMandatory.value" formControlName="defaultvalue" type="text" class="form-control" id="inputDefault" placeholder="Default Value"> </textarea>
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="chkIsmandatory" (change)="item.controls.isMandatory.value = $event.target.checked ? true : false" value="false" formControlName="isMandatory" title="IsMandatory" />IsMandatory
+                                </td>
+                                <td>
+
+                                    <ng-select [multiple]="true"
+                                               [items]="allRoles"
+                                               formControlName="roles"
+                                               placeholder="No roles selected"></ng-select>
+
+                                    <!--<select id="roles" multiple class="form-control" formControlName="roles">
+                                        <option *ngFor="let g of allRoles" [selected]="g == roles" [value]="g.Id">{{g.Name}}</option>
+                                    </select>-->
+                                </td>
+                                <td>
+                                    <button type="button" (click)="removeHieralevel(i)" class="btn btn-danger">Remove</button>
+                                </td>
+
+
+
+
+
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 control-label">Created By : </label>
+                <label class="col-sm-2 control-label">{{CreatedBy}}</label>
+                <label class="col-sm-2 control-label">Created On : </label>
+                <label class="col-sm-2 control-label">{{CreatedOn}}</label>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 control-label">Modified By : </label>
+                <label class="col-sm-2 control-label">{{ModifiedBy}}</label>
+                <label class="col-sm-2 control-label">Modified On : </label>
+                <label class="col-sm-2 control-label">{{ModifiedOn}}</label>
+            </div>
+            <button type="submit" (click)="Save(form.value)" class="btn btn-primary">Save</button>
+            <button type="submit" (click)="Cancel()" class="btn btn-primary">Cancel</button>
+        </form>
+    </div>
+</div>

@@ -79,3 +79,50 @@ C:\Eswar\Projects\Dream\Application.DTO\bin\Debug\Castle.Core.xml
 C:\Eswar\Projects\Dream\Application.DTO\obj\Debug\Application.DTO.csprojResolveAssemblyReference.cache
 C:\Eswar\Projects\Dream\Application.DTO\obj\Debug\Application.DTO.dll
 C:\Eswar\Projects\Dream\Application.DTO\obj\Debug\Application.DTO.pdb
+C:\Eswar\Projects\Dream\Application.DTO\bin\Debug\Application.DTO.dll.config
+C:\Eswar\Projects\Dream\Application.DTO\bin\Debug\Nest.dll
+C:\Eswar\Projects\Dream\Application.DTO\bin\Debug\Elasticsearch.Net.dll
+C:\Eswar\Projects\Dream\Application.DTO\bin\Debug\Newtonsoft.Json.dll
+C:\Eswar\Projects\Dream\Application.DTO\bin\Debug\Nest.xml
+C:\Eswar\Projects\Dream\Application.DTO\bin\Debug\Elasticsearch.Net.xml
+C:\Eswar\Projects\Dream\Application.DTO\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Application.DTO.dll.config
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Application.DTO.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Application.DTO.pdb
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Application.Datalayer.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Application.Utility.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Elasticsearch.Net.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\ExecuteEngine.Common.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\MongoDB.Bson.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Nest.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\MongoDB.Driver.Legacy.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\MongoDB.Driver.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\System.Web.Http.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\NLog.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\System.Web.Mvc.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Castle.Facilities.WcfIntegration.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Castle.Windsor.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\StructureMap.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Castle.Core.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\System.Web.Razor.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\System.Web.WebPages.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\ExecuteEngine.Common.pdb
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Application.Datalayer.pdb
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Application.Utility.pdb
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Elasticsearch.Net.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\MongoDB.Bson.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Nest.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\MongoDB.Driver.Legacy.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\MongoDB.Driver.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\NLog.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Castle.Windsor.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\bin\Debug\Castle.Core.xml
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\obj\Debug\Application.DTO.csprojResolveAssemblyReference.cache
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\obj\Debug\Application.DTO.dll
+C:\Users\ekriesw\OneDrive - Ericsson AB\Projects\non-Ericsson\Dream\Application.DTO\obj\Debug\Application.DTO.pdb

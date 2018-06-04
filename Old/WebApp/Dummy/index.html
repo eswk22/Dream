@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CU-Portal</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/mainStyle.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style>
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.tiles {
+	z-index: 999999;
+	width: 100%;
+	bottom: 0;
+}
+.tiles-tile {
+	flex: 1;
+	padding: 20px;
+	transition: all .25s ease-out;
+	cursor: pointer;
+	float: right;
+	width: 240px;
+	height: 239px;
+	text-align: center;
+}
+.tiles-tile img {
+	text-align: center;
+	margin-bottom: 10px;
+	margin-top: 33%;
+}
+.tiles-tile h1 {
+	margin: 0;
+	padding: 0;
+	font-family: "ericsson Capital TT";
+	font-size: 18px;
+	color: #FFF;
+}
+/*.tiles-tile.active:nth-child(1) { }
+
+.tiles-tile.active:nth-child(2) { background: 529a26; }
+
+.tiles-tile.active:nth-child(3) { background: f6a125; }
+
+.tiles-tile.active:nth-child(4) { background: crimson; }
+
+.tiles-tile.active:nth-child(5) { background: crimson; }
+
+.tiles-tile.active:nth-child(6) { background: crimson; }
+
+.tiles-tile:hover:nth-child(1) { background: #a14a7d}
+
+.tiles-tile:hover:nth-child(2) { background: #529a26;}
+
+.tiles-tile:hover:nth-child(3) { background: #f6a125; }
+
+.tiles-tile:hover:nth-child(4) { background: #f6a125; }
+
+.tiles-tile:hover:nth-child(5) { background: #3365b9; }
+
+.tiles-tile:hover:nth-child(6) { background: #bf1113; }*/
+
+
+.content {
+	z-index: 10;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	
+}
+.content-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	padding: 12vw;
+	transform: scale(0);
+	transition: all 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content-item a {
+color: #FFF;
+}
+
+.content-item h3 a {
+color: #FFF;
+ font-family:"Ericsson Capital TT";
+}
+
+.content-item.active {
+	transform: scale(1);
+}
+.content-item.active .content-wrap {
+	transform: scale(1);
+	opacity: 1;
+}
+.content-item:nth-child(1) {
+	transform-origin: 0% 100%;
+	background: #a14a7d;
+	color: #FFF;
+}
+.content-item:nth-child(2) {
+	transform-origin: 33% 100%;
+	background: #529a26;
+	color: #FFF;
+}
+.content-item:nth-child(3) {
+	transform-origin: 14% 20%;
+	background: #f6a125;
+	color: #FFF;
+}
+.content-item:nth-child(4) {
+	transform-origin: 100% 100%;
+	background: #007b78;
+	color: #FFF;
+}
+.content-item:nth-child(5) {
+	transform-origin: 100% 100%;
+	background: #3365b9;
+	color: #FFF;
+}
+.content-item:nth-child(6) {
+	transform-origin: 100% 100%;
+	background: #bf1113;
+	color: #FFF;
+}
+.content-item .content-wrap {
+	transform: scale(0.7);
+	opacity: 0;
+	transition: all 0.8s 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+/* --------------- */
+
+.stuff {
+	margin: 6vw;
+	max-width: 768px;
+}
+ @media (max-width:970px) {
+.tiles-tile {
+	cursor: pointer;
+	float: left;
+	width: 240px;
+	height: 239px;
+	text-align: center;
+}
+.boxWrapper ul {
+	padding-left: 4%;
+}
+.introContent {
+	padding-left: 4%;
+	width: 81%;
+}
+</style>
+</head>
+<body>
+<div class="ericsnBrandLine"></div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <img src="images/ericssion-logo.png" width="46" height="63"> </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li> <a href="whoweare.html">Who We Are<span></span></a> 
+          <!--          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+--> </li>
+        <!--<li><a href="#">What We Offer</a></li>-->
+        <li><a href="engage.html">How We Engage</a></li>
+        <!--<li><a href="ContactUs.html">Contact Us</a></li>-->
+      </ul>
+      <!--            <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+
+--> </div>
+  </div>
+</nav>
+<div class="row subHeader">
+  <div class="col-md-1"></div>
+  <div class="col-md-3"> <img src="images/customrIcon.png" width="30" height="31"> <a href="Client_partner.html">Client Partner Contacts</a> </div>
+  <div class="col-md-3"> <img src="images/serviceIcon.png" width="30" height="31"> <a href="Solutions_Lead.html">Service Offering Contacts</a> </div>
+  <div class="col-md-3"> <img src="images/question.png" width="30" height="31"> <a href="mailto:rnamoperateservicessolutions@ericsson.com?Subject=Operate Services Portal Request">Do you have a question?</a> </div>
+  <div class="col-md-2"></div>
+</div>
+<div class="row">
+  <div class="introductionWrapper">
+    <div class="introContent"> <span><img src="images/operate.png" width="73" height="73"></span>
+      <h1>Ericsson Operate Services</h1>
+      <p style="font-size:14px">Ericsson Operate Services is a trusted partner to our customers in helping them manage their networks in an efficient way by leveraging our strong expertise in all aspects of network lifecycle management and transformation.  We are well positioned to lead them through the industry revolution. We take full responsibility for our customer’s networks and services. </p>
+      <p>&nbsp;</p>
+      <p style="font-size:14px">We have a strong track record and references demonstrating our capabilities in delivering consistent performance and cost improvements. </p>
+    </div>
+  </div>
+  <div class="boxWrapper" >
+    <ul class="tiles">
+      <li class="tiles-tile internetImg" data-tile="1"> <img src="images/internetIcon.png">
+        <h1>Internet <br>
+          providers</h1>
+      </li>
+      <li class="tiles-tile wirelineImg" data-tile="2"> <img src="images/wirelineIcon.png">
+        <h1>Wireline</h1>
+      </li>
+      <li class="tiles-tile wirelessImg" data-tile="3"> <img src="images/wirelessIcon.png">
+        <h1>Wireless</h1>
+      </li>
+      <li class="tiles-tile mediaImg" data-tile="4"> <img src="images/mediaIcon.png">
+        <h1>Media</h1>
+      </li>
+      <li class="tiles-tile industryImg" data-tile="5"> <img src="images/industryIcon.png">
+        <h1>Internet of <br>
+         Things </h1>
+      </li>
+      <li class="tiles-tile cableImg" data-tile="6"> <img src="images/cableIcon.png">
+        <h1>CABLE</h1>
+      </li>
+      <div id="content_1" class="hoverContectEvent">
+        <div class="content-wrap">
+          <h1><a href="Internet_Providers.html">Internet Providers</a></h1>
+          <br/>
+          <p> <a href="Network_Operations.html">Network Operations</a><br>
+            <a href="Field_Operations.html">Field Operations</a><br>
+            <a href="Network_Configuration.html">Network Configuration & Fulfillment Services</a><br>
+            <a href="Managed_Security.html">Managed Security</a><br>
+            <a href="Operational_Excellence.html">Operational Excellence</a><br>
+            <a href="Energy_Management.html">Energy Management</a><br>
+            X As A Service<br>
+            <a href="Small_Cells.html" style="margin-left: 14%">Small Cells </a><br>
+          </p>
+        </div>
+      </div>
+      <div id="content_2" class="hoverContectEvent">
+        <div class="content-wrap">
+          <h1><a href="Wireline.html">Wireline</a></h1>
+          <br/>
+          <p> <a href="Network_Operations.html">Network Operations</a><br>
+            <a href="Field_Operations.html">Field Operations</a><br>
+            <a href="Managed_Network_Performance.html">Managed Network Performance</a><br>
+            <a href="Network_Configuration.html">Network Configuration & Fulfillment Services</a><br>
+            <a href="Managed_Security.html">Managed Security</a><br>
+           
+            <a href="Operational_Excellence.html">Operational Excellence</a><br>
+            <a href="Experience_Centric_Managed_Services.html">Experience Centric Managed Services</a><br>
+            <a href="SDN_and_NFV_Operations.html">SDN and NFV Operations</a><br>
+            <a href="Energy_Management.html">Energy Management</a><br>
+            X As A Service<br>
+            <a href="Small_Cells.html" style="margin-left: 14%">Small Cells </a><br>
+            <a href="Tools.html" style="margin-left: 14%">Tools</a><br>
+          </p>
+        </div>
+      </div>
+      <div id="content_3" class="hoverContectEvent">
+        <div class="content-wrap">
+          <h1><a href="Wireless.html">wireless</a></h1>
+          <br/>
+          <p> <a href="Network_Operations.html">Network Operations</a><br>
+            <a href="Field_Operations.html">Field Operations</a><br>
+            <a href="Managed_Network_Performance.html">Managed Network Performance</a><br>
+            <a href="Network_Configuration.html">Network Configuration & Fulfillment Services</a><br>
+            <a href="Managed_Security.html">Managed Security</a><br>
+            <a href="Managed_Network_Deployment.html">Managed Network Deployment</a><br>
+            <a href="Operational_Excellence.html">Operational Excellence</a><br>
+            <a href="Experience_Centric_Managed_Services.html">Experience Centric Managed Services</a><br>
+            <a href="SDN_and_NFV_Operations.html">SDN and NFV Operations</a><br>
+            <a href="Energy_Management.html">Energy Management</a><br>
+            X As A Service<br>
+            <a href="Backhaul.html" style="margin-left: 14%">Backhaul</a><br>
+            <a href="Small_Cells.html" style="margin-left: 14%">Small Cells </a><br>
+            <a href="Managed_Rural_Coverage.html" style="margin-left: 14%">Managed Rural Coverage </a><br>
+            <a href="Tools.html" style="margin-left: 14%">Tools</a><br>
+          </p>
+        </div>
+      </div>
+      <div id="content_4" class="hoverContectEvent">
+        <div class="content-wrap">
+          <h1><a href="Media.html">Media</a></h1>
+          <br/>
+          <p> <a href="Network_Operations.html">Network Operations</a><br>
+            <a href="Field_Operations.html">Field Operations</a><br>
+            <a href="Network_Configuration.html">Network Configuration & Fulfillment Services</a><br>
+            <a href="Managed_Security.html">Managed Security</a><br>
+            <a href="Operational_Excellence.html">Operational Excellence</a><br>
+            <a href="Energy_Management.html">Energy Management</a><br>
+            <!-- X As A Service<br>
+            <a href="Backhaul.html" style="margin-left: 14%">Backhaul</a><br>
+            <a href="Small_Cells.html" style="margin-left: 14%">Small Cells </a><br>
+            <a href="Managed_Rural_Coverage.html" style="margin-left: 14%">Managed Rural Coverage </a><br>
+            <a href="Tools.html" style="margin-left: 14%">Tools</a><br>--> 
+          </p>
+        </div>
+      </div>
+      <div id="content_5" class="hoverContectEvent">
+        <div class="content-wrap">
+          <h1><a href="IOT.html">Internet Of Things</a></h1>
+          <br/>
+          <p> <a href="Network_Operations.html">Network Operations</a><br>
+            <a href="Field_Operations.html">Field Operations</a><br>
+            <a href="Network_Configuration.html">Network Configuration & Fulfillment Services</a><br>
+            <a href="Managed_Security.html">Managed Security</a><br>
+            <a href="Operational_Excellence.html">Operational Excellence</a><br>
+            <a href="Energy_Management.html">Energy Management</a><br>
+            X As A Service<br>
+            <a href="Small_Cells.html" style="margin-left: 14%">Small Cells </a><br>
+          </p>
+        </div>
+      </div>
+      <div id="content_6" class="hoverContectEvent">
+        <div class="content-wrap">
+          <h1><a href="Cable.html">Cable</a></h1>
+          <br/>
+          <p> <a href="Network_Operations.html">Network Operations</a><br>
+            <a href="Field_Operations.html">Field Operations</a><br>
+            <a href="Network_Configuration.html">Network Configuration & Fulfillment Services</a><br>
+            <a href="Managed_Security.html">Managed Security</a><br>
+            <a href="Operational_Excellence.html">Operational Excellence</a><br>
+            <a href="Energy_Management.html">Energy Management</a><br>
+            X As A Service<br>
+            <a href="Small_Cells.html" style="margin-left: 14%">Small Cells </a><br>
+          </p>
+        </div>
+      </div>
+    </ul>
+    
+    
+    
+    
+    
+    <ul class="content">
+      <li class="content-item" id="1">
+        <div class="content-wrap ">
+          <h3><a href="Internet_Providers.html">Internet Providers</a></h3>
+          <br/>
+          <p> <a href="Network_Operations.html">Network Operations</a><br>
+            <a href="Field_Operations.html">Field Operations</a><br>
+            <a href="Network_Configuration.html">Network Configuration & Fulfillment Services</a><br>
+            <a href="Managed_Security.html">Managed Security</a><br>
+            <a href="Operational_Excellence.html">Operational Excellence</a><br>
+            <a href="Energy_Management.html">Energy Management</a><br>
+            X As A Service<br>
+            <a href="Small_Cells.html" style="margin-left: 14%">Small Cells </a><br>
+          </p>
+        </div>
+      </li>
+      <li class="content-item" id="2">
+        <div class="content-wrap">
+          <h3><a href="Wireline.html">Wireline</a></h3>
+          <br/>
+          <p> <a href="Network_Operations.html">Network Operations</a><br>
+            <a href="Field_Operations.html">Field Operations</a><br>
+            <a href="Managed_Network_Performance.html">Managed Network Performance</a><br>
+            <a href="Network_Configuration.html">Network Configuration & Fulfillment Services</a><br>
+            <a href="Managed_Security.html">Managed Security</a><br>
+            <a href="Operational_Excellence.html">Operational Excellence</a><br>
+            <a href="Experience_Centric_Managed_Services.html">Experience Centric Managed Services</a><br>
+            <a href="SDN_and_NFV_Operations.html">SDN and NFV Operations</a><br>
+            <a href="Energy_Management.html">Energy Management</a><br>
+            X As A Service<br>
+            <a href="Small_Cells.html" style="margin-left: 14%">Small Cells </a><br>
+            <a href="Tools.html" style="margin-left: 14%">Tools</a><br>
+          </p>
+        </div>
+      </li>
+      <li class="content-item" id="3">
+        <div class="content-wrap">
+        <h3><a href="Wireless.html">wireless</a></h3>
+          <br/>
+          <p> <a href="Network_Operations.html">Network Operations</a><br>
+            <a href="Field_Operations.html">Field Operations</a><br>
+            <a href="Managed_Network_Performance.html">Managed Network Performance</a><br>
+            <a href="Network_Configuration.html">Network Configuration & Fulfillment Services</a><br>
+            <a href="Managed_Security.html">Managed Security</a><br>
+            <a href="Managed_Network_Deployment.html">Managed Network Deployment</a><br>
+            <a href="Operational_Excellence.html">Operational Excellence</a><br>
+            <a href="Experience_Centric_Managed_Services.html">Experience Centric Managed Services</a><br>
+            <a href="SDN_and_NFV_Operations.html">SDN and NFV Operations</a><br>
+            <a href="Energy_Management.html">Energy Management</a><br>
+            X As A Service<br>
+            <a href="Backhaul.html" style="margin-left: 14%">Backhaul</a><br>
+            <a href="Small_Cells.html" style="margin-left: 14%">Small Cells </a><br>
+            <a href="Managed_Rural_Coverage.html" style="margin-left: 14%">Managed Rural Coverage </a><br>
+            <a href="Tools.html" style="margin-left: 14%">Tools</a><br>
+          </p>
+        </div>
+      </li>
+      <li class="content-item" id="4">
+        <div class="content-wrap">
+          <h3><a href="Media.html">Media</a></h3>
+          <br/>
+          <p> <a href="Network_Operations.html">Network Operations</a><br>
+            <a href="Field_Operations.html">Field Operations</a><br>
+            <a href="Network_Configuration.html">Network Configuration & Fulfillment Services</a><br>
+            <a href="Managed_Security.html">Managed Security</a><br>
+            <a href="Operational_Excellence.html">Operational Excellence</a><br>
+            <a href="Energy_Management.html">Energy Management</a><br>
+            <!-- X As A Service<br>
+            <a href="Backhaul.html" style="margin-left: 14%">Backhaul</a><br>
+            <a href="Small_Cells.html" style="margin-left: 14%">Small Cells </a><br>
+            <a href="Managed_Rural_Coverage.html" style="margin-left: 14%">Managed Rural Coverage </a><br>
+            <a href="Tools.html" style="margin-left: 14%">Tools</a><br>--> 
+          </p>
+        </div>
+      </li>
+      <li class="content-item" id="5">
+        <div class="content-wrap">
+          <h3><a href="IOT.html">Internet Of Things</a></h3>
+          <br/>
+          <p> <a href="Network_Operations.html">Network Operations</a><br>
+            <a href="Field_Operations.html">Field Operations</a><br>
+            <a href="Network_Configuration.html">Network Configuration & Fulfillment Services</a><br>
+            <a href="Managed_Security.html">Managed Security</a><br>
+            <a href="Operational_Excellence.html">Operational Excellence</a><br>
+            <a href="Energy_Management.html">Energy Management</a><br>
+            X As A Service<br>
+            <a href="Small_Cells.html" style="margin-left: 14%">Small Cells </a><br>
+          </p>
+        </div>
+      </li>
+      <li class="content-item" id="6">
+        <div class="content-wrap">
+          <h3><a href="Cable.html">Cable</a></h3>
+          <br/>
+          <p> <a href="Network_Operations.html">Network Operations</a><br>
+            <a href="Field_Operations.html">Field Operations</a><br>
+            <a href="Network_Configuration.html">Network Configuration & Fulfillment Services</a><br>
+            <a href="Managed_Security.html">Managed Security</a><br>
+            <a href="Operational_Excellence.html">Operational Excellence</a><br>
+            <a href="Energy_Management.html">Energy Management</a><br>
+            X As A Service<br>
+            <a href="Small_Cells.html" style="margin-left: 14%">Small Cells </a><br>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted">@2017 ericsson All right reserved </p>
+  </div>
+</footer>
+<script>
+
+$(".hoverContectEvent").on("click", function(){
+	if($(document).width() >= 1129){
+		$("#content_1").hide();
+		$("#content_2").hide();
+		$("#content_3").hide();
+		$("#content_4").hide();
+		$("#content_5").hide();
+		$("#content_6").hide();
+	}
+});
+
+$(".tiles-tile").on("click",function(){
+	if($(document).width() >= 1129){
+		var tilesNumner = $(this).attr("data-tile");
+		var contentDiv = "content_"+tilesNumner;
+		$("#content_1").hide();
+		$("#content_2").hide();
+		$("#content_3").hide();
+		$("#content_4").hide();
+		$("#content_5").hide();
+		$("#content_6").hide();
+		
+		//$("#"+contentDiv).show();
+		$("#"+contentDiv).animate({height: "toggle"},"fast");
+	}
+});
+
+
+var tileBtn = $('li.tiles-tile');
+var allContent = $('li.content-item');
+var contentWrap = $('.content-wrap');
+
+tileBtn.on('click touchstart', function() {
+	if($(document).width() < 1129){
+	  var self = $(this);
+	  var match = self.attr('data-tile');
+	  var allContent = $('li.content-item');
+	  var content = $('li#' + match);
+	  
+	  self.toggleClass('active');
+	  
+	  content.toggleClass('active');
+	  
+	 contentWrap.css({'transition-delay': '.35s'});
+	  
+	  return false;
+	}
+});
+
+$(window).on('click touchstart', function() {
+	if($(document).width() < 1129){
+	  if (allContent.hasClass('active') && tileBtn.hasClass('active')) {
+		allContent.removeClass('active');
+		setTimeout(function() {
+		  tileBtn.removeClass('active');
+		}, 400);
+		contentWrap.css({'transition-delay': '.0s'});
+		
+	  }
+	}
+})
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -5,7 +5,6 @@ C:\Eswar\Projects\Dream\Worker\bin\Debug\Application.Configuration.dll
 C:\Eswar\Projects\Dream\Worker\bin\Debug\Application.Datalayer.dll
 C:\Eswar\Projects\Dream\Worker\bin\Debug\Application.DTO.dll
 C:\Eswar\Projects\Dream\Worker\bin\Debug\Application.Manager.dll
-C:\Eswar\Projects\Dream\Worker\bin\Debug\Application.Repository.dll
 C:\Eswar\Projects\Dream\Worker\bin\Debug\Application.Utility.dll
 C:\Eswar\Projects\Dream\Worker\bin\Debug\EasyNetQ.dll
 C:\Eswar\Projects\Dream\Worker\bin\Debug\ExecuteEngine.Common.dll
@@ -51,7 +50,6 @@ C:\Eswar\Projects\Dream\Worker\bin\Debug\Application.Configuration.pdb
 C:\Eswar\Projects\Dream\Worker\bin\Debug\Application.Datalayer.pdb
 C:\Eswar\Projects\Dream\Worker\bin\Debug\Application.DTO.pdb
 C:\Eswar\Projects\Dream\Worker\bin\Debug\Application.Manager.pdb
-C:\Eswar\Projects\Dream\Worker\bin\Debug\Application.Repository.pdb
 C:\Eswar\Projects\Dream\Worker\bin\Debug\Application.Utility.pdb
 C:\Eswar\Projects\Dream\Worker\bin\Debug\ExecutionEngine.pdb
 C:\Eswar\Projects\Dream\Worker\bin\Debug\EasyNetQ.xml
@@ -74,3 +72,7 @@ C:\Eswar\Projects\Dream\Worker\bin\Debug\System.Reflection.Metadata.xml
 C:\Eswar\Projects\Dream\Worker\obj\Debug\Worker.csprojResolveAssemblyReference.cache
 C:\Eswar\Projects\Dream\Worker\obj\Debug\Worker.exe
 C:\Eswar\Projects\Dream\Worker\obj\Debug\Worker.pdb
+C:\Eswar\Projects\Dream\Worker\bin\Debug\Nest.dll
+C:\Eswar\Projects\Dream\Worker\bin\Debug\Elasticsearch.Net.dll
+C:\Eswar\Projects\Dream\Worker\bin\Debug\Nest.xml
+C:\Eswar\Projects\Dream\Worker\bin\Debug\Elasticsearch.Net.xml

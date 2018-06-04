@@ -1,5 +1,4 @@
 ﻿using Application.DTO.Gateway;
-using Application.Repository;
 using Application.Snapshot;
 using Application.Utility.Logging;
 using Application.Utility.Translators;

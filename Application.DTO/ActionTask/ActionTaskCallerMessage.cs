@@ -17,5 +17,7 @@ namespace Application.Messages
         public string Code { get; set; }
         public Dictionary<string,dynamic> Inputs { get; set; }
         public string ConfiguredOutputParams { get; set; }
+        public string ActionResultSheetId { get; set; }
+        public int Timeout { get; set; }
     }
 }

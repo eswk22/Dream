@@ -9,12 +9,16 @@ using Microsoft.CodeAnalysis.CSharp.Scripting;
 using Microsoft.CodeAnalysis.Scripting;
 using Compiler.Core.Processing.Languages.Internal;
 using Application.Utility;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace Compiler.Core.Processing.Languages {
+namespace Compiler.Core.Processing.Languages
+{
     [ThreadSafe]
-    public class CSharpLanguage : IRoslynLanguage {
+    public class CSharpLanguage : IRoslynLanguage
+    {
         private static readonly LanguageVersion MaxLanguageVersion = Enum
-            .GetValues(typeof (LanguageVersion))
+            .GetValues(typeof(LanguageVersion))
             .Cast<LanguageVersion>()
             .Max();
         private static readonly IReadOnlyCollection<string> PreprocessorSymbols = new[] { "__DEMO_EXPERIMENTAL__" };
@@ -25,13 +29,15 @@ namespace Compiler.Core.Processing.Languages {
         };
         private readonly IReadOnlyDictionary<string, string> _features;
 
-        public CSharpLanguage(IFeatureDiscovery featureDiscovery) {
+        public CSharpLanguage(IFeatureDiscovery featureDiscovery)
+        {
             _features = featureDiscovery.SlowDiscoverAll().ToDictionary(f => f, f => (string)null);
         }
 
         public LanguageIdentifier Identifier => LanguageIdentifier.CSharp;
 
-        public SyntaxTree ParseText(string code, SourceCodeKind kind) {
+        public SyntaxTree ParseText(string code, SourceCodeKind kind)
+        {
             var options = new CSharpParseOptions(
                 kind: kind,
                 languageVersion: MaxLanguageVersion,
@@ -40,7 +46,8 @@ namespace Compiler.Core.Processing.Languages {
             return CSharpSyntaxTree.ParseText(code, options);
         }
 
-        public Compilation CreateLibraryCompilation(string assemblyName, bool optimizationsEnabled) {
+        public Compilation CreateLibraryCompilation(string assemblyName, bool optimizationsEnabled)
+        {
             var options = new CSharpCompilationOptions(
                 OutputKind.DynamicallyLinkedLibrary,
                 optimizationLevel: optimizationsEnabled ? OptimizationLevel.Release : OptimizationLevel.Debug,
@@ -50,20 +57,36 @@ namespace Compiler.Core.Processing.Languages {
             return CSharpCompilation.Create(assemblyName, options: options, references: _references);
         }
 
-		public object execute(string code, object globals) {
-			var scriptOptions = GetScriptOptions();
-    		return  CSharpScript.RunAsync(code, options: scriptOptions, globals: globals).Result;
-		}
+        public object execute(string code, object globals, int timeout)
+        {
+            try
+            {
+                var scriptOptions = GetScriptOptions();
+                CancellationToken token = new CancellationTokenSource(timeout * 1000).Token;
+                var task = CSharpScript.RunAsync(code, options: scriptOptions, globals: globals, cancellationToken: token);
+                return task.Result;
+            }
+            catch (TaskCanceledException ex)
+            {
+                // Task was canceled before running.
+                throw new TimeoutException();
+            }
+            catch (OperationCanceledException ex)
+            {
+                // Task was canceled while running.
+                throw new TimeoutException();
+            }
+        }
 
 
-		private static ScriptOptions GetScriptOptions()
-		{
-			return ScriptOptions
-				.Default
-				.AddReferences(SurfaceArea.GetAssemblies())
-				.AddImports(SurfaceArea.GetNamespaces());
-		}
+        private static ScriptOptions GetScriptOptions()
+        {
+            return ScriptOptions
+                .Default
+                .AddReferences(SurfaceArea.GetAssemblies())
+                .AddImports(SurfaceArea.GetNamespaces());
+        }
 
 
-	}
+    }
 }

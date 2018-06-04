@@ -26,10 +26,12 @@ namespace Application.DTO.Conversion
 				entity.Parent = value.Parent;
 				entity.ParentAutomationFlowId = value.ParentAutomationFlowId;
 				entity.ProcessId = value.ProcessId;
+                entity.ActionResultSheetId = value.ActionResultSheetId;
 				entity.RequestedBy = value.RequestedBy;
 				entity.RequestedOn = value.RequestedOn;
                 entity.Inputs = value.Inputs;
                 entity.SheetId = value.SheetId;
+                entity.Timeout = value.Timeout;
 			}
 			return entity;
 
@@ -54,6 +56,8 @@ namespace Application.DTO.Conversion
                 entity.RequestedOn = value.RequestedOn;
                 entity.Inputs = value.Inputs;
                 entity.SheetId = value.SheetId;
+                entity.ActionResultSheetId = value.ActionResultSheetId;
+                entity.Timeout = value.Timeout;
             }
             return entity;
         }

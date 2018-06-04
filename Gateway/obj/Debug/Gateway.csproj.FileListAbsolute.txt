@@ -5,7 +5,6 @@ C:\Eswar\Projects\Dream\Gateway\bin\Debug\Application.Configuration.dll
 C:\Eswar\Projects\Dream\Gateway\bin\Debug\Application.Datalayer.dll
 C:\Eswar\Projects\Dream\Gateway\bin\Debug\Application.DTO.dll
 C:\Eswar\Projects\Dream\Gateway\bin\Debug\Application.Manager.dll
-C:\Eswar\Projects\Dream\Gateway\bin\Debug\Application.Repository.dll
 C:\Eswar\Projects\Dream\Gateway\bin\Debug\Application.Utility.dll
 C:\Eswar\Projects\Dream\Gateway\bin\Debug\Castle.Core.dll
 C:\Eswar\Projects\Dream\Gateway\bin\Debug\Castle.Windsor.dll
@@ -49,7 +48,6 @@ C:\Eswar\Projects\Dream\Gateway\bin\Debug\Application.Configuration.pdb
 C:\Eswar\Projects\Dream\Gateway\bin\Debug\Application.Datalayer.pdb
 C:\Eswar\Projects\Dream\Gateway\bin\Debug\Application.DTO.pdb
 C:\Eswar\Projects\Dream\Gateway\bin\Debug\Application.Manager.pdb
-C:\Eswar\Projects\Dream\Gateway\bin\Debug\Application.Repository.pdb
 C:\Eswar\Projects\Dream\Gateway\bin\Debug\Application.Utility.pdb
 C:\Eswar\Projects\Dream\Gateway\bin\Debug\Castle.Core.xml
 C:\Eswar\Projects\Dream\Gateway\bin\Debug\Castle.Windsor.xml
@@ -78,3 +76,7 @@ C:\Eswar\Projects\Dream\Gateway\bin\Debug\Microsoft.CodeAnalysis.CSharp.Scriptin
 C:\Eswar\Projects\Dream\Gateway\obj\Debug\Gateway.csprojResolveAssemblyReference.cache
 C:\Eswar\Projects\Dream\Gateway\obj\Debug\Gateway.exe
 C:\Eswar\Projects\Dream\Gateway\obj\Debug\Gateway.pdb
+C:\Eswar\Projects\Dream\Gateway\bin\Debug\Nest.dll
+C:\Eswar\Projects\Dream\Gateway\bin\Debug\Elasticsearch.Net.dll
+C:\Eswar\Projects\Dream\Gateway\bin\Debug\Nest.xml
+C:\Eswar\Projects\Dream\Gateway\bin\Debug\Elasticsearch.Net.xml

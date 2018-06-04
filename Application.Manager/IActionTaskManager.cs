@@ -4,17 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Application.DTO.ActionTask;
+using Application.DTO;
 
 namespace Application.Manager
 {
 	public interface IActionTaskManager
 	{
-		ActionTaskMessage GetbyId(string Id);
+		ActionTaskDTO GetbyId(string Id);
 
-		ActionTaskMessage Save(ActionTaskMessage actiontaskMessage);
-		IEnumerable<ActionTasklist> Get();
+		ActionTaskDTO Save(ActionTaskDTO actiontaskMessage);
+		IEnumerable<ActionTasklistDTO> Get();
 
-        bool executeCode(ActionTaskMessage actiontaskmessage);
-
+        bool executeCode(ActionTaskDTO actiontaskmessage);
+        ActionTaskMessage GetActionMessagebyId(string actionTaskId);
     }
 }

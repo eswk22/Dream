@@ -1,7 +1,6 @@
 ﻿using Application.DTO.Conversion;
 using Application.Manager;
 using Application.Manager.Implementation;
-using Application.Repository;
 using Application.Snapshot;
 using Application.Utility.IoC.Windsor;
 using Application.Utility.Logging;
@@ -15,6 +14,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Worker.AutomationHandlers;
 using Worker.Bus;
+using Application.DAL.ElasticRepository;
+using Application.Manager.ServiceContract;
 
 namespace Worker.DependencyInjection
 {
@@ -27,6 +28,9 @@ namespace Worker.DependencyInjection
 			Registrar.RegisterCompositionRoot();
             Compiler.Core.Bootstrapper.BootstrapStructureMap();
 
+            //Elastic
+            Registrar.Register<IElasticCore, ElasticCore>(CrucialLifestyleType.Singleton);
+            Registrar.Register(typeof(IElasticRepository<>), typeof(ElasticRepository<>), CrucialLifestyleType.Transient);
 
             Registrar.Register<IBusBootstrapper, BusBootstrapper>(CrucialLifestyleType.Singleton);
             Registrar.Register<IRunbookHandler, RunbookHandler>(CrucialLifestyleType.Transient);
@@ -37,13 +41,12 @@ namespace Worker.DependencyInjection
             Registrar.Register<IRepository<GatewaySnapshot>, MongoRepository<GatewaySnapshot>>(CrucialLifestyleType.Transient);
 
             Registrar.Register<IAutomationBusinessManager,IAutomationServiceManager, AutomationManager>(CrucialLifestyleType.Transient);
-            Registrar.Register<IActionTaskManager, ActionTaskManager>(CrucialLifestyleType.Transient);
+            Registrar.Register<IActionTaskServiceManager, ActionTaskManager>(CrucialLifestyleType.Transient);
             Registrar.Register<IBusinessGatewayManager, GatewayManager>(CrucialLifestyleType.Transient);
             Registrar.Register<ICompileManager, CompileManager>(CrucialLifestyleType.Transient);
-
+            Registrar.Register<IWorksheetServiceManager, WorksheetManager>(CrucialLifestyleType.Transient);
 			//Repository
-			Registrar.Register<IActionTaskRepository, ActionTaskRepository>(CrucialLifestyleType.Transient);
-            Registrar.Register<ILogger, CrucialLogger>(CrucialLifestyleType.Singleton);
+			  Registrar.Register<ILogger, CrucialLogger>(CrucialLifestyleType.Singleton);
             //Handlers
 
             Registrar.Register<IActionTaskHandler, ActionTaskHandler>(CrucialLifestyleType.Singleton);

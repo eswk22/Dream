@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Elasticsearch.Net, Version=5.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elasticsearch.Net.5.4.0\lib\net46\Elasticsearch.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MongoDB.Bson, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MongoDB.Bson.2.2.4\lib\net45\MongoDB.Bson.dll</HintPath>
       <Private>True</Private>
@@ -45,6 +49,14 @@
     </Reference>
     <Reference Include="MongoDB.Driver.Legacy, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\mongocsharpdriver.2.2.4\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nest, Version=5.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\NEST.5.4.0\lib\net46\Nest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Norm, Version=0.9.8.0, Culture=neutral, processorArchitecture=MSIL">
@@ -65,6 +77,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CollectionName.cs" />
+    <Compile Include="ElasticRepository\ElasticCore.cs" />
+    <Compile Include="ElasticRepository\ElasticRepository.cs" />
+    <Compile Include="ElasticRepository\IElasticCore.cs" />
+    <Compile Include="ElasticRepository\IElasticRepository.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +93,9 @@
   <ItemGroup>
     <None Include="app.config.transform" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Snapshot\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

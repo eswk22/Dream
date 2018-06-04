@@ -1,0 +1,614 @@
+
+.navbar{ border-radius:0; min-height: 72px; margin-bottom:0px;}
+.ericsnBrandLine{
+	background: url("../images/ebottomgrad.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 4px;
+    width: 100%;
+}
+
+.navbar-inverse .navbar-nav > li > a{ color:#FFF;}
+.navbar-inverse .navbar-nav > li > a:hover{ color:#CCC;}
+.navbar-right{}
+.subHeader{ background-color:#eeeeee; height:auto; min-height:52px;}
+.subHeader div{ text-align:right; margin-top:8px;}
+.subHeader img{ text-align:right;}
+.subHeader a{ font-size:13px; color:#2c2c2c; padding:0 0 0 8px; margin:0; line-height:34px; text-decoration:none;}
+.subHeader a:hover{ text-decoration:underline;}
+.row{margin-right: 0px; margin-left: 0px;}
+@media (min-width:768px){.navbar-nav{margin-top: 10px; float:right;}}
+
+
+
+.footer {
+  position:relative;
+  bottom: 0;
+  width: 100%;
+  float:left;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+
+
+code {
+  font-size: 80%;
+}
+
+.introductionWrapper {
+    float: left;
+	width:45%;
+    padding: 0;
+    position: relative;}
+
+.boxWrapper {
+    float: right;
+	width: 55%;
+    padding: 0;
+	max-width: 900px;
+    position: relative;}
+	
+.box1{ width:240px; height:239px; float:right; margin-right:1px; margin-bottom:1px; background-color:#000; text-align:center; cursor:pointer;}
+.box1 img{ text-align:center; margin-bottom:10px; margin-top:33%;}
+.box1 h1{ margin:0; padding:0; font-family:"ericsson Capital TT"; font-size:18px; color:#FFF;}
+
+
+.wirelessImg{ background:url(../images/wirelessBox.png) top left no-repeat; width:240px; height:239px;}
+.wirelineImg{ background:url(../images/wirelineBox.png) top left no-repeat; width:240px; height:239px;}
+.mediaImg{ background:url(../images/MediaBox.png) top left no-repeat; width:240px; height:239px;}
+.industryImg{ background:url(../images/industryBox.png) top left no-repeat; width:240px; height:239px;}
+.internetImg{ background:url(../images/internetBox.png) top left no-repeat; width:240px; height:239px;}
+.cableImg{ background:url(../images/cableBox.png) top left no-repeat; width:240px; height:239px;}
+
+
+.introContent{ width:85%; padding-left:10%; padding-right:0%; margin-top: 50px;}
+.introContent h1{ font-family:"ericsson Capital TT"; font-size:30px; line-height:50px; color:#5eb12c; text-align:left; margin:0; padding:0;}
+.introContent p{ font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#5b5b5b; text-align:left; text-align:left; margin:0; padding:0; font-style:italic;}
+.introContent a{ margin-top:10px; float:left;}
+
+
+.panel-body{position:relative;}
+.bg-tableHead{ background-color:#333; color:#FFF; font-size:12px;}
+body > .container{ padding: 1px 15px 0;}
+
+.bannerImg{ background:url(../images/contactUsBanner.png) center center no-repeat; height:185px; width:100%; margin:0 0 20px 0;}
+.weAreBanner{ background:url(../images/whoweare.png) top center no-repeat; height:185px; width:100%; margin:0 0 20px 0;}
+.engageImg{ background:url(../images/engage.png) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+.flipBanner{ background:url(../images/flipBanner.png) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+.cableBanner{ background:url(../images/cableBanner.png) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+
+.internetThing{ background:url(../images/internetThing.png) top center no-repeat; min-height:263px; width:100%; margin:0 0 20px 0;}
+
+
+.NetworkOperations{ background:url(../images/NetworkOperations.png) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+.networkConfiguration { background:url(../images/NetworkConfigurationbaner.jpg) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+
+.field_Operations{ background:url(../images/Field_Operations.jpg) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+.energy_Management{ background:url(../images/energymanagementBaner.jpg) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+
+.managed_Rural_Coverage{ background:url(../images/ManagedRuralCoveragebaner.jpg) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+
+.Backhaul{ background:url(../images/Backhaulbanner.jpg) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+.Small_Cells{ background:url(../images/Smallcells.jpg) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+
+
+.managed_etworkPerformance{ background:url(../images/managed_etworkPerformance.jpg) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+
+.oe{ background:url(../images/Operational_Excellence.png) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+
+.sdn{ background:url(../images/sdn.png) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+.tools{ background:url(../images/tools.jpg) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+
+.cableBannerBg{ background:url(../images/cableBannerTrail.png) top center no-repeat; min-height:263px; width:100%; margin:0 0 20px 0;}
+.internetProvider{ background:url(../images/internetProviderBanner.png) top center no-repeat; min-height:263px; width:100%; margin:0 0 20px 0;}
+
+.mediaBanner{ background:url(../images/mediabanner.png) top center no-repeat; min-height:263px; width:100%; margin:0 0 20px 0;}
+
+
+.BannerHeadTest{ width:40%; float:left; font-family:Ericsson Capital TT; font-size:30px; text-align:center; color:#FFF; padding-top:140px; min-height:263px;}
+.logoWrppper{ width:55%; float:left; height:263px;}
+.rightSpacing{ width:453px; height:263px; background:url(../images/logoBgTrans.png) right top no-repeat; padding: 18px 0px 0px 48px; float:right;}
+.logoBoxPanel { width:auto; height:50px; float:left; margin:10px 20px 10px 20px;}
+
+
+
+.WIRELINE{ background:url(../images/WIRELINE.png) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+.ECMS{ background:url(../images/ECMS.png) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+.mnd{ background:url(../images/mnd.png) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+.ms{ background:url(../images/ms.png) top center no-repeat; height:263px; width:100%; margin:0 0 20px 0;}
+
+.table > caption + thead > tr:first-child > td, .table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > td, .table > thead:first-child > tr:first-child > th{line-height: 30px;}
+.flip-container .front{min-height: 187px;
+border-radius: 130px;
+border: 1px solid #d0d0d0;
+background-color: #FFF;
+width: 185px;}
+
+.flip-container1 .front{min-height: 187px;
+border-radius: 130px;
+border: 1px solid #f5a241;
+background-color: #FFF;
+width: 185px;
+cursor:pointer;}
+
+.flip-container1 .front .front-bg{
+height: 170px;
+background-color: #f5a241;
+border-radius: 103px;
+margin-top: 7px;
+width: 168px;
+margin-left: 7px;
+cursor:pointer;}
+
+.flip-container2 .front{min-height: 187px;
+border-radius: 130px;
+border: 1px solid #00b7df;
+background-color: #FFF;
+width: 185px;cursor:pointer;}
+
+.flip-container2 .front .front-bg{
+height: 170px;
+background-color: #00b7df;
+border-radius: 103px;
+margin-top: 7px;
+width: 168px;
+margin-left: 7px;cursor:pointer;}
+
+.flip-container3 .front{min-height: 187px;
+border-radius: 130px;
+border: 1px solid #bdd57e;
+background-color: #FFF;
+width: 185px;cursor:pointer;}
+
+.flip-container3 .front .front-bg{
+height: 170px;
+background-color: #bdd57e;
+border-radius: 103px;
+margin-top: 7px;
+width: 168px;
+margin-left: 7px;cursor:pointer;}
+
+.flip-container .front .front-bg{
+height: 170px;
+background-color: #737373;
+border-radius: 103px;
+margin-top: 7px;
+width: 168px;
+margin-left: 7px;}
+
+.front-bg h5 {
+    bottom: 34%;
+    font-size: 15px;
+    height: 32px;
+    line-height: 18px;
+	
+   
+}
+
+
+.flip-container,.flip-container1,.flip-container2,.flip-container3, .back{min-height: 227px; border-radius: 10px;}
+
+.boxSpacing {width: 20%;}
+
+.hoverContectEvent{ padding: 20px;
+    width: 240px;
+	position: absolute;
+    height: 478px;
+	margin-left: 8px;
+    text-align: left;
+	font-size:12px;
+	display:none;
+	color:#FFF;}
+
+.hoverContectEvent .content-wrap h3{ font-size:16px;}	
+	
+
+
+#content_1{ right:0px; background-color:#8e216c; color:#fcc5eb; }
+#content_1 a{color:#fcc5eb; }
+#content_1 h1{ font-size:18px; font-family:"Ericsson Capital TT"; }
+#content_1 h3{ font-size:18px; font-family:"Ericsson Capital TT"; }
+
+#content_2 {right:240px; background-color:#529a26; color:#cffcb3; }
+#content_2 a{color:#cffcb3; }
+#content_2 h1{ font-size:18px; font-family:"Ericsson Capital TT"; }
+#content_2 h3{ font-size:18px; font-family:"Ericsson Capital TT"; }
+
+#content_3 {background-color:#f7a126; color:#fff7ec; right: 480px;}
+#content_3 a{color:#fff7ec; }
+#content_3 h1{ font-size:18px; font-family:"Ericsson Capital TT"; }
+#content_3 h3{ font-size:18px; font-family:"Ericsson Capital TT"; }
+
+#content_4 {right:0px; position:absolute; bottom:0px; background-color:#007b78;  color:#fff7ec;}
+#content_4 a{color:#fff7ec; }
+#content_4 h1{ font-size:18px; font-family:"Ericsson Capital TT"; }
+#content_4 h3{ font-size:18px; font-family:"Ericsson Capital TT"; }
+
+#content_5 {right:240px; position:absolute; bottom:0px; background-color:#1a56ba; color:#d4e4ff; }
+#content_5 a{color:#d4e4ff; }
+#content_5 h1{ font-size:18px; font-family:"Ericsson Capital TT"; }
+#content_5 h3{ font-size:18px; font-family:"Ericsson Capital TT"; }
+
+#content_6 {position:absolute; bottom:0px; background-color:#ed1012; color:#ffd7d7; right: 480px;}
+#content_6 a{color:#ffd7d7; }
+#content_6 h1{ font-size:18px; font-family:"Ericsson Capital TT"; }
+#content_6 h3{ font-size:18px; font-family:"Ericsson Capital TT"; }
+
+.content-item .content-wrap .h3 { font-size:18px; font-family:"Ericsson Capital TT"; color:#fff;}
+
+
+
+.newContectPanel{ height:auto; width:100%;float:left; padding:0px 10px 10px 20px; 
+  font-family:Arial; font-size:11px; color:#e1f4ff; text-align:left;
+  
+  }
+
+
+.newContectPanel p{ padding-left: 13px; color:#333333; font-style:normal; background:url(../images/leftArrow.png) top left no-repeat; margin:0px 0 0 0;  margin-bottom: 4px !important;}
+
+
+@media (max-width:965px){
+.subHeader{ background-color:#eeeeee; height:auto; min-height:52px;}
+.subHeader div{ text-align:left; margin-top:8px;}
+.subHeader img{ text-align:left;}
+.subHeader a{ font-size:13px; color:#2c2c2c; padding:0 0 0 8px; margin:0; line-height:34px; text-decoration:none;}
+.subHeader a:hover{ text-decoration:underline;}
+
+.introductionWrapper {
+	width:100%;}
+
+.boxWrapper {
+	width: 98%;
+	float:left;
+	}
+.tiles-tile {
+  cursor: pointer;
+  float: left;
+	width: 240px;
+	height: 239px;
+	text-align: center;
+}
+.introContent{margin-top: 5px;}
+.introContent a{ margin-bottom:20px;}
+
+}
+
+
+.profile {
+	background: #fbfbfb none repeat scroll 0 0;
+	border: 1px solid #b1b3b4;
+	border-radius: 10px;
+	margin: 20px 0;
+	padding: 10px;
+}
+.profile .img-frame {
+	margin-right: 20px;
+}
+.profile .bio {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 12px;
+	width: 68%;
+}
+.profile .bio .fn {
+	display: block;
+	font-size: 18px;
+	line-height: 1.5;
+}
+.profile .bio .title {
+	color: #8e8d8d;
+	font-size: 14px;
+	
+}
+.profile .bio p {
+	font-weight: 300;
+}
+.profile .img-frame {
+	margin-right: 20px;
+}
+.img-frame.loaded {
+	transform: scale(1);
+}
+.img-frame {
+	border: 3px solid #e1e2e3;
+	border-radius: 100%;
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+    
+    
+
+
+
+   
+
+
+
+.view {
+   width: 300px;
+   height: 200px;
+   margin: 10px;
+   float: left;
+ /*  border: 10px solid #fff;*/
+   overflow: hidden;
+   position: relative;
+   text-align: center;
+   -webkit-box-shadow: 1px 1px 2px #e6e6e6;
+   -moz-box-shadow: 1px 1px 2px #e6e6e6;
+   box-shadow: 1px 1px 2px #e6e6e6;
+   cursor: pointer;
+   background: #fff url(../images/bgimg.jpg) no-repeat center center;
+   border-radius: 3px;
+}
+
+.view .head1 {
+   text-transform: uppercase;
+   color: #fff;
+   text-align: center;
+
+   font-size: 14px;
+   padding: 5px;
+   background: rgba(0, 0, 0, 0.8);
+   margin: 0;
+       height: 48;
+    left: 0;
+    overflow: visible;
+    position: absolute;
+    top: 0;
+    width: 300px;
+	min-height: 50px;
+}
+.view .mask,.view .content {
+   width: 300px;
+   height: 200px;
+   position: absolute;
+   overflow: hidden;
+   top: 0;
+   left: 0;
+}
+.view img {
+   display: block;
+   position: relative;
+}
+.view h2 {
+   text-transform: uppercase;
+   color: #fff;
+   text-align: center;
+   position: relative;
+   font-size: 14px;
+   padding: 10px;
+   background: rgba(0, 0, 0, 0.8);
+   margin: 0;
+}
+.view p {
+   font-family: Georgia, serif;
+
+   font-size: 14px;
+   position: relative;
+   color: #fff;
+	padding: 10px 20px 20px;
+    position: relative;
+    text-align: -moz-left;
+}
+.view a.info {
+   display: inline-block;
+   text-decoration: none;
+   padding: 7px 14px;
+   background: #000;
+   color: #fff;
+   text-transform: uppercase;
+   -webkit-box-shadow: 0 0 1px #000;
+   -moz-box-shadow: 0 0 1px #000;
+   box-shadow: 0 0 1px #000;
+}
+.view a.info: hover {
+   -webkit-box-shadow: 0 0 5px #000;
+   -moz-box-shadow: 0 0 5px #000;
+   box-shadow: 0 0 5px #000;
+}
+
+
+/*.view-first img {
+   -webkit-transition: all 0.2s linear;
+   -moz-transition: all 0.2s linear;
+   -o-transition: all 0.2s linear;
+   -ms-transition: all 0.2s linear;
+   transition: all 0.2s linear;
+}*/
+.view-first .mask {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   background-color: rgba(219,127,8, 0.7);
+   -webkit-transition: all 0.4s ease-in-out;
+   -moz-transition: all 0.4s ease-in-out;
+   -o-transition: all 0.4s ease-in-out;
+   -ms-transition: all 0.4s ease-in-out;
+   transition: all 0.4s ease-in-out;
+}
+/*.view-first h2 {
+   -webkit-transform: translateY(-100px);
+   -moz-transform: translateY(-100px);
+   -o-transform: translateY(-100px);
+   -ms-transform: translateY(-100px);
+   transform: translateY(-100px);
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transition: all 0.2s ease-in-out;
+   -moz-transition: all 0.2s ease-in-out;
+   -o-transition: all 0.2s ease-in-out;
+   -ms-transition: all 0.2s ease-in-out;
+   transition: all 0.2s ease-in-out;
+}*/
+.view-first p {
+   -webkit-transform: translateY(100px);
+   -moz-transform: translateY(100px);
+   -o-transform: translateY(100px);
+   -ms-transform: translateY(100px);
+   transform: translateY(100px);
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transition: all 0.2s linear;
+   -moz-transition: all 0.2s linear;
+   -o-transition: all 0.2s linear;
+   -ms-transition: all 0.2s linear;
+   transition: all 0.2s linear;
+}
+/*.view-first:hover img {
+   -webkit-transform: scale(1.1,1.1);
+   -moz-transform: scale(1.1,1.1);
+   -o-transform: scale(1.1,1.1);
+   -ms-transform: scale(1.1,1.1);
+   transform: scale(1.1,1.1);
+}*/
+.view-first a.info {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transition: all 0.2s ease-in-out;
+   -moz-transition: all 0.2s ease-in-out;
+   -o-transition: all 0.2s ease-in-out;
+   -ms-transition: all 0.2s ease-in-out;
+   transition: all 0.2s ease-in-out;
+}
+.view-first:hover .mask {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: alpha(opacity=100);
+   opacity: 1;
+}
+/*.view-first:hover h2,*/
+.view-first:hover p,
+.view-first:hover a.info {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: alpha(opacity=100);
+   opacity: 1;
+   -webkit-transform: translateY(0px);
+   -moz-transform: translateY(0px);
+   -o-transform: translateY(0px);
+   -ms-transform: translateY(0px);
+   transform: translateY(0px);
+}
+.view-first:hover p {
+   -webkit-transition-delay: 0.1s;
+   -moz-transition-delay: 0.1s;
+   -o-transition-delay: 0.1s;
+   -ms-transition-delay: 0.1s;
+   transition-delay: 0.1s;
+}
+.view-first:hover a.info {
+   -webkit-transition-delay: 0.2s;
+   -moz-transition-delay: 0.2s;
+   -o-transition-delay: 0.2s;
+   -ms-transition-delay: 0.2s;
+   transition-delay: 0.2s;
+}
+		
+/*.view-first img {
+   -webkit-transition: all 0.2s linear;
+   -moz-transition: all 0.2s linear;
+   -o-transition: all 0.2s linear;
+   -ms-transition: all 0.2s linear;
+   transition: all 0.2s linear;
+}
+*/.view-first .mask {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   background-color: rgba(219,127,8, 0.7);
+   -webkit-transition: all 0.4s ease-in-out;
+   -moz-transition: all 0.4s ease-in-out;
+   -o-transition: all 0.4s ease-in-out;
+   -ms-transition: all 0.4s ease-in-out;
+   transition: all 0.4s ease-in-out;
+}
+
+.view-first p {
+   -webkit-transform: translateY(100px);
+   -moz-transform: translateY(100px);
+   -o-transform: translateY(100px);
+   -ms-transform: translateY(100px);
+   transform: translateY(100px);
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transition: all 0.2s linear;
+   -moz-transition: all 0.2s linear;
+   -o-transition: all 0.2s linear;
+   -ms-transition: all 0.2s linear;
+   transition: all 0.2s linear;
+}
+/*.view-first:hover img {
+   -webkit-transform: scale(1.1,1.1);
+   -moz-transform: scale(1.1,1.1);
+   -o-transform: scale(1.1,1.1);
+   -ms-transform: scale(1.1,1.1);
+   transform: scale(1.1,1.1);
+}*/
+.view-first a.info {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transition: all 0.2s ease-in-out;
+   -moz-transition: all 0.2s ease-in-out;
+   -o-transition: all 0.2s ease-in-out;
+   -ms-transition: all 0.2s ease-in-out;
+   transition: all 0.2s ease-in-out;
+}
+.view-first:hover .mask {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: alpha(opacity=100);
+   opacity: 1;
+}
+
+.view-first:hover p,
+.view-first:hover a.info {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: alpha(opacity=100);
+   opacity: 1;
+   -webkit-transform: translateY(0px);
+   -moz-transform: translateY(0px);
+   -o-transform: translateY(0px);
+   -ms-transform: translateY(0px);
+   transform: translateY(0px);
+}
+.view-first:hover p {
+   -webkit-transition-delay: 0.1s;
+   -moz-transition-delay: 0.1s;
+   -o-transition-delay: 0.1s;
+   -ms-transition-delay: 0.1s;
+   transition-delay: 0.1s;
+}
+.view-first:hover a.info {
+   -webkit-transition-delay: 0.2s;
+   -moz-transition-delay: 0.2s;
+   -o-transition-delay: 0.2s;
+   -ms-transition-delay: 0.2s;
+   transition-delay: 0.2s;
+}
+
+@media (min-width:1400px){
+.col-md-12{ width:1380px; margin:0 auto; float: none;}
+	}
+@media (max-width:650px){
+.logoWrppper{ width:100%; height:auto;}	
+.rightSpacing{ padding-left:0px; float: left; height:auto; width: 100%;}
+.logoBoxPanel{margin: 10px 24px 10px 20px;}
+.BannerHeadTest{ width:90%;}
+
+
+}
+}

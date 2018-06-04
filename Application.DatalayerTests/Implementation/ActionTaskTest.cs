@@ -6,18 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Application.Messages;
-using Application.Repository;
 using Application.Utility.Translators;
 using Application.Utility.Logging;
 using Application.Manager.Conversion;
 using Application.Tests.Helper;
+using Application.Manager.Implementation;
+using Application.DTO.Conversion;
+using Application.DTO;
 
 namespace Application.Manager.Tests
 {
     [TestClass()]
     public class ActionTaskTest
     {
-        ActionTaskManager _actionTaskManager { get; set; }
+        IActionTaskBusinessManager _actionTaskManager { get; set; }
 
         public ActionTaskTest()
         {
@@ -28,34 +30,34 @@ namespace Application.Manager.Tests
             translatorService.RegisterEntityTranslator(new ActionTaskTranslator());
             translatorService.RegisterEntityTranslator(new ActionTasklistTranslator());
 
-            _actionTaskManager = new ActionTaskManager(new ActionTaskRepository(), translatorService, new CrucialLogger());
+         //   _actionTaskManager = new ActionTaskManager(new ActionTaskRepository(), translatorService, new CrucialLogger());
 
         }
 
 
-        private ActionTaskMessage ActionTaskData()
+        private ActionTaskDTO ActionTaskData()
         {
-            return new ActionTaskMessage()
+            return new ActionTaskDTO()
             {
-                AccessCode = "",
-                Actiontype = "Remote",
-                Codelanguage = "Csharp",
+                LocalCode = "",
+                Type = "Remote",
+                LocalLanguage = "Csharp",
                 CreatedBy = "ekriesw",
                 CreatedOn = DateTime.UtcNow,
                 Description = "",
-                Inputs = null,
+            //    Inputs = null,
                 IsActive = true,
-                menupath = "",
-                MockInputs = null,
-                module = "",
+                FolderPath = "",
+             //   MockInputs = null,
+                Namespace = "",
                 Name = "ActionTask1",
-                Outputs = null,
+            //    Outputs = null,
                 RemoteCode = "",
-                Results = null,
+            //    Results = null,
                 Summary = "",
-                TimeOut = 300,
-                UpdatedBy = "",
-                UpdatedOn = DateTime.UtcNow
+                Timeout = 300,
+                ModifiedBy = "",
+                ModifiedOn = DateTime.UtcNow
             };
         }
 
@@ -63,32 +65,32 @@ namespace Application.Manager.Tests
         [TestMethod()]
         public void GetbyIdTest()
         {
-            ActionTaskMessage input = this.ActionTaskData();
-            ActionTaskMessage savedData = _actionTaskManager.Save(input);
+            ActionTaskDTO input = this.ActionTaskData();
+            ActionTaskDTO savedData = _actionTaskManager.Save(input);
             Assert.IsNotNull(savedData);
-            input.ActionId = savedData.ActionId;
+            input.ActionTaskId = savedData.ActionTaskId;
             
 
-            string actionId = savedData.ActionId;
-            ActionTaskMessage result = _actionTaskManager.GetbyId(actionId);
+            string actionId = savedData.ActionTaskId;
+            ActionTaskDTO result = _actionTaskManager.GetbyId(actionId);
             Assert.IsNotNull(result);
             input.CreatedOn = result.CreatedOn;
-            input.UpdatedOn = result.UpdatedOn;
-            AssertHelper.HasEqualFieldValues<ActionTaskMessage>(input, result);
+            input.ModifiedOn = result.ModifiedOn;
+            AssertHelper.HasEqualFieldValues<ActionTaskDTO>(input, result);
         }
 
         [TestMethod()]
         public void AddTest()
         {
 
-            ActionTaskMessage input = this.ActionTaskData();
+            ActionTaskDTO input = this.ActionTaskData();
             var actionId = _actionTaskManager.Add(input);
-            ActionTaskMessage result = _actionTaskManager.GetbyId(actionId);
+            ActionTaskDTO result = _actionTaskManager.GetbyId(actionId);
             Assert.IsNotNull(result);
-            input.ActionId = result.ActionId;
+            input.ActionTaskId = result.ActionTaskId;
             input.CreatedOn = result.CreatedOn;
-            input.UpdatedOn = result.UpdatedOn;
-            AssertHelper.HasEqualFieldValues<ActionTaskMessage>(input, result);
+            input.ModifiedOn = result.ModifiedOn;
+            AssertHelper.HasEqualFieldValues<ActionTaskDTO>(input, result);
 
 
         }
@@ -96,24 +98,24 @@ namespace Application.Manager.Tests
         [TestMethod()]
         public void UpdateTest()
         {
-            ActionTaskMessage input = this.ActionTaskData();
-            ActionTaskMessage savedData = _actionTaskManager.Save(input);
+            ActionTaskDTO input = this.ActionTaskData();
+            ActionTaskDTO savedData = _actionTaskManager.Save(input);
             Assert.IsNotNull(savedData);
-            input.ActionId = savedData.ActionId;
+            input.ActionTaskId = savedData.ActionTaskId;
             input.CreatedOn = savedData.CreatedOn;
-            input.UpdatedOn = savedData.UpdatedOn;
-            input.AccessCode = "Test";
-            ActionTaskMessage result = _actionTaskManager.Update(input);
+            input.ModifiedOn = savedData.ModifiedOn;
+            input.LocalCode = "Test";
+            ActionTaskDTO result = _actionTaskManager.Update(input);
             Assert.IsNotNull(result);
-            input.UpdatedOn = result.UpdatedOn;
-            AssertHelper.HasEqualFieldValues<ActionTaskMessage>(input, result);
+            input.ModifiedOn = result.ModifiedOn;
+            AssertHelper.HasEqualFieldValues<ActionTaskDTO>(input, result);
 
         }
 
         [TestMethod()]
         public void GetTest()
         {
-            IEnumerable<ActionTasklist> result = _actionTaskManager.Get();
+            IEnumerable<ActionTaskDTO> result = _actionTaskManager.Get();
 
             Assert.IsNotNull(result);
 
@@ -126,26 +128,26 @@ namespace Application.Manager.Tests
         [TestMethod()]
         public void SaveTest()
         {
-            ActionTaskMessage input = this.ActionTaskData();
+            ActionTaskDTO input = this.ActionTaskData();
             var result = _actionTaskManager.Save(input);
             Assert.IsNotNull(result);
-            input.ActionId = result.ActionId;
+            input.ActionTaskId = result.ActionTaskId;
             input.CreatedOn = result.CreatedOn;
-            input.UpdatedOn = result.UpdatedOn;
-            AssertHelper.HasEqualFieldValues<ActionTaskMessage>(input, result);
+            input.ModifiedOn = result.ModifiedOn;
+            AssertHelper.HasEqualFieldValues<ActionTaskDTO>(input, result);
         }
 
         [TestMethod()]
         public void DeleteTest()
         {
-            ActionTaskMessage input = this.ActionTaskData();
-            ActionTaskMessage savedData = _actionTaskManager.Save(input);
+            ActionTaskDTO input = this.ActionTaskData();
+            ActionTaskDTO savedData = _actionTaskManager.Save(input);
             Assert.IsNotNull(savedData);
-            input.ActionId = savedData.ActionId;
+            input.ActionTaskId = savedData.ActionTaskId;
             input.CreatedOn = savedData.CreatedOn;
-            input.UpdatedOn = savedData.UpdatedOn;
+            input.ModifiedOn = savedData.ModifiedOn;
             input.IsActive = false;
-            ActionTaskMessage result = _actionTaskManager.Delete(input);
+            ActionTaskDTO result = _actionTaskManager.Delete(input);
             Assert.IsFalse(result.IsActive);
 
         }

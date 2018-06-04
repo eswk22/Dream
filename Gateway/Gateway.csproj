@@ -109,10 +109,6 @@
       <Project>{14e6606d-3282-455e-a3b2-899d1e411e7d}</Project>
       <Name>Application.Manager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Application.Repository\Application.Repository.csproj">
-      <Project>{6cdd6827-ab34-4a02-86da-ef4e0a4ca0df}</Project>
-      <Name>Application.Repository</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Application.Utility\Application.Utility.csproj">
       <Project>{58f2d7cf-3f49-4fe8-a13f-795e14292bed}</Project>
       <Name>Application.Utility</Name>
